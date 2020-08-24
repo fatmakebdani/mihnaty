@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-         <title>Job Flinder </title>
+         <title>Mihnaty </title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="manifest" href="site.webmanifest">
@@ -69,14 +69,14 @@
     <!-- Preloader Start -->
     <header>
         <!-- Header Start -->
-       <div class="header-area header-transparrent">
+       <div class="header-area">
            <div class="headder-top header-sticky">
                 <div class="container">
                     <div class="row align-items-center">
                         <div class="col-lg-2 col-md-1" align="left">
                             <!-- Logo -->
                             <div class="logo">
-                                <a href="/home"><img src="assets/img/logo/MihnatyFatma.png" alt=""></a>
+                                <a href="/"><img src="assets/img/logo/MihnatyFatma.png" alt=""></a>
                             </div>  
                         </div>
                         <div class="col-lg-10 col-md-9" align="rights">
@@ -85,7 +85,7 @@
                                 <div class="main-menu">
                                     <nav class="d-none d-lg-block">
                                         <ul id="navigation">
-                                            <li><a href="/home">Accueil</a></li>
+                                            <li><a href="/s">Accueil</a></li>
                                             <li><a href="/offres">Offres d'emploi</a></li>
                                             <li><a href="/fiches entreprises">Fiches d'entreprise</a></li>
                                             <li><a href="apropos">A propos</a></li>
@@ -207,10 +207,11 @@
                                 <h3 class="register-heading">S'inscrire</h3>
                                 <form  class="row register-form" method="POST" action="{{ route('register') }}">
                                     @csrf
-                                    <div class="form-group row">
+                                    <div class="form-group{{ $errors->has('role')? 'has
+                                        error' :''}}">
                                     <label for="role" class="col-md-6 col-form-label text-md-right">{{ __('vous étes:') }}</label>
-                                    <input type="checkbox" name="role" value="candidat" checked>Candidat
-                                    <input type="checkbox" name="role" value="professionnel">Professionnel
+                                    <input type="checkbox" name="role" value="2" checked>Candidat
+                                    <input type="checkbox" name="role" value="3">Professionnel
                                 </form>
                         <div class="form-group row">
                            
@@ -271,12 +272,7 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="/MaFicheP">
-                                    Ma fiche professionnelle
-                                    </a>
-                                     <a class="dropdown-item" href="/mes_candidatures">
-                                    Mes candidatures
-                                    </a>
+                                   
                                      <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -316,6 +312,8 @@
         <script src="/assets/js/bootstrap.min.js"></script>
         <!-- Jquery Mobile Menu -->
         <script src="/assets/js/jquery.slicknav.min.js"></script>
+        <script src="/assets/js/jquery-3.5.1.min.js"></script>
+        <script src="/assets/js/test.js"></script>
 
         <!-- Jquery Slick , Owl-Carousel Plugins -->
         <script src="/assets/js/owl.carousel.min.js"></script>

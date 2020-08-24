@@ -49893,5 +49893,10 @@ module.exports = __webpack_require__(/*! C:\laragon\www\pfe\resources\sass\app.s
 
 
 /***/ })
-
+$(document).ready(function () {
+$('#dtBasicExample').DataTable({
+"ordering": false // false to disable sorting (or any other option)
+});
+$('.dataTables_length').addClass('bs-select');
+});
 /******/ });

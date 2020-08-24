@@ -16,10 +16,10 @@
                                 <h2 style="color: #fb246a">Le site qui va vous faciliter votre vie professionnelle</h2>
                             </div>
                             <div class="support-caption">
-                                <p>Grâce à Mihnaty vous pouvez chercher un emploi que ça soit par secteur ou par wilaya, vous trouverez votre emploi idéal.</p>
-                               <p>En un seul clique postuler pour l'offre d'emploi qui vous convient et votre CV sera  traité le plutôt possible.</p>
+                                  <p>Grâce à Mihnaty vous pouvez chercher un emploi que ça soit par secteur ou par wilaya, vous trouverez votre emploi idéal. On propose aussi un espace pour les professionnels pour qu'ils puissent créer leurs offres d'emploi et selectionner le bon candidat.</p>
+                               <p>En un seul clique postuler pour l'offre d'emploi qui vous convient selon le type de contrat, la date du début d'emploi, etc. Ensuite votre CV sera traité le plutôt possible.</p>
                                <p>Aprés la cloture de l'adhésion à une offre,le recruteur passe à l'évaluation de chaque candidat tout seul ou à l'aide d'un jury pour à la fin arriver à un seul candidat au quel le poste sera attribué.</p>
-                               <p>Un professionnel possède un poste dans une entreprise,peut créer une fiche pour son etreprise,a la possiblité de proposer une offre et peut etre un membre de jury dans une offre.</p>
+                               <p>Un professionnel est un acteur qui possède un poste dans une entreprise. Il a la possibilité de créer une fiche pour son etreprise, et c'est lui qui propose les offres d'emploi. Il peut etre impliqué dans une offre comme membre de jury lors d'une évaluation collaborative.</p>
                                
                             </div>
                         </div>

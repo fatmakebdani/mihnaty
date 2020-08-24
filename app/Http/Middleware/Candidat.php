@@ -16,7 +16,7 @@ class Candidat
     public function handle($request, Closure $next)
     {
          if(!Auth::check()){
-            return redirect()->route('login')
+            return redirect()->route('login');
         }
         if (Auth::user()->role==2) {
             return $next($request);

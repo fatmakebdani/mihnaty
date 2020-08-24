@@ -28,4 +28,5 @@
                 }
             });
         });
+        $('content').load('content/professionnel.blade.php');
     });

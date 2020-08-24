@@ -256,6 +256,11 @@ $('#myModal').click(function () {
 $('#myModal2').click(function () {
   $("#myModal2").modal("show");
 });
-
+$(document).ready(function () {
+$('#dtBasicExample').DataTable({
+"ordering": false // false to disable sorting (or any other option)
+});
+$('.dataTables_length').addClass('bs-select');
+});
 
 })(jQuery);

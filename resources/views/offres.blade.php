@@ -206,8 +206,12 @@
                                             </ul>
                                         </div>
                                     </div>
+                                    
+
                                     <div class="items-link items-link2 f-right">
+                                        @if (Auth::user()->role==2)
                                         <a href="job_details.html">postuler</a>
+                                        @endif 
                                         <span>7 hours ago</span>
                                     </div>
                                 </div>

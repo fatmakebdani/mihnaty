@@ -29,7 +29,7 @@
                 <img src="assets/img/hero/baker.jpg" class="d-block w-100" alt="...">
                 <div class="carousel-caption">
                             <h1>Un clic</h1>
-                            <h2>et attendez d'étre recruter</h2>
+                            <h2>et vous serez recruter</h2>
                         </div>
             </div>
              <div class="carousel-item">
@@ -55,8 +55,8 @@
                                     <div class="input-form">
                                         <input type="text" placeholder="titre offre ,mot clé">
                                     </div>
-                                         <div class="wrapper">
-               <select size="5" class="selection" >wilaya
+                                                                                  <div class="wrapper">
+               <select size="3" class="form-control">
                                       <option value="1">Adrar</option><option value="2">Chlef</option><option value="3">Laghouat</option><option value="4">Oum El-Bouaghi</option><option value="5">Batna</option><option value="6">Bejaia</option><option value="7">Biskra</option><option value="8">Bechar</option><option value="9">Blida</option><option value="10">Bouira</option><option value="11">Tamanrassat</option><option value="12">Tebessa</option><option value="13">Tlemcen</option><option value="14">Tiaret</option><option value="15">Tizi-Ouzou</option><option value="16">Alger</option><option value="17">Djelfa</option><option value="18">Jijel</option><option value="19">Setif</option><option value="20">Saida</option><option value="21">Skikda</option><option value="22">Sidi-Bel-Abbes</option><option value="23">Annaba</option><option value="24">Guelma</option><option value="25">Constantine</option><option value="26">Médea</option><option value="27">Mostaganem</option><option value="28">M'sila</option><option value="29">Mascara</option><option value="30">Ouargla</option><option value="31">Oran</option><option value="32">El-Bayadh</option><option value="33">Illizi</option><option value="34">Bordj Bou-Arreridj</option><option value="35">Boumerdes</option><option value="36">El-Taref</option><option value="37">Tindouf</option><option value="38">Tissimsilt</option><option value="39">El-Oued</option><option value="40">khenchela</option><option value="41">Souk Ahras</option><option value="42">Tipaza</option><option value="43">Mila</option><option value="44">Ain Defla</option><option value="45">Naama</option><option value="46">Ain Timouchent</option><option value="47">Ghardaia</option><option value="48">Relizane</option>
                                     </select>
               </div>
@@ -343,8 +343,8 @@
                                 <span class="flaticon-tour"></span>
                             </div>
                             <div class="process-cap">
-                               <h5>4. Le professionnel</h5>
-                               <p>Un professionnel possède un poste dans une entreprise,peut créer une fiche pour son etreprise,a la possiblité de proposer une offre et peut etre un membre de jury dans une offre.</p>
+                                <h5>4. Gestion des professionnels</h5>
+                               <p>Un professionnel est un acteur qui possède un poste dans une entreprise. Il a la possibilité de créer une fiche pour son etreprise, et c'est lui qui propose les offres d'emploi. Il peut etre impliqué dans une offre comme membre de jury lors d'une évaluation collaborative.</p>
                             </div>
                         </div>
                     </div>
