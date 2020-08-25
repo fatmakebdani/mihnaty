@@ -23,9 +23,9 @@ class CreateOffresTable extends Migration
             $table->date('denier_delais');
             $table->date('date_notification');
             $table->date('date_prise_fonction');
-            $table->integer('ficheE_id')->unsigned();
+            $table->unsignedInteger('ficheE_id');
             $table->foreign('ficheE_id')->references('id')->on('fichees');
-            $table->integer('user_id')->unsigned();
+            $table->unsignedInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });

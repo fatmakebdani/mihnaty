@@ -9,7 +9,7 @@ class Candidat extends Authenticatable
 {
         use Notifiable;
 
-        protected $guard = 'candidat';
+        protected $guard = 'candidats';
 
         protected $fillable = [
             'nom','prenom', 'email', 'password',
@@ -18,4 +18,9 @@ class Candidat extends Authenticatable
         protected $hidden = [
             'password', 'remember_token',
         ];
+
+        public function user()
+        {
+            return $this->belongsTo('App\User');
+        }
 }

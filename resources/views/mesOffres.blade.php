@@ -26,20 +26,20 @@
           <i class="zmdi zmdi-check-square"></i> Mes examinations
         </a>
       </li>
-    
+
     </ul>
   </div>
   <!-- Content -->
   <div id="content" class="scroll">
         <!-- PAGE CONTENT-->
             <!-- BREADCRUMB-->
-        
+
             <section class="au-breadcrumb2">
             <div class="container">
                         <div class="row justify-content-center">
                             <div class=" col-lg-8">
                                 <h3 class="mb-30"style="color:#fb246a">Mes examination</h3>
-                                
+
                                     <div class="progress-table">
                                             <div class="table-head">
                             <div class="col-lg-3">Titre</div>
@@ -61,7 +61,7 @@
         <h4 class="modal-title"></h4>
       </div>
       <div class="modal-body">
-         
+
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -74,8 +74,8 @@
 <div class="fa fa-minus-circle"size="lg" aria-hidden="true" title="Supprimer"></div>
 </div>
 
-                
-                                           
+
+
                                        <div class="table-row">
                                             <div class="col-lg-3">IT</div>
                             <div class="col-lg-3">CHU</div>
@@ -91,7 +91,7 @@
         <h4 class="modal-title"></h4>
       </div>
       <div class="modal-body">
-         
+
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -118,7 +118,7 @@
         <h4 class="modal-title"></h4>
       </div>
       <div class="modal-body">
-         
+
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -130,24 +130,24 @@
 <div class="col-md-2"></div>
 <div class="fa fa-minus-circle"size="lg" aria-hidden="true" title="Supprimer"></div>
 </div>
-                             
+
 </div>
                                         </div>
-                                    
+
                                 </div>
                             </div>
-                           
+
         <div class="page-content--bgf7">
             <!-- BREADCRUMB-->
             </div>
         </main>
-            
+
             <!-- WELCOME-->
-           
+
             <!-- END WELCOME-->
 
             <!-- STATISTIC-->
-           
+
             <!-- END DATA TABLE-->
 
             <!-- COPYRIGHT-->

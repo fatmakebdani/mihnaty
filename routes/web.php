@@ -29,12 +29,13 @@ Route::get('/mesOffres',function(){
     return view('mesOffres');
 });
 
+Route::resource('professionnel', 'ProfessionnelController');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/candidat','CandidatController@index')->name('candidat')->middleware('candidat');
 Route::get('/admin','AdminController@index')->name('admin')->middleware('admin');
-Route::get('/professionnel','ProfessionnelController@index')->name('professionnel')->middleware('professionnel');
+//Route::get('/professionnel','ProfessionnelController@index')->name('professionnel')->middleware('professionnel');
 Route::get('/MaFicheE','ProfessionnelController@ficheE')->name('ficheE')->middleware('professionnel');
 Route::get('/MesExaminations','ProfessionnelController@mesexaminations')->name('mesexaminations')->middleware('professionnel');
 
