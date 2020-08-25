@@ -112,18 +112,9 @@
                                 <form>
                                     <label>Activité principale:</label>
                                     <input type="text" class="form-control" id="id_TitreE">
-
-
-                                    <label>Activité(s) secondaire(s)</label>
-                                    <textarea id="id_sec" ></textarea>
-                                    
    
-                                    
 
-                                    <div class="col-md-6" class="vertical-right">
                                     
-                                    <div class="genric-btn primary-border circle" text-align="vertical-right">Ajouter</div>
-                                </div>
 
                                 </form>
                             </div>

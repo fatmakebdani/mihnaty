@@ -23,12 +23,12 @@ class CreateFicheesTable extends Migration
             $table->string('raison sociale');
             $table->date('date de creation');
             $table->string('activité');
-            $table->string("photo");
-             $table->integer('representant_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->string('photo');
+            $table->integer('representant')->unsigned();
+            $table->foreign('representant')->references('id')->on('users');
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
-            $table->timestamps()
+            $table->timestamps();
         });
     }
 
