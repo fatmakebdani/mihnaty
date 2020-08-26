@@ -11315,7 +11315,7 @@ z-index:10;
 color:#fff;
 text-align:left;
 top:40%;
-left:2%;
+left:-90%;
 bottom:auto;
 -webkit-transform:translate(0, -50%);
 -ms-transform:translate(0, -50%);
@@ -11328,7 +11328,7 @@ transform:translate(0, -50%);
             margin-bottom: 0px;
             color:white;
             top: 10%;
-            line-height:1;
+                line-height:1;
       
 }
 
@@ -11443,7 +11443,7 @@ transform:translate(0, -50%);
   position:absolute;
   left: 250px;
   width: 280px;
-  height: 98%;
+  height: 100%;
   margin-left: -250px;
   overflow-y: auto;
   background:#242b5e;

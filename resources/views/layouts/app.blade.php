@@ -8,7 +8,7 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="manifest" href="site.webmanifest">
-        <link rel="shortcut icon" type="image/x-icon" href="assets/img/logo/MihnatyFatma.png">
+        <link rel="shortcut icon" type="image/x-icon" href="/assets/img/logo/MihnatyFatma.png">
 
         <!-- CSS here -->
            
@@ -19,20 +19,23 @@
 <script src="{{ asset('js/app.js') }}" defer></script>
 
 
-            <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-            <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
-            <link rel="stylesheet" href="assets/css/flaticon.css">
-            <link rel="stylesheet" href="assets/css/price_rangs.css">
-            <link rel="stylesheet" href="assets/css/slicknav.css">
-            <link rel="stylesheet" href="assets/css/animate.min.css">
-            <link rel="stylesheet" href="assets/css/magnific-popup.css">
-            <link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
-            <link rel="stylesheet" href="assets/css/themify-icons.css">
-            <link rel="stylesheet" href="assets/css/slick.css">
-            <link rel="stylesheet" href="assets/css/nice-select.css">
-            <link rel="stylesheet" href="assets/css/style.css">
-            <link rel="stylesheet" href="css/app.css">
-                <link rel="stylesheet" href="assets/css/responsive.css">
+            <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+            <link rel="stylesheet" href="/assets/css/owl.carousel.min.css">
+            <link rel="stylesheet" href="/assets/css/flaticon.css">
+            <link rel="stylesheet" href="/assets/css/price_rangs.css">
+            <link rel="stylesheet" href="/assets/css/slicknav.css">
+            <link rel="stylesheet" href="/assets/css/animate.min.css">
+            <link rel="stylesheet" href="/assets/css/magnific-popup.css">
+            <link rel="stylesheet" href="/assets/css/fontawesome-all.min.css">
+            <link rel="stylesheet" href="/assets/css/themify-icons.css">
+            <link rel="stylesheet" href="/assets/css/slick.css">
+            <link rel="stylesheet" href="/assets/css/nice-select.css">
+            <link rel="stylesheet" href="/assets/css/style.css">
+            <link rel="stylesheet" href="/css/app.css">
+                <link rel="stylesheet" href="/assets/css/responsive.css">
+                    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/css/templatemo-blue.css">
 
             <link href="/assets/css/font-face.css" rel="stylesheet" media="all">
     <link href="/assets/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
@@ -61,7 +64,7 @@
             <div class="preloader-inner position-relative">
                 <div class="preloader-circle"></div>
                 <div class="preloader-img pere-text">
-                    <img src="assets/img/logo/MihnatyFatma.png" alt="">
+                    <img src="/assets/img/logo/MihnatyFatma.png" alt="">
                 </div>
             </div>
         </div>
@@ -76,7 +79,7 @@
                         <div class="col-lg-2 col-md-1" align="left">
                             <!-- Logo -->
                             <div class="logo">
-                                <a href="/"><img src="assets/img/logo/MihnatyFatma.png" alt=""></a>
+                                <a href="/"><img src="/assets/img/logo/MihnatyFatma.png" alt=""></a>
                             </div>  
                         </div>
                         <div class="col-lg-10 col-md-9" align="rights">
@@ -97,12 +100,12 @@
                                 <div class="header-btn d-none f-right d-lg-block">
                                    @guest
                                     <a class="btn head-btn2" data-toggle="modal" data-target="#myModal">
-    {{ __('Login') }}</a>
+    {{ __('Connection') }}</a>
 <div class="modal custom-modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
     aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
-            <div class="modal-header">{{ __('Login') }}
+            <div class="modal-header">{{ __('Connection') }}
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
                     ×</button>
                 </div>
@@ -183,12 +186,12 @@
             </div>
         </div>
                                       <a class="btn head-btn2" data-toggle="modal" data-target="#myModal2">
-    {{ __('Register') }}</a>
+    {{ __('Inscription') }}</a>
 <div class="modal custom-modal" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
     aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
-            <div class="modal-header">{{ __('Register') }}
+            <div class="modal-header">{{ __('Inscription') }}
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
                     ×</button>
                 </div>
@@ -200,7 +203,7 @@
                      <div class="col-md-12 register-left">
                         
                         Vous avez déja un compte? 
-                        <input type="submit" name="" value="S'inscrire"/><br/>
+                        <input type="submit" name="" value="Se connecter"/><br/>
                     </div>
                         <div class="col-md-10 register-right">
                            
@@ -209,7 +212,7 @@
                                     @csrf
                                     <div class="form-group{{ $errors->has('role')? 'has
                                         error' :''}}">
-                                    <label for="role" class="col-md-6 col-form-label text-md-right">{{ __('vous étes:') }}</label>
+                                  
                                     <input type="checkbox" name="role" value="2" checked>Candidat
                                     <input type="checkbox" name="role" value="3">Professionnel
                                 </form>
@@ -307,9 +310,7 @@
     </div>
               <script src="/assets/js/vendor/modernizr-3.5.0.min.js"></script>
         <!-- Jquery, Popper, Bootstrap -->
-        <script src="/assets/js/vendor/jquery-1.12.4.min.js"></script>
-        <script src="/assets/js/popper.min.js"></script>
-        <script src="/assets/js/bootstrap.min.js"></script>
+      
         <!-- Jquery Mobile Menu -->
         <script src="/assets/js/jquery.slicknav.min.js"></script>
         <script src="/assets/js/jquery-3.5.1.min.js"></script>
@@ -362,5 +363,6 @@
 
     <!-- Main JS-->
     <script src="/assets/js/main.js"></script>
+
 </body>
 </html>

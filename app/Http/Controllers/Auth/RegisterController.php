@@ -44,7 +44,7 @@ class RegisterController extends Controller
                 return $this->redirectTo;
                 break;
             case '3':
-                $this->redirectTo ='/professionnel';
+                $this->redirectTo ='/professionnel/create';
                 return $this->redirectTo;
                     break;
             default:
@@ -65,7 +65,7 @@ class RegisterController extends Controller
 
     }
 
-   
+
 
     /**
      * Get a validator for an incoming registration request.
@@ -76,7 +76,7 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-           
+
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'role' =>['required'],
@@ -92,7 +92,7 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         return User::create([
-          
+
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'role' => $data['role'],

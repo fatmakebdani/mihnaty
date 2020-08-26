@@ -1,40 +1,262 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Intervention\Image\Facades\Image;
 use Illuminate\Http\Request;
+use App\Professionnel;
+use App\Competence;
+use App\Diplome;
+use App\PosteCourant;
+use App\Experience;
+use Auth;
+use App\User;
 
 class ProfessionnelController extends Controller
 {
-    //
-      public function index()
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
     {
-        return view('professionnel');
+        return Auth::user()->id;
     }
-     public function ficheE()
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
     {
-        return view('MaFicheE');
+        $user= Auth::user();
+        $data = [
+            'user' => $user,
+        ];
+        return view('professionnel')->with($data);
     }
-      public function mesExaminations()
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
     {
-        return view('MesExaminations');
+        $this->validate($request, [
+            'image' => 'image|nullable|max:1999',
+            'nom' => 'required',
+            'prenom' => 'required',
+            'sexe' => 'required',
+            'email' => 'required',
+            'tel' => 'required',
+            'date' => 'required',
+
+            'nom_en' => 'required',
+            'titre_en' => 'required',
+            'date_debut' => 'required',
+            'date_fin' => 'required',
+            'contrat_file' => 'required',
+
+            'titre' => 'required',
+            'nom_en_c' => 'required',
+            'date_debut_c' => 'required',
+            'date_fin_c' => 'required',
+            'contrat_c_file' => 'required',
+
+            'diplome' => 'required',
+            'diplome_en' => 'required',
+            'date_debut_d' => 'required',
+            'date_fin_d' => 'required',
+            'diplome_file' => 'required',
+
+            'competence' => 'required',
+
+            'insta' => 'nullable',
+            'linkedin' => 'nullable',
+            'portfolio' => 'nullable',
+        ]);
+        $auth = Auth::user();
+
+        // User image
+        if($request->hasFile('image')){
+            // Get filename with the extension
+            $filenameWithExt = $request->file('image')->getClientOriginalName();
+            // Get just filename
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            // Get just ext
+            $extension = $request->file('image')->getClientOriginalExtension();
+            // Filename to store
+            $fileNameToStore1= $filename.'_'.time().'.'.$extension;
+            // Upload Image
+            $path = $request->file('image')->storeAs('public/user_images', $fileNameToStore1);
+
+            // make thumbnails
+            $thumbStore = 'thumb.'.$filename.'_'.time().'.'.$extension;
+            $thumb = Image::make($request->file('image')->getRealPath());
+            $thumb->resize(80, 80);
+            $thumb->save('storage/user_images/'.$thumbStore);
+
+        }
+        else {
+            $fileNameToStore1 = 'noimage.jpg';
+        }
+
+        //EXPERIENCE IMAGE
+        // make thumbnails
+
+        // Get filename with the extension
+        $filenameWithExt = $request->file('contrat_file')->getClientOriginalName();
+        // Get just filename
+        $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+        // Get just ext
+        $extension = $request->file('contrat_file')->getClientOriginalExtension();
+        // Filename to store
+        $fileNameToStore2= $filename.'_'.time().'.'.$extension;
+        // Upload Image
+        $path = $request->file('contrat_file')->storeAs('public/experience', $fileNameToStore2);
+
+
+        //Contrat IMAGE
+        // Get filename with the extension
+        $filenameWithExt = $request->file('contrat_c_file')->getClientOriginalName();
+        // Get just filename
+        $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+        // Get just ext
+        $extension = $request->file('contrat_c_file')->getClientOriginalExtension();
+        // Filename to store
+        $fileNameToStore3= $filename.'_'.time().'.'.$extension;
+        // Upload Image
+        $path = $request->file('contrat_c_file')->storeAs('public/contrat_courant', $fileNameToStore3);
+
+        //DIPLOME IMAGE
+        // Get filename with the extension
+        $filenameWithExt = $request->file('diplome_file')->getClientOriginalName();
+        // Get just filename
+        $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+        // Get just ext
+        $extension = $request->file('diplome_file')->getClientOriginalExtension();
+        // Filename to store
+        $fileNameToStore4= $filename.'_'.time().'.'.$extension;
+        // Upload Image
+        $path = $request->file('diplome_file')->storeAs('public/diplome', $fileNameToStore4);
+
+
+        // Create Post
+        $professionnel = new Professionnel;
+        $professionnel->user_id = $auth->id;
+        $professionnel->nom = $request->input('nom');
+        $professionnel->prenom = $request->input('prenom');
+        $professionnel->email = $request->input('email');
+        if ($request->input('sexe') == 'Homme') {
+            $professionnel->sexe = 'H';
+        } else {
+            $professionnel->sexe = 'F';
+        }
+        $professionnel->tel = $request->input('tel');
+        $professionnel->dateN = $request->input('date');
+        $professionnel->save();
+
+        $experience = new Experience;
+        $experience->entreprise = $request->input('nom_en');
+        $experience->titre = $request->input('titre_en');
+        $experience->debut = $request->input('date_debut');
+        $experience->fin = $request->input('date_fin');
+        $experience->file = $fileNameToStore2;
+        $experience->user_id = $auth->id;
+        $experience->save();
+
+        $poste = new PosteCourant;
+        $poste->entreprise = $request->input('nom_en_c');
+        $poste->titre = $request->input('titre');
+        $poste->debut = $request->input('date_debut_c');
+        $poste->fin = $request->input('date_fin_c');
+        $poste->file = $fileNameToStore3;
+        $poste->user_id = $auth->id;
+        $poste->save();
+
+        $diplome = new Diplome;
+        $diplome->titre = $request->input('diplome');
+        $diplome->etablisement = $request->input('diplome_en');
+        $diplome->debut = $request->input('date_debut_d');
+        $diplome->fin = $request->input('date_fin_d');
+        $diplome->file = $fileNameToStore4;
+        $diplome->user_id = $auth->id;
+        $diplome->save();
+
+        $competence = new Competence;
+        $competence->titre = $request->input('competence');
+        $competence->user_id = $auth->id;
+        $competence->save();
+
+        $user = User::find($auth->id);
+        $user->insta = $request->input('insta');
+        $user->linkedin = $request->input('linkedin');
+        $user->portfolio = $request->input('portfolio');
+        $user->user_photo = $fileNameToStore1;
+        $user->save();
+
+        return redirect('/professionnel');
     }
-    public function create(){
-      return view('ficheE.create');
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Professionnel  $professionnel
+     * @return \Illuminate\Http\Response
+     */
+    public function show(Professionnel $professionnel)
+    {
+        $prof = Professionnel::find($professionnel)->first();
+        //exemple comment accéder à une seule experience à partir de professionnel
+        return $prof->user->experiences->first()->titre;
     }
-    public function store(Request $request){
-      $fichee = new fichee();
-      $fichee->nom = $request->input('nom');
-      $fichee->raison_sociale=$request->input('raison sociale');
-      $fichee->photo=$request->input('photo');
-      $fichee->adresse = $request->input('adresse');
-      $fichee->num = $request->input('num');
-      $fichee->site = $request->input('site');
-       $fichee->code_postal=$request->input('code postal');
-      $fichee->date_creation=$request->input('date de création');
-      $fichee->nature_activité = $request->input('nature activite');
-      $fichee->representant = $request->input('representant');
-      $fichee->site = $request->input('site');
-      $professionnel->save();
-      return redirect('MaFicheE');
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Professionnel  $professionnel
+     * @return \Illuminate\Http\Response
+     */
+   public function edit(Professionnel $professionnel)
+    {
+        $prof = Professionnel::find($professionnel);
+        
+        //Check if post exists before deleting
+        if (!isset($prof)){
+            return redirect('/professionnel')->with('error', 'No Post Found');
+        }
+
+        // Check for correct user
+        if(auth()->user()->id !==$prof->user_id){
+            return redirect('/professionnel')->with('error', 'Unauthorized Page');
+        }
+
+        return view('professionnel.edit')->with('professionnel', $prof);
+    }
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Professionnel  $professionnel
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, Professionnel $professionnel)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Professionnel  $professionnel
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(Professionnel $professionnel)
+    {
+        //
+    }
+    
 }
