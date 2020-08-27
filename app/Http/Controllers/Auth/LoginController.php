@@ -41,7 +41,7 @@ class LoginController extends Controller
                 return $this->redirectTo;
                 break;
             case '3':
-                $this->redirectTo ='/professionnel';
+                $this->redirectTo ='/professionnel'.'/'.Auth::user()->professionnel->id . '/edit';
                 return $this->redirectTo;
                     break;
             default:
@@ -58,12 +58,12 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
-        
+
     }
 
-   
 
 
 
-   
+
+
 }

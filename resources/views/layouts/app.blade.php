@@ -11,7 +11,7 @@
         <link rel="shortcut icon" type="image/x-icon" href="/assets/img/logo/MihnatyFatma.png">
 
         <!-- CSS here -->
-           
+
 
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
@@ -42,7 +42,7 @@
     <link href="/assets/vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
     <link href="/assets/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
       <!-- Bootstrap CSS-->
-   
+
 
     <!-- Vendor CSS-->
     <!--link href="vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
@@ -80,7 +80,7 @@
                             <!-- Logo -->
                             <div class="logo">
                                 <a href="/"><img src="/assets/img/logo/MihnatyFatma.png" alt=""></a>
-                            </div>  
+                            </div>
                         </div>
                         <div class="col-lg-10 col-md-9" align="rights">
                             <div class="menu-wrapper">
@@ -95,7 +95,7 @@
                                             <li><a href="contact">Contact</a></li>
                                         </ul>
                                     </nav>
-                                </div>          
+                                </div>
                                 <!-- Header-btn -->
                                 <div class="header-btn d-none f-right d-lg-block">
                                    @guest
@@ -115,17 +115,17 @@
 <div class=" register">
                 <div class="row">
                      <div class="col-md-12 register-left">
-                        
-                        Vous n'avez pas un compte? 
+
+                        Vous n'avez pas un compte?
                         <input type="submit" name="" value="S'inscrire"/><br/>
                     </div>
                         <div class="col-md-10 register-right">
-                           
+
                                 <h3 class="register-heading">Se connecter</h3>
                                 <form  class="row register-form" method="POST" action="{{ route('login') }}">
                                     @csrf
                                     <div class="form-group row">
-                     
+
 
                         <div class="col-md-6">
                             <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="Email" autofocus>
@@ -136,7 +136,7 @@
                                 </span>
                             @enderror
                         </div>
-                   
+
 
                         <div class="col-md-6">
                             <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password" placeholder="Mot de passe">
@@ -176,10 +176,10 @@
                     </div>
                                 </form>
                             </div>
-                           
-                            
+
+
                     </div>
-                  
+
                 </div>
             </div>
                 </div>
@@ -201,23 +201,23 @@
 <div class=" register">
                 <div class="row">
                      <div class="col-md-12 register-left">
-                        
-                        Vous avez déja un compte? 
+
+                        Vous avez déja un compte?
                         <input type="submit" name="" value="Se connecter"/><br/>
                     </div>
                         <div class="col-md-10 register-right">
-                           
+
                                 <h3 class="register-heading">S'inscrire</h3>
                                 <form  class="row register-form" method="POST" action="{{ route('register') }}">
                                     @csrf
                                     <div class="form-group{{ $errors->has('role')? 'has
                                         error' :''}}">
-                                  
+
                                     <input type="checkbox" name="role" value="2" checked>Candidat
                                     <input type="checkbox" name="role" value="3">Professionnel
                                 </form>
                         <div class="form-group row">
-                           
+
 
                             <div class="col-md-12">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email"
@@ -259,10 +259,10 @@
                         </div>
                                 </form>
                             </div>
-                           
-                            
+
+
                     </div>
-                  
+
                 </div>
             </div>
                 </div>
@@ -275,7 +275,7 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                   
+
                                      <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -290,7 +290,7 @@
                         @endguest
 
 
-                                    
+
                                 </div>
                             </div>
                         </div>
@@ -305,12 +305,13 @@
         <!-- Header End -->
     </header>
         <main class="py-4">
+            @include('inc.messages')
             @yield('content')
         </main>
     </div>
               <script src="/assets/js/vendor/modernizr-3.5.0.min.js"></script>
         <!-- Jquery, Popper, Bootstrap -->
-      
+
         <!-- Jquery Mobile Menu -->
         <script src="/assets/js/jquery.slicknav.min.js"></script>
         <script src="/assets/js/jquery-3.5.1.min.js"></script>
@@ -320,7 +321,7 @@
         <script src="/assets/js/owl.carousel.min.js"></script>
         <script src="/assets/js/slick.min.js"></script>
         <script src="/assets/js/price_rangs.js"></script>
-        
+
         <!-- One Page, Animated-HeadLin -->
         <script src="/assets/js/wow.min.js"></script>
         <script src="/assets/js/animated.headline.js"></script>
@@ -330,15 +331,15 @@
         <script src="/assets/js/jquery.scrollUp.min.js"></script>
         <script src="/assets/js/jquery.nice-select.min.js"></script>
         <script src="/assets/js/jquery.sticky.js"></script>
-        
+
         <!-- contact js -->
         <script src="/assets/js/contact.js"></script>
         <script src="/assets/js/jquery.form.js"></script>
         <script src="/assets/js/jquery.validate.min.js"></script>
         <script src="/assets/js/mail-script.js"></script>
         <script src="/assets/js/jquery.ajaxchimp.min.js"></script>
-        
-        <!-- Jquery Plugins, main Jquery -->    
+
+        <!-- Jquery Plugins, main Jquery -->
         <script src="/assets/js/plugins.js"></script>
         <script src="/assets/js/main.js"></script>
           <script src="/assets/vendor/jquery-3.2.1.min.js"></script>

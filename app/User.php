@@ -53,7 +53,7 @@ class User extends Authenticatable
     }
     public function competences()
     {
-        return $this->hasMany('App\Competences');
+        return $this->hasMany('App\Competence');
     }
 
     public function professionnel()
