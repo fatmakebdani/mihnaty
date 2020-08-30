@@ -63,20 +63,20 @@ class ProfessionnelController extends Controller
 
             'nom_en' => 'required',
             'titre_en' => 'required',
-            'date_debut' => 'required|gt:date',
-            'date_fin' => 'required|gt:date_debut',
+            'date_debut' => 'required',
+            'date_fin' => 'required',
             'contrat_file' => 'required',
 
             'titre' => 'required',
             'nom_en_c' => 'required',
-            'date_debut_c' => 'required|gte:date_debut',
-            'date_fin_c' => 'required|gt:date_fin_c',
+            'date_debut_c' => 'required',
+            'date_fin_c' => 'required',
             'contrat_c_file' => 'required',
 
             'diplome' => 'required',
             'diplome_en' => 'required',
-            'date_debut_d' => 'required|gt:date',
-            'date_fin_d' => 'required|gt:date_debut_d',
+            'date_debut_d' => 'required',
+            'date_fin_d' => 'required',
             'diplome_file' => 'required',
 
             'competence' => 'required',

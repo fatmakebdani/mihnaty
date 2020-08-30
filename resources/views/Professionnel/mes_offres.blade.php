@@ -17,15 +17,15 @@
                                             <span>6 offres proposées</span>
                                             <!-- Select job items start -->
                                                  <div class="items-link items-link2 f-right">
-                                                     <a aria-hidden="true" data-toggle="modal" data-target="#myModal"> Nouvelle offre</a>
-<div id="myModal" class="modal" tabindex="-1" role="dialog"  aria-labelledby="myModal">
+                                                     <a aria-hidden="true" data-toggle="modal" data-target="#myModal1"> Nouvelle offre</a>
+<div id="myModal1" class="modal" tabindex="-1" role="dialog"  aria-labelledby="myModal1">
   <div class="modal-dialog modal-lg" role="document">
 
     <!-- Modal content-->
     <div class="modal-content">
      
   <div class="modal-header">
-    <div class="modal-title" style="color:#fb246a">Nouvelle offre</div>
+    <div class="modal-title" style="color:#fb246a; font-weight: bolder;">Nouvelle offre</div>
       <button type="button" class="close" data-dismiss="modal">X</button>
     </div>
     <div class="modal-body">
@@ -46,13 +46,13 @@
             <form method="post">
               
               <div class="form-group">
-                <label for="Titre" style="color: #242b5e;">Titre</label>
-                <input type="text" class="form-control" id="Titre">
+                <label  for="Titre" style="color: #242b5e; font-weight: bolder;">Titre</label>
+                <input name="titre" type="text" class="form-control" id="Titre">
               </div>
               <div class="form-group">
-                <label for="Ville">Emplacement</label>
+                <label for="Ville" style="color: #242b5e; font-weight: bolder;">Emplacement</label>
                 <div class="wrapper">
-               <select size="5" class="selection" >wilaya
+               <select name="ville" size="1" class="form-control" >wilaya
                                       <option value="1">Adrar</option><option value="2">Chlef</option><option value="3">Laghouat</option><option value="4">Oum El-Bouaghi</option><option value="5">Batna</option><option value="6">Bejaia</option><option value="7">Biskra</option><option value="8">Bechar</option><option value="9">Blida</option><option value="10">Bouira</option><option value="11">Tamanrassat</option><option value="12">Tebessa</option><option value="13">Tlemcen</option><option value="14">Tiaret</option><option value="15">Tizi-Ouzou</option><option value="16">Alger</option><option value="17">Djelfa</option><option value="18">Jijel</option><option value="19">Setif</option><option value="20">Saida</option><option value="21">Skikda</option><option value="22">Sidi-Bel-Abbes</option><option value="23">Annaba</option><option value="24">Guelma</option><option value="25">Constantine</option><option value="26">Médea</option><option value="27">Mostaganem</option><option value="28">M'sila</option><option value="29">Mascara</option><option value="30">Ouargla</option><option value="31">Oran</option><option value="32">El-Bayadh</option><option value="33">Illizi</option><option value="34">Bordj Bou-Arreridj</option><option value="35">Boumerdes</option><option value="36">El-Taref</option><option value="37">Tindouf</option><option value="38">Tissimsilt</option><option value="39">El-Oued</option><option value="40">khenchela</option><option value="41">Souk Ahras</option><option value="42">Tipaza</option><option value="43">Mila</option><option value="44">Ain Defla</option><option value="45">Naama</option><option value="46">Ain Timouchent</option><option value="47">Ghardaia</option><option value="48">Relizane</option>
                                     </select>
               </div>
@@ -64,33 +64,43 @@
 
               
               <div class="form-group">
-                <label for="text-aria">Description de l'offre</label>
-                <textarea id="textarea" class="form-control" rows="4" placeholder="decrivez votre offre!"></textarea>
+                <label for="text-aria" style="color: #242b5e; font-weight: bolder;">Description</label>
+                <textarea name="description" id="textarea" class="form-control" rows="4" placeholder="decrivez votre offre!"></textarea>
                 </div>
               <div class="form-group">
-                   <input type="radio" name="sexe" id="id_sexe" value="Homme">
+                <label style="color: #242b5e; font-weight: bolder;">Sexe</label><br>
+                                    <input  type="radio" name="sexe" id="id_sexe" value="Homme">
                                     <label>Homme</label>
-
                                     <input type="radio" name="sexe" id="id_sexe" value="Femme">
                                     <label>Femme</label>
-                                     <input type="radio" name="sexe" id="id_sexe" value="Quelconque">
+                                    <input type="radio" name="sexe" id="id_sexe" value="Quelconque">
                                     <label>Quelconque</label>
 
 
               </div>
+             
               <div class="form-group">
-                   <label>Dernier délais</label>
-                                    <input type="date" id="id_DateN" ><br>
-
-              </div>
-                <div class="form-group">
-                   <label>Date de notification</label>
-                                    <input type="date" id="id_DateN" ><br>
+                <label style="color: #242b5e; font-weight: bolder;">Type de contrat</label><br>
+                  
+                                    <input type="radio" name="contrat" id="id_contrat" value="CDD">
+                                    <label>CDD</label>
+                                     <input type="radio" name="contrat" id="id_contrat" value="CDI">
+                                    <label>CDI</label>
 
               </div>
                <div class="form-group">
-                   <label>Date de prise de fonction</label>
-                                    <input type="date" id="id_DateN" ><br>
+                   <label style="color: #242b5e; font-weight: bolder;">Dernier délais</label>
+                                    <input name="dernier_delais" type="date" id="id_dernier_delais" ><br>F
+
+              </div>
+                <div class="form-group">
+                   <label style="color: #242b5e; font-weight: bolder;">Date de notification</label>
+                                    <input name="date_notif" type="date" id="id_date_notif" ><br>
+
+              </div>
+               <div class="form-group">
+                   <label style="color: #242b5e; font-weight: bolder;">Date de prise de fonction</label>
+                                    <input name="date_fonction" type="date" id="id_date_fonction" ><br>
 
               </div>
 </form>

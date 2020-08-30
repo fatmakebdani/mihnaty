@@ -2,15 +2,28 @@
 
 namespace App;
 
+
 use Illuminate\Database\Eloquent\Model;
-
-class Fichee extends Model
+  use Illuminate\Notifications\Notifiable;
+    use Illuminate\Foundation\Auth\User as Authenticatable;
+class Fichee extends Authenticatable
 {
-     protected $table = 'fichees';
+    use Notifiable;
 
-    protected $fillable = ['nom', 'photo', 'raison sociale', 'adresse', 'code postale','site','num','date _de_creation','activité',];
+        protected $table = 'fichees';
+
+        protected $primaryKey = 'id';
+
+        protected $fillable = [
+            'nom','adresse', 'site', 'code_postal','num','date_de_creation','raison_sociale','activité',
+        ];
+
+        protected $hidden = [
+            'password', 'remember_token',
+        ];
+
     public function user()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo('App\User');
     }
 }

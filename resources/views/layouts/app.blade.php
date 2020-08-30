@@ -88,11 +88,11 @@
                                 <div class="main-menu">
                                     <nav class="d-none d-lg-block">
                                         <ul id="navigation">
-                                            <li><a href="/s">Accueil</a></li>
+                                            <li><a href="/">Accueil</a></li>
                                             <li><a href="/offres">Offres d'emploi</a></li>
                                             <li><a href="/fiches entreprises">Fiches d'entreprise</a></li>
-                                            <li><a href="apropos">A propos</a></li>
-                                            <li><a href="contact">Contact</a></li>
+                                            <li><a href="/apropos">A propos</a></li>
+                                            <li><a href="/contact">Contact</a></li>
                                         </ul>
                                     </nav>
                                 </div>

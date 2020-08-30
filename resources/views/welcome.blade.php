@@ -26,7 +26,7 @@
                         </div>
             </div>
             <div class="carousel-item">
-                <img src="assets/img/hero/baker.jpg" class="d-block w-100" alt="...">
+                <img src="assets/img/hero/pain.jpg" class="d-block w-100" alt="...">
                 <div class="carousel-caption">
                             <h1>Un clic</h1>
                             <h2>et vous serez recruter</h2>
@@ -56,7 +56,7 @@
                                         <input type="text" placeholder="titre offre ,mot clé">
                                     </div>
                                                                                   <div class="wrapper">
-               <select size="3" class="form-control">
+               <select style="height:4.4em;" size="1" class="form-control">
                                       <option value="1">Adrar</option><option value="2">Chlef</option><option value="3">Laghouat</option><option value="4">Oum El-Bouaghi</option><option value="5">Batna</option><option value="6">Bejaia</option><option value="7">Biskra</option><option value="8">Bechar</option><option value="9">Blida</option><option value="10">Bouira</option><option value="11">Tamanrassat</option><option value="12">Tebessa</option><option value="13">Tlemcen</option><option value="14">Tiaret</option><option value="15">Tizi-Ouzou</option><option value="16">Alger</option><option value="17">Djelfa</option><option value="18">Jijel</option><option value="19">Setif</option><option value="20">Saida</option><option value="21">Skikda</option><option value="22">Sidi-Bel-Abbes</option><option value="23">Annaba</option><option value="24">Guelma</option><option value="25">Constantine</option><option value="26">Médea</option><option value="27">Mostaganem</option><option value="28">M'sila</option><option value="29">Mascara</option><option value="30">Ouargla</option><option value="31">Oran</option><option value="32">El-Bayadh</option><option value="33">Illizi</option><option value="34">Bordj Bou-Arreridj</option><option value="35">Boumerdes</option><option value="36">El-Taref</option><option value="37">Tindouf</option><option value="38">Tissimsilt</option><option value="39">El-Oued</option><option value="40">khenchela</option><option value="41">Souk Ahras</option><option value="42">Tipaza</option><option value="43">Mila</option><option value="44">Ain Defla</option><option value="45">Naama</option><option value="46">Ain Timouchent</option><option value="47">Ghardaia</option><option value="48">Relizane</option>
                                     </select>
               </div>

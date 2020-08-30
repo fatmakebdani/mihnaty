@@ -14,18 +14,18 @@ class CreateFicheesTable extends Migration
     public function up()
     {
         Schema::create('fichees', function (Blueprint $table) {
-           $table->increments('id');
+           $table->Increments('id');
             $table->string('nom');
             $table->string('adresse');
-            $table->integer('code postal');
+            $table->integer('code_postal');
             $table->string('site')->unique();
             $table->integer('num');
-            $table->string('raison sociale');
-            $table->date('date de creation');
+            $table->string('raison_sociale');
+            $table->date('date_de_creation');
             $table->string('activité');
             $table->string('photo');
-            $table->integer('representant')->unsigned();
-            $table->foreign('representant')->references('id')->on('users');
+            $table->integer('id_gerant')->unsigned();
+            $table->foreign('id_gerant')->references('id')->on('professionnels');
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();

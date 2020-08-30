@@ -40,7 +40,7 @@ class RegisterController extends Controller
                 return $this->redirectTo;
                 break;
             case '2':
-                $this->redirectTo ='/candidat';
+                $this->redirectTo ='/candidat/create';
                 return $this->redirectTo;
                 break;
             case '3':

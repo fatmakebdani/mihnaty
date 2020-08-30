@@ -270,7 +270,7 @@
         <!-- Footer End-->
     </footer>
 
-	<!-- JS here -->
-	
-		<!-- All JS Custom Plugins Link Here here -->
+    <!-- JS here -->
+    
+        <!-- All JS Custom Plugins Link Here here -->
        @endsection

@@ -22,15 +22,28 @@ Route::get('/offres', function () {
 Route::get('/apropos', function () {
     return view('apropos');
 });
+Route::get('/contact', function () {
+    return view('contact');
+});
+
 Route::get('/verify',function(){
 	return view('auth.verify');
 });
 Route::get('/mesOffres',function(){
-    return view('mesOffres');
+    return view('Professionnel.mes_offres');
 });
 
 Route::resource('professionnel', 'ProfessionnelController');
 Route::resource('candidat', 'CandidatController');
+Route::resource('fichee', 'FicheeController');
+
+Route::get('/', function () {
+    return view('welcome');
+});
+  
+Auth::routes(['verify' => true]);
+  
+Route::get('/home', 'HomeController@index')->name('home');
 
 
 Auth::routes();

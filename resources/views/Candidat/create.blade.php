@@ -11,25 +11,16 @@
         <div id="sidebar">
             <ul class="nav">
             <li>
-                <a href="/professionnelle">
+                <a href="/candidat">
                 <i class="zmdi zmdi-file-text"></i> Ma fiche professionnelle
                 </a>
             </li>
             <li>
-                <a href="#">
-                <i class="zmdi zmdi-card-travel"></i> Ma fiche d'entreprise
+                <a href="/MaFicheE">
+                <i class="zmdi zmdi-card-travel"></i> Mes candidatures
                 </a>
             </li>
-            <li>
-                <a href="#">
-                <i class="fas fa-lightbulb"></i> Mes propositions
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                <i class="zmdi zmdi-check-square"></i> Mes examinations
-                </a>
-            </li>
+            
 
             </ul>
         </div>
@@ -63,7 +54,7 @@
                     </div>
                 </div>
 
-                {!! Form::open(['action' => 'ProfessionnelController@store', 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
+                {!! Form::open(['action' => 'CandidatController@store', 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
                     <div class="row justify-content-center">
                         <div class="col-md-10">
                             <!-- CHART-->

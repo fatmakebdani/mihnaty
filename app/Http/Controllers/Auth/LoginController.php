@@ -37,7 +37,7 @@ class LoginController extends Controller
                 return $this->redirectTo;
                 break;
             case '2':
-                $this->redirectTo ='/candidat';
+                $this->redirectTo ='/candidat'.'/'.Auth::user()->candidat->id . '/edit';
                 return $this->redirectTo;
                 break;
             case '3':

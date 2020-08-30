@@ -1,49 +1,71 @@
 @extends('layouts.app')
 
 @section('content')
- <main>
+    <main>
 
         <!-- slider Area Start-->
-        <div class="slider-area ">
-            <!-- Mobile Menu -->
-            <div class="slider-active">
-                <div class="single-slider slider-height d-flex align-items-center" data-background="assets/img/hero/main.jpg" >
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-xl-6 col-lg-9 col-md-10">
-                                <div class="hero__caption">
-                                    <h1 width=>Votre logiciel de recrutement</h1>
-                                </div>
-                            </div>
+       <section>
+    <div id="carouselExampleFade" class="carousel slide " data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active"data-interval="200">
+                <img src="assets/img/hero/suit.jpg" class="d-block w-100" alt="...">
+                
+                        <div class="carousel-caption">
+                            <h1>Votre logiciel </h1>
+                            <h2>de recrutement</h2>
                         </div>
-                        <!-- Search Box -->
-                        <div class="row">
-                            <div class="col-xl-9">
+                       
+                
+            </div>
+            <div class="carousel-item">
+                <img src="assets/img/hero/Construction.jpg" class="d-block w-100" alt="...">
+
+                        <div class="carousel-caption">
+                            <h1>La chance de trouver</h1>
+                            <h2>l'emploi adéquat</h2>
+                        </div>
+            </div>
+            <div class="carousel-item">
+                <img src="assets/img/hero/baker.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption">
+                            <h1>Un clic</h1>
+                            <h2>et vous serez recruter</h2>
+                        </div>
+            </div>
+             <div class="carousel-item">
+                <img src="assets/img/hero/meet.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption">
+                            <h1>Trouvez rapidement</h1>
+                            <h2>les profils recherchés</h2>
+                        </div>
+            </div>
+            <!--https://upload.wikimedia.org/wikipedia/commons/8/8d/Yarra_Night_Panorama%2C_Melbourne_-_Feb_2005.jpg-->
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
+           
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
+          
+        </a>
+    </div>
+</section>
+<section>
                                 <!-- form -->
                                 <form action="#" class="search-box">
                                     <div class="input-form">
-                                        <input type="text" placeholder="titre ou mot clé">
+                                        <input type="text" placeholder="titre offre ,mot clé">
                                     </div>
-                                    <div class="select-form">
-                                        <div class="select-itms">
-                                            <select name="select" id="select1">
-                                                <option value="">Est</option>
-                                                <option value="">Ouest</option>
-                                                <option value="">Nord</option>
-                                                <option value="">Sud</option>
-                                            </select>
-                                        </div>
-                                    </div>
+                                                                                  <div class="wrapper">
+               <select size="3" class="form-control">
+                                      <option value="1">Adrar</option><option value="2">Chlef</option><option value="3">Laghouat</option><option value="4">Oum El-Bouaghi</option><option value="5">Batna</option><option value="6">Bejaia</option><option value="7">Biskra</option><option value="8">Bechar</option><option value="9">Blida</option><option value="10">Bouira</option><option value="11">Tamanrassat</option><option value="12">Tebessa</option><option value="13">Tlemcen</option><option value="14">Tiaret</option><option value="15">Tizi-Ouzou</option><option value="16">Alger</option><option value="17">Djelfa</option><option value="18">Jijel</option><option value="19">Setif</option><option value="20">Saida</option><option value="21">Skikda</option><option value="22">Sidi-Bel-Abbes</option><option value="23">Annaba</option><option value="24">Guelma</option><option value="25">Constantine</option><option value="26">Médea</option><option value="27">Mostaganem</option><option value="28">M'sila</option><option value="29">Mascara</option><option value="30">Ouargla</option><option value="31">Oran</option><option value="32">El-Bayadh</option><option value="33">Illizi</option><option value="34">Bordj Bou-Arreridj</option><option value="35">Boumerdes</option><option value="36">El-Taref</option><option value="37">Tindouf</option><option value="38">Tissimsilt</option><option value="39">El-Oued</option><option value="40">khenchela</option><option value="41">Souk Ahras</option><option value="42">Tipaza</option><option value="43">Mila</option><option value="44">Ain Defla</option><option value="45">Naama</option><option value="46">Ain Timouchent</option><option value="47">Ghardaia</option><option value="48">Relizane</option>
+                                    </select>
+              </div>
                                     <div class="search-form">
                                         <a href="#">Chercher</a>
                                     </div>  
                                 </form> 
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+                            </section>
+
         <!-- slider Area End-->
         <!-- Our Services Start -->
         <div class="our-services section-pad-t30">
@@ -151,7 +173,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="browse-btn2 text-center mt-50">
-                            <a href="job_listing.html" class="border-btn2">Browse All Sectors</a>
+                            <a href="job_listing.html" class="border-btn2">Toutes les catégories</a>
                         </div>
                     </div>
                 </div>
@@ -193,8 +215,7 @@
                                 </div>
                             </div>
                             <div class="items-link f-right">
-                                <a href="job_details.html">Full Time</a>
-                                <span>7 hours ago</span>
+                                <h3 style="color:#fb246a">60 offres</h3s>
                             </div>
                         </div>
                         <!-- single-job-content -->
@@ -212,9 +233,8 @@
                                     </ul>
                                 </div>
                             </div>
-                            <div class="items-link f-right">
-                                <a href="job_details.html">Full Time</a>
-                                <span>7 hours ago</span>
+                             <div class="items-link f-right">
+                                <h3 style="color:#fb246a">60 offres</h3s>
                             </div>
                         </div>
                          <!-- single-job-content -->
@@ -233,8 +253,7 @@
                                 </div>
                             </div>
                             <div class="items-link f-right">
-                                <a href="job_details.html">Full Time</a>
-                                <span>7 hours ago</span>
+                                <h3 style="color:#fb246a">60 offres</h3s>
                             </div>
                         </div>
                          <!-- single-job-content -->
@@ -253,13 +272,19 @@
                                 </div>
                             </div>
                             <div class="items-link f-right">
-                                <a href="job_details.html">Full Time</a>
-                                <span>7 hours ago</span>
+                                <h3 style="color:#fb246a">60 offres</h3s>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+              <div class="row">
+                    <div class="col-lg-12">
+                        <div class="browse-btn2 text-center mt-50">
+                            <a href="job_listing.html" class="border-btn2">Toutes les entreprises</a>
+                        </div>
+                    </div>
+                </div>
         </section>
         <!-- Featured_job_end -->
         <!-- How  Apply Process Start-->
@@ -283,7 +308,7 @@
                             </div>
                             <div class="process-cap">
                                <h5>1. Chercher un emploi</h5>
-                               <p>Grâce à ... vous pouvez chercher un emploi que ça soit par fonction, par secteur ou par région, vous trouverez votre emploi idéal.</p>
+                               <p>Grâce à Mihnaty vous pouvez chercher un emploi que ça soit par secteur ou par wilaya, vous trouverez votre emploi idéal.</p>
                             </div>
                         </div>
                     </div>
@@ -294,7 +319,7 @@
                             </div>
                             <div class="process-cap">
                                <h5>2. Postuler pour un emploi</h5>
-                               <p>En un seul clique postuler pour l'offre d'emploi qui vous convient et votre CV sera envoyé et traité le plutôt possible.</p>
+                               <p>En un seul clique postuler pour l'offre d'emploi qui vous convient et votre CV sera  traité le plutôt possible.</p>
                             </div>
                         </div>
                     </div>
@@ -304,8 +329,8 @@
                                 <span class="flaticon-tour"></span>
                             </div>
                             <div class="process-cap">
-                               <h5>3. Evaluer un candidat</h5>
-                               <p>En tant que recruteur vous avez la possibilité d'évaluer vos candidats un à un selon votre fiche d'évalution et même avec un jury de votre entreprise.</p>
+                               <h5>3. Sélectionner un candidat</h5>
+                               <p>Aprés la cloture de l'adhésion à une offre,le recruteur passe à l'évaluation de chaque candidat tout seul ou à l'aide d'un jury pour à la fin arriver à un seul candidat au quel le poste sera attribué.</p>
                             </div>
                         </div>
                     </div>
@@ -318,8 +343,8 @@
                                 <span class="flaticon-tour"></span>
                             </div>
                             <div class="process-cap">
-                               <h5>4. Recruter un candidat</h5>
-                               <p>Recruter le candidat idéal pour le poste après l'évaluation de toute la liste des candidats potentiels.</p>
+                                <h5>4. Gestion des professionnels</h5>
+                               <p>Un professionnel est un acteur qui possède un poste dans une entreprise. Il a la possibilité de créer une fiche pour son etreprise, et c'est lui qui propose les offres d'emploi. Il peut etre impliqué dans une offre comme membre de jury lors d'une évaluation collaborative.</p>
                             </div>
                         </div>
                     </div>
@@ -510,7 +535,7 @@
                             <div class="footer-tittle">
                                 <h4>Newsletter</h4>
                                 <div class="footer-pera footer-pera2">
-                                 <p>Heaven fruitful doesn't over lesser in days. Appear creeping.</p>
+                                 <p>Ecrivez nous.</p>
                              </div>
                              <!-- Form -->
                              <div class="footer-form" >
@@ -519,7 +544,7 @@
                                      method="get" class="subscribe_form relative mail_part">
                                          <input type="email" name="email" id="newsletter-form-email" placeholder="Email Address"
                                          class="placeholder hide-on-focus" onfocus="this.placeholder = ''"
-                                         onblur="this.placeholder = ' Email Address '">
+                                         onblur="this.placeholder = ' Email '">
                                          <div class="form-icon">
                                              <button type="submit" name="submit" id="newsletter-submit"
                                              class="email_icon newsletter-submit button-contactForm"><img src="assets/img/icon/form.png" alt=""></button>
@@ -537,28 +562,9 @@
                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
                         <!-- logo -->
                         <div class="footer-logo mb-20">
-                        <a href="index.html"><img src="assets/img/logo/logo2_footer.png" alt=""></a>
+                        <a href="/"><img src="assets/img/logo/MihnatyFatma.png"height="50" width="120" alt=""></a>
                         </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-5">
-                    <div class="footer-tittle-bottom">
-                        <span>5000+</span>
-                        <p>Talented Hunter</p>
-                    </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-5">
-                        <div class="footer-tittle-bottom">
-                            <span>451</span>
-                            <p>Talented Hunter</p>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-5">
-                        <!-- Footer Bottom Tittle -->
-                        <div class="footer-tittle-bottom">
-                            <span>568</span>
-                            <p>Talented Hunter</p>
-                        </div>
-                    </div>
+                    
                </div>
             </div>
         </div>
@@ -574,18 +580,13 @@
   <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
                              </div>
                          </div>
-                         <div class="col-xl-2 col-lg-2">
-                             <div class="footer-social f-right">
-                                 <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                 <a href="#"><i class="fab fa-twitter"></i></a>
-                                 <a href="#"><i class="fas fa-globe"></i></a>
-                                 <a href="#"><i class="fab fa-behance"></i></a>
-                             </div>
-                         </div>
+                       
                      </div>
                 </div>
             </div>
         </div>
         <!-- Footer End-->
     </footer>
-@endsection
+
+  
+    @endsection
