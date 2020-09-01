@@ -4,8 +4,8 @@ namespace App;
 
 
 use Illuminate\Database\Eloquent\Model;
-  use Illuminate\Notifications\Notifiable;
-    use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 class Professionnel extends Authenticatable
 {
     use Notifiable;
@@ -25,5 +25,9 @@ class Professionnel extends Authenticatable
     public function user()
     {
         return $this->belongsTo('App\User');
+    }
+    public function professionnels()
+    {
+        return $this->belongsTo('Fichee.php','id_entreprise');
     }
 }

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use Intervention\Image\Facades\Image;
 use Illuminate\Http\Request;
-use App\Offres;
+use App\Offre;
 use App\Competence;
 use App\Diplome;
 use App\PosteCourant;
@@ -21,13 +21,14 @@ class OffreController extends Controller
      */
     public function index()
     {
-         $data = [
-            'offres' => Offre::where('user_id', Auth::user()->id)->get(),
-        ];
-        if(Auth::user()->role == 1)
-            return view('offre.index')->with($data);
-        else
-            return redirect('/offre'.'/'. Auth::user()->offre->id . '/edit')->with('error', 'Vous ne pouvez pas accèder à cette page');
+         $offres = Offre::all();
+        //return Post::where('title', 'Post Two')->get();
+        //$posts = DB::select('SELECT * FROM posts');
+        //$posts = Post::orderBy('title','desc')->take(1)->get();
+        //$posts = Post::orderBy('title','desc')->get();
+
+        $offres = Offre::orderBy('created_at','desc')->paginate(10);
+        return view('offres')->with('offres', $offres);
     }
 
     /**
@@ -41,7 +42,7 @@ class OffreController extends Controller
         $data = [
             'user' => $user,
         ];
-        return view('offre.create')->with($data);
+        return view('myModal1')->with($data);
     }
 
     /**
@@ -69,20 +70,22 @@ class OffreController extends Controller
 
         $offre = new Offre;
         $offre->user_id = $auth->id;
+        $offre->id_entreprise = '1';
+        $offre->statut = ('ouvert');
         $offre->titre = $request->input('titre');
         $offre->ville = $request->input('ville');
         $offre->description = $request->input('description');
         $offre->sexe = $request->input('sexe');
         $offre->contrat = $request->input('contrat');
         $offre->dernier_delais = $request->input('dernier_delais');
-        $offre->date_notif = $request->input('fate_notif');
+        $offre->date_notif = $request->input('date_notif');
         $offre->date_fonction = $request->input('date_fonction');
         $offre->save();
 
         $user = User::find($auth->id);
         $user->save();
 
-        return redirect('/offre'.'/'. $offre->id . '/edit')->with('succes', 'Compte créé avec Succès');
+        return redirect('/Professionnel/mesPropositions')->with('succes', 'Compte créé avec Succès');
     }
 
     /**
@@ -104,16 +107,20 @@ class OffreController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Offre $offre)
     {
+        if (!isset($offre)){
+            return redirect('/offre'.'/'. $offre->id . 'myModal3')->with('error', 'No Post Found');
+        }
+
         if(auth()->user()->id !== $offre->user_id){
-            return redirect('/offre'.'/'. $offre->id . '/edit')->with('error', 'Unauthorized Page');
+            return redirect('/offre'.'/'. $offre->id . 'myModal3')->with('error', 'Unauthorized Page');
         }
 
         $data = [
             'offre' => $offre,
         ];
-        return view('offre.edit')->with('offre', $offre);
+        return view('myModal3')->with('offre', $offre);
     }
 
     /**
@@ -123,7 +130,7 @@ class OffreController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Offre $offre)
     {
         $this->validate($request, [
             
@@ -139,8 +146,8 @@ class OffreController extends Controller
             
         ]);
 
-        $offre = new Offre;
-        $offre->user_id = $auth->id;
+        
+        
         $offre->titre = $request->input('titre');
         $offre->ville = $request->input('ville');
         $offre->description = $request->input('description');
@@ -151,10 +158,9 @@ class OffreController extends Controller
         $offre->date_fonction = $request->input('date_fonction');
         $offre->save();
 
-        $user = User::find($professionnel->user->id);
-        $user->save();
+     
 
-        return redirect('/offre'.'/'. $offre->id . '/edit')->with('success', 'Mise à Jour Réussie');
+        return redirect('/offre'.'/'. $offre->id . '/myModal3' )->with('success', 'Mise à Jour Réussie');
 
     }
 

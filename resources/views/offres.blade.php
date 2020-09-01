@@ -190,6 +190,37 @@
                                 </div>
                                 <!-- Count of Job list End -->
                                 <!-- single-job-content -->
+                                 @if(count($offres) > 0)
+        @foreach($offres as $offre)
+            <div class="single-job-items mb-30">
+                                    <div class="job-items">
+                                        <div class="company-img">
+                                            <a href="#"><img src="assets/img/icon/job-list1.png" alt=""></a>
+                                        </div>
+                                        <div class="job-tittle job-tittle2">
+                                            <a href="#">
+                                                <h4>{{$offre->titre}}</h4>
+                                            </a>
+                                            <ul>
+                                                <li>Creative Agency</li>
+                                                <li><i class="fas fa-map-marker-alt"></i>{{$offre->ville}}</li>
+                                                <li>$3500 - $4000</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    
+
+                                    <div class="items-link items-link2 f-right">
+                                        @if (Auth::user()->role==2)
+                                        <a href="job_details.html">postuler</a>
+                                        @endif 
+                                        <span>7 hours ago</span>
+                                    </div>
+                                </div>
+        @endforeach
+    @else
+        <p>No offers found</p>
+    @endif
                                 <div class="single-job-items mb-30">
                                     <div class="job-items">
                                         <div class="company-img">
@@ -509,7 +540,7 @@
         <!-- Footer End-->
     </footer>
 
-	<!-- JS here -->
-	
-		<!-- All JS Custom Plugins Link Here here -->
+    <!-- JS here -->
+    
+        <!-- All JS Custom Plugins Link Here here -->
      @endsection

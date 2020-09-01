@@ -2,20 +2,19 @@
 
 namespace App;
 
-
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-class Offre extends Authenticatable
+class Employe extends Authenticatable
 {
     use Notifiable;
 
-        protected $table = 'offres';
+        protected $table = 'employes';
 
         protected $primaryKey = 'id';
 
         protected $fillable = [
-            'titre','ville', 'contrat','salaire', 'sexe','dernier_delais','date_notif','date_fonction',
+            'id_entreprise','id_professionnel',
         ];
 
         protected $hidden = [

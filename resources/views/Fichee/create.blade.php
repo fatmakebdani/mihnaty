@@ -57,20 +57,18 @@
                         <div class="col-md-10">
                             <!-- CHART-->
                             <div class="statistic-chart-1"style="background-color:#A6A4BB ">
-                                        <div class="row">
-                                    <div class="col-md-6" class="vertical-right">
+                                <div class="row">
+                                 <div class="col-md-6" class="vertical-right">
                                     
                                    
-                                 <div  class="col-md-6" class="vertical-right">
-                                  
+                                 
                                     <label>Choisir une photo</label>
                                     <input name="photo" type="file"id="idI" accept="image/png, image/jpeg">
                                     
-                                   
-                           
+                                
                                 </div>
-
-</div>
+                                <br>
+                                <div class="row" >
                                       <label>Nom</label>
                                     <input name="nom" type="text" class="form-control" id="id_nom"><br>
                                     <label>Raison sociale</label>
@@ -92,7 +90,7 @@
                                     <label>Date de création</label>
                                     <input name="date de creation" type="date" id="id_DateN" ><br>
 
-
+</div>
 
 
                                     
@@ -136,10 +134,7 @@
                                     </select>
                                         
                                   
-                                <div class="col-md-6" class="vertical-right">
-                                    
-                                    <button class="btn-save btn btn-primary btn-sm">Save</button> 
-                                </div>
+                                
                                     
                                     
 
@@ -161,27 +156,23 @@
             <section class="p-t-60 p-b-20">
                 <div class="container">
                     <div class="row">
-                        
+                        <div class="col-md-6">
                             <h6 class="title-5 m-b-35"style="color: #242b5e;">Membres de l'entreprise</h6>
                             <!-- CHART-->
                             <div class="statistic-chart-1"style="background-color:#A6A4BB ">
                                 
-                                    
+                                  <select class="form-control" multiple size="2" name="employes[]" >
+                                        <option  disabled selected>Membre</option>
+                                        @foreach ($professionnels as $professionnel)
                                         
-                               <select class="mdb-select md-form" multiple searchable="Search here..">
-  <option value="" disabled selected>Choose your country</option>
-  <option value="1">USA</option>
-  <option value="2">Germany</option>
-  <option value="3">France</option>
-  <option value="3">Poland</option>
-  <option value="3">Japan</option>
-</select>
-<button class="btn-save btn btn-primary btn-sm">Save</button>
- 
+                                        <option value="{{$professionnel->id}}">{{$professionnel->nom}}</option>
+                                        @endforeach
+                                    </select>  
+                             
                     
                                 
                             </div>
-                       
+                        </div>
                     </div>
                 
                  {{Form::submit('Enregistrer', ['class'=>'genric-btn primary-border circle'])}}
@@ -203,10 +194,11 @@
             <!-- COPYRIGHT-->
       
     <!-- Jquery JS-->
-  @endsection
+ 
 <!-- end document-->
  <script>
          $(document).ready(function() {
 $('.mdb-select').materialSelect();
 });
-       </script> 
+</script> 
+@endsection

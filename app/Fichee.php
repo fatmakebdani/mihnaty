@@ -26,4 +26,8 @@ class Fichee extends Authenticatable
     {
         return $this->belongsTo('App\User');
     }
+    public function professionnels()
+    {
+        return $this->belongsToMany('Professionnel.php');
+    }
 }

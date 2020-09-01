@@ -7,6 +7,7 @@ use App\Fichee;
 use App\Professionnel;
 use Auth;
 use App\User;
+use App\Employe;
 use Illuminate\Support\Facades\Storage;
 
 class FicheeController extends Controller
@@ -57,6 +58,7 @@ class FicheeController extends Controller
              
 
         ]);
+        //return $request->input('employes');
         $auth = Auth::user();
         
 
@@ -99,6 +101,12 @@ class FicheeController extends Controller
         $fichee->photo = $fileNameToStore5;
         $fichee->save();
 
+        foreach ($request->input('employes') as $emp) {
+           $employe = new Employe;
+           $employe->id_entreprise = $fichee->id;
+           $employe->id_professionnel = intval($emp);
+           $employe->save();
+        }
 
         return redirect('/fichee'.'/'. $fichee->id . '/edit')->with('succes', 'Compte créé avec Succès');
     }
@@ -136,8 +144,10 @@ class FicheeController extends Controller
 
         $data = [
             'fichee' => $fichee,
+            'professionnels'=>Professionnel::all(),
+
         ];
-        return view('fichee.edit')->with('fichee', $fichee);
+        return view('fichee.edit')->with($data);
     }
     /**
      * Update the specified resource in storage.
@@ -146,7 +156,7 @@ class FicheeController extends Controller
      * @param  \App\Professionnel  $professionnel
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Professionnel $professionnel)
+    public function update(Request $request, Fichee $fichee)
     {
 
         $this->validate($request, [
@@ -172,6 +182,7 @@ class FicheeController extends Controller
         $fichee->activité = $request->input('activité');
         $fichee->id_gerant = $request->input('id_gerant');
         $fichee->save();
+        
 
         // User image
         if($request->hasFile('photo')){

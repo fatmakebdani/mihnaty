@@ -26,7 +26,7 @@
                         </div>
             </div>
             <div class="carousel-item">
-                <img src="assets/img/hero/pain.jpg" class="d-block w-100" alt="...">
+                <img src="assets/img/hero/femme.jpg" class="d-block w-100" alt="...">
                 <div class="carousel-caption">
                             <h1>Un clic</h1>
                             <h2>et vous serez recruter</h2>

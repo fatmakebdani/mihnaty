@@ -118,6 +118,8 @@
                                 <label>Titre</label>
                                 <input name="titre_en_{{$i}}" type="text" class="form-control" id="id_TitreE" value="{{$experience->titre}}" required>
 
+                                
+
                                 <label>Date de début</label>
                                 <input name="date_debut_{{$i}}" type="date" id="id_DateD" value="{{$experience->debut}}" required><br>
 
