@@ -27,6 +27,11 @@
           <i class="zmdi zmdi-check-square"></i> Mes examinations
         </a>
       </li>
+       <li>
+         <a href="/professionnel/invitations">
+          <i class="fas fa-user-plus"></i> Mes invitations
+          </a>
+        </li>
     
     </ul>
   </div>
@@ -43,7 +48,8 @@
                        
                     </div>
                 </div>
-            </section>            <section class="statistic-chart">
+            </section>           
+             <section class="statistic-chart">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
@@ -57,22 +63,21 @@
                         <div class="col-md-10">
                             <!-- CHART-->
                             <div class="statistic-chart-1"style="background-color:#A6A4BB ">
-                                <div class="row">
-                                 <div class="col-md-6" class="vertical-right">
-                                    
-                                   
+                                <div class="row">   
                                  
-                                    <label>Choisir une photo</label>
+                                    <label>Choisir une photo:</label>
                                     <input name="photo" type="file"id="idI" accept="image/png, image/jpeg">
                                     
                                 
-                                </div>
+                                
                                 <br>
                                 <div class="row" >
                                       <label>Nom</label>
                                     <input name="nom" type="text" class="form-control" id="id_nom"><br>
                                     <label>Raison sociale</label>
                                     <input name="raison sociale" type="text" class="form-control" id="id_raison"><br>
+                                     <label>Nature d'activité</label>
+                                    <input name="activité" type="text" class="form-control" id="id_TitreE"><br>
 
                                     
                                     <label>Adresse</label>
@@ -101,32 +106,16 @@
                             <!-- END CHART-->
                         </div>       
                     </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <h6 class="title-5 m-b-35"style="color: #242b5e;">Nature d'activité</h6>
-                       
-                            <!-- CHART-->
-                            <div class="statistic-chart-1"style="background-color:#A6A4BB ">
-                    
-                                    <label>Activité:</label>
-                                    <input name="activité" type="text" class="form-control" id="id_TitreE">
-   
-
-                                    
-
-                    
-                            </div>
-                        </div>
-                         
-                         <div class="col-md-6">
-
-                            <h6 class="title-5 m-b-35"style="color:#242b5e;">Représentant </h6>
+                </div>
+                         <h6 class="title-5 m-b-35"style="color:#242b5e;">Représentant </h6>
                         
+                    <div class="row justify-content-center">
+                         <div class="col-md-10">
                             <!-- CHART-->
                             <div class="statistic-chart-1"style="background-color:#A6A4BB ">
-                    
-                                    <select class="mdb-select md-form"  searchable="Search here.." name="id_gerant" >
-                                        <option  disabled selected>Representant</option>
+                                       Le représentant de l'entreprise est
+                                    <select class="mdb-select md-form"  searchable="Search here.." name="id_gerant" >Le représentant de l'entreprise est
+                                        <option  disabled selected></option>
                                         @foreach ($professionnels as $professionnel)
                                         
                                         <option value="{{$professionnel->id}}">{{$professionnel->nom}}</option>
@@ -138,14 +127,14 @@
                                     
                                     
 
- 
+ </div>
             
-                            </div>
+                    
                         </div>
                             <!-- END CHART-->
                         </div> 
-                      
-                </div>
+                      </div>
+            
                
             </section>
             <!-- END STATISTIC CHART-->
@@ -155,8 +144,8 @@
             <!-- END DATA TABLE-->
             <section class="p-t-60 p-b-20">
                 <div class="container">
-                    <div class="row">
-                        <div class="col-md-6">
+                    <div class="row justify-content-center">
+                        <div class="col-md-9">
                             <h6 class="title-5 m-b-35"style="color: #242b5e;">Membres de l'entreprise</h6>
                             <!-- CHART-->
                             <div class="statistic-chart-1"style="background-color:#A6A4BB ">

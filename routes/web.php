@@ -16,8 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/offres', function () {
-    return view('offres');
+Route::get('/lesOffres', function () {
+    return view('lesOffres');
 });
 Route::get('/apropos', function () {
     return view('apropos');
@@ -32,11 +32,12 @@ Route::get('/verify',function(){
 Route::get('/mesOffres',function(){
     return view('Professionnel.mes_offres');
 });
+Route::get('/lesOffres','OffreController@index');
 
 Route::resource('professionnel', 'ProfessionnelController');
 Route::resource('candidat', 'CandidatController');
 Route::resource('fichee', 'FicheeController');
-
+Route::resource('offre','OffreController');
 Route::get('/', function () {
     return view('welcome');
 });

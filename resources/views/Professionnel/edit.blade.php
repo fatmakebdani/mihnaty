@@ -11,23 +11,28 @@
         <div id="sidebar">
             <ul class="nav">
             <li>
-                <a href="/professionnelle">
+                <a href="{{ route('professionnel.edit',$professionnel->id)}}">
                 <i class="zmdi zmdi-file-text"></i> Ma fiche professionnelle
                 </a>
             </li>
             <li>
-                <a href="/fichee/create">
+                <a href="{{ route('fichee.create')}}">
                 <i class="zmdi zmdi-card-travel"></i> Ma fiche d'entreprise
                 </a>
             </li>
             <li>
-                <a href="/MesPropositions">
+                <a href="{{ route('offre.create')}}">
                 <i class="fas fa-lightbulb"></i> Mes propositions
                 </a>
             </li>
             <li>
                 <a href="/MesExaminations">
                 <i class="zmdi zmdi-check-square"></i> Mes examinations
+                </a>
+            </li>
+             <li>
+                <a href="#">
+                <i class="fas fa-user-plus"></i> Mes invitations
                 </a>
             </li>
 
@@ -69,7 +74,7 @@
                             <!-- CHART-->
                             <div class="statistic-chart-1"style="background-color:#A6A4BB">
                                 <div class="row">
-                                        <img src="/storage/user_images/{{$professionnel->user->user_photo}}" alt="cover_img">
+                                        <img  style="width:100%" src="/storage/app/public/user_images/{{$professionnel->user->user_photo}}" alt="cover_img">
                                         <label>Changer de photo</label>
                                         <input name="image" type="file"id="idI" accept="image/png, image/jpeg">
                                     </div>
@@ -206,13 +211,10 @@
                         <div class="col-md-6">
                             <h6 class="title-5 m-b-35">Réseaux sociaux</h6>
                             <div class="statistic-chart-1"style="background-color:#A6A4BB;">
-                                <img src="assets/img/icon/instag.png"  />
-                                <label>Instagram</label>
-                                <input name="insta" type="url" class="form-control" id="id_link" value="{{$professionnel->user->insta}}"><br>
+                               <button type="button" class="btn btn-ins"><i class="fab fa-instagram pr-1"></i> Instagram</button><br>
 
-                                <img src="assets/img/icon/lin.png"  />
-                                <label>Linkedin</label>
-                                <input name="linkedin" type="url" class="form-control" id="id_insta" value="{{$professionnel->user->linkedin}}"><br>
+                               <button type="button" class="btn btn-git"><i class="fab fa-github pr-1"></i> Github</button><br>
+
 
                                 <img src="assets/img/icon/por.png"  />
                                 <label>Portfolio</label>
@@ -227,7 +229,7 @@
                     </div>
                 {!! Form::close() !!}
 
-            </div>
+            
         </section>
     </div>
 </main>

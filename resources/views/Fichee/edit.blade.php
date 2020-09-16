@@ -8,17 +8,17 @@
 <div id="sidebar">
     <ul class="nav">
       <li>
-        <a href="/Professionnel/edit">
+        <a href="#">
           <i class="zmdi zmdi-file-text"></i> Ma fiche professionnelle
         </a>
       </li>
       <li>
-        <a href="/MaFicheE">
+        <a href="#">
           <i class="zmdi zmdi-card-travel"></i> Ma fiche d'entreprise
         </a>
       </li>
       <li>
-        <a href="/MesPropositions">
+        <a href="{{ route('offre.create')}}">
           <i class="fas fa-lightbulb"></i> Mes propositions
         </a>
       </li>
@@ -27,6 +27,11 @@
           <i class="zmdi zmdi-check-square"></i> Mes examinations
         </a>
       </li>
+       <li>
+         <a href="/professionnel/invitations">
+          <i class="fas fa-user-plus"></i> Mes invitations
+          </a>
+        </li>
     
     </ul>
   </div>
@@ -76,8 +81,9 @@
                                     <input name="nom" type="text" class="form-control" id="id_nom"  value="{{$fichee->nom}}"><br>
                                     <label>Raison sociale</label>
                                     <input name="raison sociale" type="text" class="form-control" id="id_raison" value="{{$fichee->raison_sociale}}"><br>
-
-                                    
+                                    <label>Activité:</label>
+                                    <input name="activité" type="text" class="form-control" id="id_TitreE" value="{{$fichee->activité}}">
+                        
                                     <label>Adresse</label>
                                     <input name="adresse" type="text" class="form-control" id="id_adresse" value="{{$fichee->adresse}}"><br>
 
@@ -104,26 +110,13 @@
                             <!-- END CHART-->
                         </div>       
                     </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <h6 class="title-5 m-b-35"style="color: #242b5e;">Nature d'activité</h6>
+                    
                        
-                            <!-- CHART-->
-                            <div class="statistic-chart-1"style="background-color:#A6A4BB ">
-                    
-                                    <label>Activité:</label>
-                                    <input name="activité" type="text" class="form-control" id="id_TitreE" value="{{$fichee->activité}}">
-   
+                <h6 class="title-5 m-b-35"style="color:#242b5e;">Représentant </h6>
+                         <div class="row justify-content-center">
+                         <div class="col-md-10">
 
-                                    
-
-                    
-                            </div>
-                        </div>
-                         
-                         <div class="col-md-6">
-
-                            <h6 class="title-5 m-b-35"style="color:#242b5e;">Représentant </h6>
+                            
                         
                             <!-- CHART-->
                             <div class="statistic-chart-1"style="background-color:#A6A4BB ">
@@ -150,8 +143,8 @@
             <!-- END DATA TABLE-->
             <section class="p-t-60 p-b-20">
                 <div class="container">
-                    <div class="row">
-                        <div class="col-md-6">
+                    <div class="row justify-content-center">
+                        <div class="col-md-10">
                             <h6 class="title-5 m-b-35"style="color: #242b5e;">Membres de l'entreprise</h6>
                             <!-- CHART-->
                             <div class="statistic-chart-1"style="background-color:#A6A4BB ">
@@ -164,7 +157,7 @@
                         </div>
                     </div>
                 
-                 {{Form::submit('Enregistrer', ['class'=>'genric-btn primary-border circle'])}}
+                 {{Form::submit('Enregistrer les modifications', ['class'=>'genric-btn primary-border circle'])}}
                     </div>
                 {!! Form::close() !!}
 

@@ -81,9 +81,6 @@ class ProfessionnelController extends Controller
 
             'competence' => 'required',
 
-            'insta' => 'nullable',
-            'linkedin' => 'nullable',
-            'portfolio' => 'nullable',
         ]);
         $auth = Auth::user();
 
@@ -189,9 +186,8 @@ class ProfessionnelController extends Controller
         $competence->save();
 
         $user = User::find($auth->id);
-        $user->insta = $request->input('insta');
-        $user->linkedin = $request->input('linkedin');
-        $user->portfolio = $request->input('portfolio');
+        $user->nom = $request->input('nom');
+        $user->prenom = $request->input('prenom');
         $user->user_photo = $fileNameToStore1;
         $user->save();
 
@@ -253,9 +249,7 @@ class ProfessionnelController extends Controller
             'tel' => 'required',
             'date' => 'required',
 
-            'insta' => 'nullable',
-            'linkedin' => 'nullable',
-            'portfolio' => 'nullable',
+
         ]);
 
         $professionnel->nom = $request->input('nom');
@@ -267,9 +261,8 @@ class ProfessionnelController extends Controller
         $professionnel->save();
 
         $user = User::find($professionnel->user->id);
-        $user->insta = $request->input('insta');
-        $user->linkedin = $request->input('linkedin');
-        $user->portfolio = $request->input('portfolio');
+        $user->nom = $request->input('nom');
+        $user->prenom = $request->input('prenom');
         // User image
         if($request->hasFile('image')){
             // Get filename with the extension

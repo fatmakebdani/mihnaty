@@ -10,6 +10,8 @@ use App\PosteCourant;
 use App\Experience;
 use Auth;
 use App\User;
+use App\Professionnel;
+use App\Fichee;
 use Illuminate\Support\Facades\Storage;
 
 class OffreController extends Controller
@@ -26,9 +28,10 @@ class OffreController extends Controller
         //$posts = DB::select('SELECT * FROM posts');
         //$posts = Post::orderBy('title','desc')->take(1)->get();
         //$posts = Post::orderBy('title','desc')->get();
+         $nbr=  Offre::count();
 
         $offres = Offre::orderBy('created_at','desc')->paginate(10);
-        return view('offres')->with('offres', $offres);
+       return view ('lesOffres',compact('offres','nbr'));
     }
 
     /**
@@ -42,7 +45,7 @@ class OffreController extends Controller
         $data = [
             'user' => $user,
         ];
-        return view('myModal1')->with($data);
+        return view('offre.mesPropositions')->with($data);
     }
 
     /**
@@ -52,7 +55,8 @@ class OffreController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
+    { $auth = Auth::user();
+        
         $this->validate($request, [
             
             'titre' => 'required',
@@ -66,26 +70,27 @@ class OffreController extends Controller
 
             
         ]);
-        $auth = Auth::user();
+       
 
         $offre = new Offre;
-        $offre->user_id = $auth->id;
-        $offre->id_entreprise = '1';
         $offre->statut = ('ouvert');
         $offre->titre = $request->input('titre');
         $offre->ville = $request->input('ville');
+        $offre->cat = $request->input('cat');
         $offre->description = $request->input('description');
         $offre->sexe = $request->input('sexe');
+        $offre->salaire=$request->input('salaire');
         $offre->contrat = $request->input('contrat');
         $offre->dernier_delais = $request->input('dernier_delais');
         $offre->date_notif = $request->input('date_notif');
         $offre->date_fonction = $request->input('date_fonction');
+        $offre->rec_id = $auth->id;
+        $offre->entreprise_id = 
         $offre->save();
 
-        $user = User::find($auth->id);
-        $user->save();
+        
 
-        return redirect('/Professionnel/mesPropositions')->with('succes', 'Compte créé avec Succès');
+        return view('offre.mesPropositions')->with('succes', 'Compte créé avec Succès');
     }
 
     /**

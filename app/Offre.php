@@ -1,8 +1,6 @@
 <?php
 
 namespace App;
-
-
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -15,7 +13,7 @@ class Offre extends Authenticatable
         protected $primaryKey = 'id';
 
         protected $fillable = [
-            'titre','ville', 'contrat','salaire', 'sexe','dernier_delais','date_notif','date_fonction',
+            'titre','ville','cat','contrat','salaire', 'sexe','dernier_delais','date_notif','date_fonction',
         ];
 
         protected $hidden = [

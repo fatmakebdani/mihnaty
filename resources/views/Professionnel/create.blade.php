@@ -11,7 +11,7 @@
         <div id="sidebar">
             <ul class="nav">
             <li>
-                <a href="/professionnelle">
+                <a href="#">
                 <i class="zmdi zmdi-file-text"></i> Ma fiche professionnelle
                 </a>
             </li>
@@ -28,6 +28,11 @@
             <li>
                 <a href="#">
                 <i class="zmdi zmdi-check-square"></i> Mes examinations
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                <i class="fas fa-user-plus"></i> Mes invitations
                 </a>
             </li>
 
@@ -68,7 +73,7 @@
                         <div class="col-md-10">
                             <!-- CHART-->
                             <div class="statistic-chart-1"style="background-color:#A6A4BB">
-                                <div class="row">
+                                <div class="row ">
 
                                         <label>Choisir une photo</label>
                                         <input name="image" type="file"id="idI" accept="image/png, image/jpeg">
@@ -80,7 +85,7 @@
                                 <label>Prénom</label>
                                 <input name="prenom" type="text" class="form-control" id="id_prenom"><br>
 
-                                <input type="radio" name="sexe" id="id_sexe" value="H">
+                                <input type="radio" name="sexe" id="id_sexe" value="H" checked>
                                 <label>Homme</label>
 
                                 <input type="radio" name="sexe" id="id_sexe" value="F">
@@ -89,10 +94,10 @@
                                 <label >Email</label>
                                 <input name="email" type="email" class="form-control" id="id_email" value="{{$user->email}}"><br>
 
-                                <label>N° de téléphone</label>
-                                <input name="tel" type="tel" id="id_phone" required ><br>
+                                <label >N° de téléphone</label><br>
+                                <input name="tel" type="tel" id="id_phone"><br>
 
-                                <label>Date de naissance</label>
+                                <label>Date de naissance</label><br>
                                 <input  name="date" type="date" value="jj/mm/aaaa" id="example-date-input"><br>
                             </div>
                         <!-- END CHART-->
@@ -186,13 +191,9 @@
                         <div class="col-md-6">
                             <h6 class="title-5 m-b-35">Réseaux sociaux</h6>
                             <div class="statistic-chart-1"style="background-color:#A6A4BB;">
-                                <img src="assets/img/icon/instag.png"  />
-                                <label>Instagram</label>
-                                <input name="insta" type="url" class="form-control" id="id_link"><br>
+                               <button type="button" class="btn btn-ins"><i class="fab fa-instagram pr-1"></i> Instagram</button><br>
 
-                                <img src="assets/img/icon/lin.png"  />
-                                <label>Linkedin</label>
-                                <input name="linkedin" type="url" class="form-control" id="id_insta"><br>
+                               <button type="button" class="btn btn-git"><i class="fab fa-github pr-1"></i> Github</button><br>
 
                                 <img src="assets/img/icon/por.png"  />
                                 <label>Portfolio</label>

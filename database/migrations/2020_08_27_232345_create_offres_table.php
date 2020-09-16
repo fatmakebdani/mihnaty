@@ -22,11 +22,14 @@ class CreateOffresTable extends Migration
             $table->enum('contrat', ['CDI', 'CDD']);
             $table->enum('statut', ['ouvert', 'examin','attribue']);
             $table->integer('salaire');
+            $table->string('cat');
             $table->date('dernier_delais');
             $table->date('date_notif');
             $table->date('date_fonction');
-            $table->integer('user_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->integer('rec_id')->unsigned();
+            $table->foreign('rec_id')->references('id')->on('users');
+            $table->integer('entreprise_id')->unsigned();
+            $table->foreign('entreprise_id')->references('id')->on('fichees');
             
             $table->timestamps();
         });

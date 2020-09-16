@@ -73,7 +73,7 @@ class FicheeController extends Controller
             // Filename to store
             $fileNameToStore5= $filename.'_'.time().'.'.$extension;
             // Upload Image
-            $path = $request->file('photo')->storeAs('public/user_images', $fileNameToStore1);
+            $path = $request->file('photo')->storeAs('public/user_images', $fileNameToStore5);
 
         }
         else {

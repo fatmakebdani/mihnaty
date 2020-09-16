@@ -14,9 +14,8 @@ class UpdateUser extends Migration
     public function up()
     {
         Schema::table('users', function($table){
-            $table->string('insta')->nullable();
-            $table->string('linkedin')->nullable();
-            $table->string('portfolio')->nullable();
+            $table->string('nom')->nullable();
+            $table->string('prenom')->nullable();
             $table->string('user_photo')->nullable();
         });
     }
@@ -29,9 +28,8 @@ class UpdateUser extends Migration
     public function down()
     {
         Schema::table('users', function($table){
-            $table->dropColumn('insta');
-            $table->dropColumn('linkedin');
-            $table->dropColumn('portfolio');
+            $table->dropColumn('nom');
+            $table->dropColumn('prenom');
             $table->dropColumn('user_photo');
         });
     }
