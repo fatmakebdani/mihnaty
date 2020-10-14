@@ -19,172 +19,28 @@
         </div>
         <!-- Hero Area End -->
         <!-- Job List Area Start -->
-        <div class="job-listing-area pt-120 pb-120">
+
+        <div class="job-listing-area pt-120 pb-120 pl-10">
             <div class="container">
+
                 <div class="row">
                     <!-- Left content -->
-                    <div class="col-xl-3 col-lg-3 col-md-4">
-                        <div class="row">
-                            <div class="col-12">
-                                    <div class="small-section-tittle2 mb-45">
-                                    <div class="ion"> <svg 
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        xmlns:xlink="http://www.w3.org/1999/xlink"
-                                        width="20px" height="12px">
-                                    <path fill-rule="evenodd"  fill=" #fb246a"
-                                        d="M7.778,12.000 L12.222,12.000 L12.222,10.000 L7.778,10.000 L7.778,12.000 ZM-0.000,-0.000 L-0.000,2.000 L20.000,2.000 L20.000,-0.000 L-0.000,-0.000 ZM3.333,7.000 L16.667,7.000 L16.667,5.000 L3.333,5.000 L3.333,7.000 Z"/>
-                                    </svg>
-                                    </div>
-                                    <h4>Filtrer les offres</h4>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Job Category Listing start -->
-                        <div class="job-category-listing mb-50">
-                            <!-- single one -->
-                            <div class="single-listing">
-                               <div class="small-section-tittle2">
-                                     <h4>Catégories</h4>
-                               </div>
-                                <!-- Select job items start -->
-                                  <div class="wrapper">
-               <select   style="width: 16em;"name="cat" size="1" class="form-control"  data-live-search="true">
-                                     <option value="1">Commercial et marketing</option>
-                                        <option value="2">Commerce et vente</option>
-                                        <option value="3">Industrie et production</option>
-                                        <option value="4">Education et formations</option>
-                                        <option value="5">Bureatique et secretariat</option>
-                                        <option value="6">Beauté et Esthétique</option>
-                                        <option value="7">Tourisme et Gastronomie</option>
-                                        <option value="8">Nettoyage et Hygiéne</option>
-                                        <option value="9">Génie logiciel</option>
-                                        <option value="10">développement web</option>
-                                        <option value="11">développement mobile</option>
-                                        <option value="12">Programmation</option>
-                                        <option value="13">Base de données</option>
-                                        <option value="14">Cryptographie</option>
-                                        <option value="15">Photographie</option>
-                                        <option value="16">Analyse des donnés</option>
-                                        <option value="17">Réseau</option>
-                                        <option value="18">Développement jeux vidéo</option>
-                                        <option value="19">Systeme d'informations</option>
-                                        <option value="20">Securité</option>
-                                        <option value="21">Comptabilité et Audit</option>
-                                        <option value="22">Couture et Confection</option>
-                                        <option value="23">Graphisme et Communication</option>
-                                        <option value="24">Administration et Management</option>
-                                        <option value="25">Mécanique Auto</option>
-                                        <option value="26">Transport et Chauffeurs</option>
-                                        <option value="27">Agents polyvalents</option>
-                                        <option value="28">Eléctronique et Téchnique</option>
-                                        <option value="29">Artisanat</option>
-                                        <option value="30">Immobilier</option>
-                                        <option value="31">Achat et Logistique</option>
-                                        <option value="32">Environnement</option>
-                                        <option value="33">Journalisme et Presse</option>
-                                        <option value="34">Recherche</option>
-                                        <option value="35">Juridique</option>
-                                        <option value="36">Carburants et Mines</option>
-                                        <option value="37">Construction et Travaux</option>
-                                        <option value="38">Medecine et Santé</option>
-                                        <option value="39">Télecom</option>
-                                        <option value="40">Banque,Assurances</option>
-                                        <option value="41">Autre</option>
-                                    </select>
-              </div>
-                                <!--  Select job items End-->
-                                <!-- select-Categories start -->
-                               
-                                <!-- select-Categories End -->
-                            </div><br>
-                            <!-- single two -->
-                            <div class="single-listing">
-                               <div class="small-section-tittle2">
-                                     <h4>Emplacement</h4>
-                               </div>
-                                <!-- Select job items start -->
-                                <div class="wrapper">
-               <select style="width: 10em;" name="ville" size="1" class="form-control" >wilaya
-                                      <option value="1">Adrar</option><option value="2">Chlef</option><option value="3">Laghouat</option><option value="4">Oum El-Bouaghi</option><option value="5">Batna</option><option value="6">Bejaia</option><option value="7">Biskra</option><option value="8">Bechar</option><option value="9">Blida</option><option value="10">Bouira</option><option value="11">Tamanrassat</option><option value="12">Tebessa</option><option value="13">Tlemcen</option><option value="14">Tiaret</option><option value="15">Tizi-Ouzou</option><option value="16">Alger</option><option value="17">Djelfa</option><option value="18">Jijel</option><option value="19">Setif</option><option value="20">Saida</option><option value="21">Skikda</option><option value="22">Sidi-Bel-Abbes</option><option value="23">Annaba</option><option value="24">Guelma</option><option value="25">Constantine</option><option value="26">Médea</option><option value="27">Mostaganem</option><option value="28">M'sila</option><option value="29">Mascara</option><option value="30">Ouargla</option><option value="31">Oran</option><option value="32">El-Bayadh</option><option value="33">Illizi</option><option value="34">Bordj Bou-Arreridj</option><option value="35">Boumerdes</option><option value="36">El-Taref</option><option value="37">Tindouf</option><option value="38">Tissimsilt</option><option value="39">El-Oued</option><option value="40">khenchela</option><option value="41">Souk Ahras</option><option value="42">Tipaza</option><option value="43">Mila</option><option value="44">Ain Defla</option><option value="45">Naama</option><option value="46">Ain Timouchent</option><option value="47">Ghardaia</option><option value="48">Relizane</option>
-                                    </select>
-              </div>
-                                <!--  Select job items End-->
-                                <!-- select-Categories start -->
-                                <div class="select-Categories pt-80 pb-50">
-                                    <div class="small-section-tittle2">
-                                        <h4>Experience</h4>
-                                    </div>
-                                     <label class="container">
-                                        <input type="checkbox" >
-                                        <span class="checkmark"></span>
-                                    </label>
-                                    <label class="container">1-2 ans
-                                        <input type="checkbox" >
-                                        <span class="checkmark"></span>
-                                    </label>
-                                    <label class="container">2-3 ans
-                                        <input type="checkbox" checked="checked active">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                    <label class="container">3-6 ans
-                                        <input type="checkbox">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                    <label class="container">6-plus..
-                                        <input type="checkbox">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                </div>
-                                <!-- select-Categories End -->
-                            </div>
-                            <!-- single three -->
-                            <div class="single-listing">
-                                <!-- select-Categories start -->
-                               
-                                <!-- select-Categories End -->
-                            </div>
-                            <div class="single-listing">
-                                <!-- Range Slider Start -->
-                                <aside class="left_widgets p_filter_widgets price_rangs_aside sidebar_box_shadow">
-                                    <div class="small-section-tittle2">
-                                        <h4>Filter Jobs</h4>
-                                    </div>
-                                    <div class="widgets_inner">
-                                        <div class="range_item">
-                                            <!-- <div id="slider-range"></div> -->
-                                            <input type="text" class="js-range-slider" value="" />
-                                            <div class="d-flex align-items-center">
-                                                <div class="price_text">
-                                                    <p>Price :</p>
-                                                </div>
-                                                <div class="price_value d-flex justify-content-center">
-                                                    <input type="text" class="js-input-from" id="amount" readonly />
-                                                    <span>to</span>
-                                                    <input type="text" class="js-input-to" id="amount" readonly />
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </aside>
-                              <!-- Range Slider End -->
-                            </div>
-                        </div>
-                        <!-- Job Category Listing End -->
-                    </div>
+                   
+                            
                     <!-- Right content -->
                     <div class="col-xl-9 col-lg-9 col-md-8">
                         <!-- Featured_job_start -->
                         <section class="featured-job-area">
                             <div class="container">
                                 <!-- Count of Job list Start -->
-                                <div class="row">
-                                    <div class="col-lg-12">
-                                        <div class="count-job mb-35">
-                                            <span>{{$nbr}} offre(s) trouvée(s)</span>
+                                <div class="row ">
+                                    <div class="col-lg-12 ">
+                                         <h3 class="mb-30"style="color:#fb246a">{{$nbr}} offre(s) trouvée(s)</h3>
+                                           
                                             <!-- Select job items start -->
                                             
                                             <!--  Select job items End-->
-                                        </div>
+                    
                                     </div>
                                 </div>
                                 <!-- Count of Job list End -->
@@ -194,56 +50,85 @@
             <div class="single-job-items mb-30">
                                     <div class="job-items">
                                         <div class="company-img">
-                                            <a href="#"><img src="assets/img/icon/job-list1.png" alt=""></a>
+                                            <a><img width="85px;" height="85px;" src="{{url('/storage/entreprise_images/'.$offre->user->fichee->entreprise_photo)}}"></a>
                                         </div>
                                         <div class="job-tittle job-tittle2">
-                                            <a href="#">
-                                                <h4>{{$offre->titre}}</h4>
-                                            </a>
+                                            
+                                                <h3>{{$offre->titre}}</h3>
+                                            
                                             <ul>
-                                                <li>Creative Agency</li>
+                                                <li>{{$offre->user->fichee->nom}}</li>
                                                 <li><i class="fas fa-map-marker-alt"></i>{{$offre->ville}}</li>
-                                                <li>$3500 - $4000</li>
+                                                <li>{{$offre->salaire}} DA</li>
+                                                <li>{{$offre->cat}} </li>
                                             </ul>
                                         </div>
                                     </div>
                                     
-
-                                    <div class="items-link items-link2 f-right">
-                                        @if (Auth::user()->role==2)
-                                        <a href="job_details.html">postuler</a>
-                                        @endif 
-                                        <span>7 hours ago</span>
+                                   
+                                    <div class="items-link items-link2 f-right"  aria-hidden="true" data-toggle="modal" data-target="#myModal-{{ $offre->id }}">
+                                       
+                                        <a>Voir détails</a>
+                                       
+                                      
                                     </div>
-                                </div>
+                            
+                                       
+                                    <div id="myModal-{{ $offre->id }}" class="modal" tabindex="-1" role="dialog"  aria-labelledby="myModal">
+  <div class="modal-dialog modal-lg" role="document">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">{{$offre->titre}}
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title" ></h4>
+      </div>
+      <div class="modal-body">
+           <ul class="list-unstyled pl-3 mb-0">
+              <li class="mb-2"><strong class="text-black">Titre:</strong>{{$offre->titre}}</li>
+              <li class="mb-2"><strong class="text-black">Entreprise:</strong>{{$offre->user->fichee->nom}}</li>
+              <li class="mb-2"><strong class="text-black">Emplacement:</strong> {{$offre->ville}}</li>
+              <li class="mb-2"><strong class="text-black">Catégorie:</strong>{{$offre->cat}}</li>
+              <li class="mb-2"><strong class="text-black">Description de l'offre:</strong>{{$offre->description}}</li>
+              <li class="mb-2"><strong class="text-black">Sexe:</strong>{{$offre->sexe}}</li>
+              <li class="mb-2"><strong class="text-black">Salaire:</strong>{{$offre->salaire}}<strong class="text-black">DA</strong></li>
+              <li class="mb-2"><strong class="text-black">dernier délais de candidature:</strong>{{$offre->dernier_delais}}</li>
+              <li class="mb-2"><strong class="text-black">date de notification:</strong>{{$offre->date_notif}}</li>
+              <li class="mb-2"><strong class="text-black">date prise en fonction:</strong>{{$offre->date_fonction}}</li> 
+          </ul>
+        
+                                    @guest
+
+                                     
+                                        @elseif (Auth::user()->hasRole('2'))
+               <a href="/postuler-offre/{{$offre->id}}" class="genric-btn primary-border circle">
+                                        Postuler
+                                      </a>
+                                      @else
+                        
+              @endif 
+                                      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+                      </div>           
+                            
         @endforeach
     
                                
                         <!-- Featured_job_end -->
-                    </div>
+                   
                 </div>
             </div>
         </div>
         <!-- Job List Area End -->
         <!--Pagination Start  -->
-        <div class="pagination-area pb-115 text-center">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-12">
-                        <div class="single-wrap d-flex justify-content-center">
-                            <nav aria-label="Page navigation example">
-                                <ul class="pagination justify-content-start">
-                                    <li class="page-item active"><a class="page-link" href="#">01</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">02</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">03</a></li>
-                                <li class="page-item"><a class="page-link" href="#"><span class="ti-angle-right"></span></a></li>
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+     
         <!--Pagination End  -->
         
     </main>

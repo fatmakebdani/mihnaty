@@ -11,12 +11,12 @@
         <div id="sidebar">
             <ul class="nav">
             <li>
-                <a href="#">
+                <a href="professionnel.create">
                 <i class="zmdi zmdi-file-text"></i> Ma fiche professionnelle
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="/professionnel'.'/'. $professionnel->id . '/edit'">
                 <i class="zmdi zmdi-card-travel"></i> Ma fiche d'entreprise
                 </a>
             </li>
@@ -187,21 +187,7 @@
                         </div>
 
                     </div>
-                    <div class="row justify-content-center">
-                        <div class="col-md-6">
-                            <h6 class="title-5 m-b-35">Réseaux sociaux</h6>
-                            <div class="statistic-chart-1"style="background-color:#A6A4BB;">
-                               <button type="button" class="btn btn-ins"><i class="fab fa-instagram pr-1"></i> Instagram</button><br>
-
-                               <button type="button" class="btn btn-git"><i class="fab fa-github pr-1"></i> Github</button><br>
-
-                                <img src="assets/img/icon/por.png"  />
-                                <label>Portfolio</label>
-                                <input name="portfolio" type="url" class="form-control" id="id_port"><br>
-
-                            </div>
-                        </div>
-                    </div>
+                   
                     <div class="row justify-content-center">
                          {{Form::submit('Enregistrer', ['class'=>'genric-btn primary-border circle'])}}
                     </div>

@@ -8,6 +8,8 @@ use App\Professionnel;
 use Auth;
 use App\User;
 use App\Employe;
+use App\offre;
+use App\jury;
 use Illuminate\Support\Facades\Storage;
 
 class FicheeController extends Controller
@@ -19,7 +21,9 @@ class FicheeController extends Controller
      */
     public function index()
     {
-      return view('fiches entreprises');
+         $entreprises = Fichee::where('vérification','valide')->get();
+          $nbrF=  Fichee::where('vérification','valide')->count();
+      return view('entreprises',compact('entreprises','nbrF'));
     }
 
     /**
@@ -63,21 +67,22 @@ class FicheeController extends Controller
         
 
         // User image
-        if($request->hasFile('photo')){
+        
+                if($request->hasFile('image')){
             // Get filename with the extension
-            $filenameWithExt = $request->file('photo')->getClientOriginalName();
+            $filenameWithExt = $request->file('image')->getClientOriginalName();
             // Get just filename
             $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
             // Get just ext
-            $extension = $request->file('photo')->getClientOriginalExtension();
+            $extension = $request->file('image')->getClientOriginalExtension();
             // Filename to store
-            $fileNameToStore5= $filename.'_'.time().'.'.$extension;
+            $fileNameToStore1= $filename.'_'.time().'.'.$extension;
             // Upload Image
-            $path = $request->file('photo')->storeAs('public/user_images', $fileNameToStore5);
+            $path = $request->file('image')->storeAs('public/entreprise_images', $fileNameToStore1);
 
         }
         else {
-            $fileNameToStore5 = 'noimage.jpg';
+            $fileNameToStore1 = 'noimage.png';
         }
 
         //EXPERIENCE IMAGE
@@ -90,6 +95,7 @@ class FicheeController extends Controller
         $fichee = new Fichee;
         $fichee->user_id = $auth->id;
         $fichee->nom = $request->input('nom');
+         $offre->vérification = ('suspendu');
         $fichee->adresse = $request->input('adresse');
         $fichee->site = $request->input('site');
         $fichee->code_postal = $request->input('code_postal');
@@ -97,8 +103,8 @@ class FicheeController extends Controller
         $fichee->date_de_creation = $request->input('date_de_creation');
         $fichee->raison_sociale = $request->input('raison_sociale');
         $fichee->activité = $request->input('activité');
-        $fichee->id_gerant = $request->input('id_gerant');
-        $fichee->photo = $fileNameToStore5;
+        $fichee->gerant_id = $request->input('gerant_id');
+        $fichee->entreprise_photo= $fileNameToStore1;
         $fichee->save();
 
         foreach ($request->input('employes') as $emp) {
@@ -145,6 +151,8 @@ class FicheeController extends Controller
         $data = [
             'fichee' => $fichee,
             'professionnels'=>Professionnel::all(),
+            'gerant' => Professionnel::where('id',$fichee->gerant_id)->first(),
+            'employes' =>Employe::where('id_entreprise',$fichee->id)->get(),
 
         ];
         return view('fichee.edit')->with($data);
@@ -168,7 +176,7 @@ class FicheeController extends Controller
             'raison_sociale' => 'required',
             'date_de_creation' => 'required',
             'activité'=>'required',
-            'id_gerant' =>'required',
+            'gerant_id' =>'required',
             
         ]);
 
@@ -180,7 +188,7 @@ class FicheeController extends Controller
         $fichee->date_de_creation = $request->input('date_de_creation');
         $fichee->raison_sociale = $request->input('raison_sociale');
         $fichee->activité = $request->input('activité');
-        $fichee->id_gerant = $request->input('id_gerant');
+        $fichee->gerant_id = $request->input('gerant_id');
         $fichee->save();
         
 

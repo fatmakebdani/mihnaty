@@ -8,8 +8,10 @@ use App\Competence;
 use App\Diplome;
 use App\PosteCourant;
 use App\Experience;
+use App\Offre;
 use Auth;
 use App\User;
+use App\Candidature;
 use Illuminate\Support\Facades\Storage;
 
 class CandidatController extends Controller
@@ -82,9 +84,6 @@ class CandidatController extends Controller
 
             'competence' => 'required',
 
-            'insta' => 'nullable',
-            'linkedin' => 'nullable',
-            'portfolio' => 'nullable',
         ]);
          $auth = Auth::user();
 
@@ -202,9 +201,8 @@ class CandidatController extends Controller
         $competence->save();
 
         $user = User::find($auth->id);
-        $user->insta = $request->input('insta');
-        $user->linkedin = $request->input('linkedin');
-        $user->portfolio = $request->input('portfolio');
+        $user->nom = $request->input('nom');
+        $user->prenom = $request->input('prenom');
         $user->user_photo = $fileNameToStore1;
         $user->save();
 
@@ -399,4 +397,50 @@ class CandidatController extends Controller
     {
         //
     }
+      public function postuler($id)
+    {   $auth = Auth::user();
+         //$candidat =Candidat::where('user_id', Auth::user()->id)->get(id);
+        //$candidat= Candidat::where('id',$auth->id)->get('id');
+         //$candidat = Auth::user()->candidat();
+         $candidature = new Candidature;
+           $candidature->offre_id = $id;
+           $candidature->candidat_id = $auth->id;
+           $candidature->save();
+        return redirect('lesOffres');
+    }
+    public function afficherCandidatures()
+    {
+        $auth = Auth::user();
+         $data = [
+        
+            'candidatures'=>Candidature::select('*')
+        ->where([
+            ['candidat_id',$auth->id]
+               ])
+        ->get(),
+         'nbrC'=> Candidature::select('*')
+        ->where([
+            ['candidat_id',$auth->id]
+               ])
+        ->count(),
+    ];
+        ///$candidatures = Candidature::where('candidat_id',$auth->id)->get();
+       // $candidatures = Offre::where('id',$offres->offre_id)->get();
+       // $offres= Offre::all();
+        //$candidatures= $offres::where([
+            //['id_candidat',$auth->id],
+           // ['id_offre',$offres->id]
+
+       // ])->get();
+        
+        return view('mes_candidatures')->with($data);
+        
+    }
+    public function seRetirer($id)
+    {
+         $candidature = Candidature::find($id);
+        $candidature->delete();
+         return redirect('mes_candidatures');
+    }
+   
 }

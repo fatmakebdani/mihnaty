@@ -2,20 +2,19 @@
 
 namespace App;
 
-
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-class Professionnel extends Authenticatable
+class Jury extends Authenticatable
 {
     use Notifiable;
 
-        protected $table = 'professionnels';
+        protected $table = 'jurys';
 
         protected $primaryKey = 'id';
 
         protected $fillable = [
-            'nom','prenom', 'email', 'password',
+            'offre_id','professionnel_id',
         ];
 
         protected $hidden = [
@@ -26,16 +25,16 @@ class Professionnel extends Authenticatable
     {
         return $this->belongsTo('App\User');
     }
-    public function professionnels()
+        public function professionnels()
     {
         return $this->belongsTo('Fichee.php','id_entreprise');
     }
-    public function jurys()
+      public function offre()
+      {
+        return $this->belongsTo('App\Offre');
+      }
+         public function evaluations()
     {
-        return $this->belongsTo('offre.php','id_offre');
-    }
-    public function employe()
-    {
-        return $this->hasOne('App\Employe');
+        return $this->hasMany('App\Evaluation');
     }
 }

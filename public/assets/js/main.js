@@ -256,6 +256,12 @@ $('#myModal').click(function () {
 $('#myModal2').click(function () {
   $("#myModal2").modal("show");
 });
+$('#myModal5').click(function () {
+  $("#myModal5").modal("show");
+});
+$('#AjoutE').click(function () {
+  $("#AjoutE").modal("show");
+});
 $(document).ready(function () {
 $('#dtBasicExample').DataTable({
 "ordering": false // false to disable sorting (or any other option)

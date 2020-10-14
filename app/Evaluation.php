@@ -5,24 +5,29 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-class Employe extends Authenticatable
+class Evaluation extends Authenticatable
 {
     use Notifiable;
 
-        protected $table = 'employes';
+        protected $table = 'evaluations';
 
         protected $primaryKey = 'id';
 
         protected $fillable = [
-            'id_entreprise','id_professionnel',
+            'jury_id','candidature_id',
         ];
 
         protected $hidden = [
             'password', 'remember_token',
         ];
 
-    public function professionnel()
+    public function jury()
     {
-        return $this->belongsTo('App\Professionnel');
+        return $this->belongsTo('App\Jury');
     }
+    
+      public function candidature()
+      {
+        return $this->belongsTo('App\Candidature');
+      }
 }

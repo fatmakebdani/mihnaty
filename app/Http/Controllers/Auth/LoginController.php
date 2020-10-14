@@ -7,6 +7,7 @@ use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Auth;
+use App\Professionnel;
 
 class LoginController extends Controller
 {
@@ -30,7 +31,8 @@ class LoginController extends Controller
      */
     protected $redirectTo;
     public function redirectTo()
-    {
+    { 
+      $auth = Auth::user();
         switch (Auth::user()->role) {
             case '1':
                 $this->redirectTo ='/admin';
@@ -41,7 +43,10 @@ class LoginController extends Controller
                 return $this->redirectTo;
                 break;
             case '3':
-                $this->redirectTo ='/professionnel'.'/'.Auth::user()->professionnel->id . '/edit';
+           
+  $this->redirectTo ='/professionnel'.'/'.Auth::user()->professionnel->id . '/edit';
+
+// or
                 return $this->redirectTo;
                     break;
             default:

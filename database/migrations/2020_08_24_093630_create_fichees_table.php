@@ -23,9 +23,10 @@ class CreateFicheesTable extends Migration
             $table->string('raison_sociale');
             $table->date('date_de_creation');
             $table->string('activité');
-            $table->string('photo');
-            $table->integer('id_gerant')->unsigned();
-            $table->foreign('id_gerant')->references('id')->on('professionnels');
+            $table->string('entreprise_photo');
+            $table->enum('vérification',['valide','invalide','suspendu']);
+            $table->integer('gerant_id')->unsigned();
+            $table->foreign('gerant_id')->references('id')->on('professionnels');
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();

@@ -27,11 +27,7 @@
           <i class="zmdi zmdi-check-square"></i> Mes examinations
         </a>
       </li>
-       <li>
-         <a href="/professionnel/invitations">
-          <i class="fas fa-user-plus"></i> Mes invitations
-          </a>
-        </li>
+     
     
     </ul>
   </div>
@@ -65,7 +61,7 @@
                             <div class="statistic-chart-1"style="background-color:#A6A4BB ">
                                 <div class="row">   
                                  
-                                    <label>Choisir une photo:</label>
+                                    <label>Ajouter une logo:</label>
                                     <input name="photo" type="file"id="idI" accept="image/png, image/jpeg">
                                     
                                 
@@ -114,11 +110,11 @@
                             <!-- CHART-->
                             <div class="statistic-chart-1"style="background-color:#A6A4BB ">
                                        Le représentant de l'entreprise est
-                                    <select class="mdb-select md-form"  searchable="Search here.." name="id_gerant" >Le représentant de l'entreprise est
+                                    <select class="mdb-select md-form"  searchable="Search here.." name="gerant_id" >Le représentant de l'entreprise est
                                         <option  disabled selected></option>
                                         @foreach ($professionnels as $professionnel)
                                         
-                                        <option value="{{$professionnel->id}}">{{$professionnel->nom}}</option>
+                                        <option value="{{$professionnel->id}}">{{$professionnel->nom}}{{$professionnel->prenom}}</option>
                                         @endforeach
                                     </select>
                                         
@@ -150,11 +146,11 @@
                             <!-- CHART-->
                             <div class="statistic-chart-1"style="background-color:#A6A4BB ">
                                 
-                                  <select class="form-control" multiple size="2" name="employes[]" >
+                                  <select class="form-control" multiple size="4" name="employes[]" >
                                         <option  disabled selected>Membre</option>
                                         @foreach ($professionnels as $professionnel)
                                         
-                                        <option value="{{$professionnel->id}}">{{$professionnel->nom}}</option>
+                                        <option value="{{$professionnel->id}}">{{$professionnel->nom}}{{$professionnel->prenom}}</option>
                                         @endforeach
                                     </select>  
                              

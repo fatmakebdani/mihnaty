@@ -4,14 +4,12 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Experience extends Model
+class Refus extends Model
 {
-    protected $table = 'experiences';
+    protected $table = 'refus';
 
     protected $primaryKey = 'id';
-    protected $fillable = [
-        'nom_en', 'titre-en', 'date_debut', 'date_fin'
-    ];
+    protected $fillable = 'motif';
 
     public function user()
     {

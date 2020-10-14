@@ -25,4 +25,8 @@ class Candidat extends Authenticatable
         {
             return $this->belongsTo('App\User');
         }
+        public function candidats()
+        {
+            return $this->hasMany('App\Candidature');
+        }
 }

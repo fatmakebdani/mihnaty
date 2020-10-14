@@ -12,7 +12,11 @@ use Auth;
 use App\User;
 use App\Professionnel;
 use App\Fichee;
+use App\Employe;
+use App\Jury;
+use App\Candidature;
 use Illuminate\Support\Facades\Storage;
+use Spatie\Searchable\Search;
 
 class OffreController extends Controller
 {
@@ -23,14 +27,24 @@ class OffreController extends Controller
      */
     public function index()
     {
-         $offres = Offre::all();
+         //$offres = Offre::all();
+        $offres = Offre::select('*')
+        ->where([
+            ['vérification','acceptée'],
+            ['statut','ouverte']
+        ])->get();
         //return Post::where('title', 'Post Two')->get();
         //$posts = DB::select('SELECT * FROM posts');
         //$posts = Post::orderBy('title','desc')->take(1)->get();
         //$posts = Post::orderBy('title','desc')->get();
-         $nbr=  Offre::count();
+         $nbr = Offre::select('*')
+        ->where([
+            ['vérification','acceptée'],
+            ['statut','ouverte']
+        ])->count();
+         //$fichee=$offre
 
-        $offres = Offre::orderBy('created_at','desc')->paginate(10);
+       // $offres = Offre::orderBy('created_at','desc')->paginate(10);
        return view ('lesOffres',compact('offres','nbr'));
     }
 
@@ -44,7 +58,47 @@ class OffreController extends Controller
          $user= Auth::user();
         $data = [
             'user' => $user,
+            'professionnels'=>Professionnel::all(),
+               'mesOffres'=>  Offre::select('*')
+        ->where([
+            ['vérification','acceptée'],
+            ['user_id',$user->id]
+               ])
+        ->get(),
+         'offreA'=> Offre::select('*')
+        ->where([
+            ['vérification','acceptée'],
+            ['user_id',$user->id]
+               ])
+        ->count(),
+         'mesOffresR'=>  Offre::select('*')
+        ->where([
+            ['vérification','refusée'],
+            ['user_id',$user->id]
+               ])
+        ->get(),
+         'offreR'=> Offre::select('*')
+        ->where([
+            ['vérification','refusée'],
+            ['user_id',$user->id]
+               ])
+        ->count(),
+        'mesOffresS'=>  Offre::select('*')
+        ->where([
+            ['vérification','suspendue'],
+            ['user_id',$user->id]
+               ])
+        ->get(),
+         'offreS'=> Offre::select('*')
+        ->where([
+            ['vérification','suspendue'],
+            ['user_id',$user->id]
+               ])
+        ->count(),
+        'candidats' => Candidature::all(),
         ];
+
+           
         return view('offre.mesPropositions')->with($data);
     }
 
@@ -56,6 +110,8 @@ class OffreController extends Controller
      */
     public function store(Request $request)
     { $auth = Auth::user();
+        //$prof   = Professionnel::where('nom','kebdani');
+        //$entreprise = Employe::where('id_professionnel','$prof')->get('id_entreprise');
         
         $this->validate($request, [
             
@@ -68,12 +124,14 @@ class OffreController extends Controller
             'date_notif' => 'required',
             'date_fonction' => 'required',
 
-            
-        ]);
+            ]);
+       
        
 
         $offre = new Offre;
-        $offre->statut = ('ouvert');
+        $offre->statut = ('ouverte');
+        $offre->vérification = ('suspendue');
+        $offre->motif = ('');
         $offre->titre = $request->input('titre');
         $offre->ville = $request->input('ville');
         $offre->cat = $request->input('cat');
@@ -84,13 +142,58 @@ class OffreController extends Controller
         $offre->dernier_delais = $request->input('dernier_delais');
         $offre->date_notif = $request->input('date_notif');
         $offre->date_fonction = $request->input('date_fonction');
-        $offre->rec_id = $auth->id;
-        $offre->entreprise_id = 
+        $offre->user_id = $auth->id;
         $offre->save();
-
+        foreach ($request->input('jurys') as $jur) {
+           $jury = new Jury;
+           $jury->offre_id = $offre->id;
+           $jury->professionnel_id = intval($jur);
+           $jury->save();
+            $user= Auth::user();
+}  $data = [
+            'user' => $user,
+            'professionnels'=>Professionnel::all(),
+               'mesOffres'=>  Offre::select('*')
+        ->where([
+            ['vérification','acceptée'],
+            ['user_id',$user->id]
+               ])
+        ->get(),
+         'offreA'=> Offre::select('*')
+        ->where([
+            ['vérification','acceptée'],
+            ['user_id',$user->id]
+               ])
+        ->count(),
+         'mesOffresR'=>  Offre::select('*')
+        ->where([
+            ['vérification','refusée'],
+            ['user_id',$user->id]
+               ])
+        ->get(),
+         'offreR'=> Offre::select('*')
+        ->where([
+            ['vérification','refusée'],
+            ['user_id',$user->id]
+               ])
+        ->count(),
+        'mesOffresS'=>  Offre::select('*')
+        ->where([
+            ['vérification','suspendue'],
+            ['user_id',$user->id]
+               ])
+        ->get(),
+         'offreS'=> Offre::select('*')
+        ->where([
+            ['vérification','suspendue'],
+            ['user_id',$user->id]
+               ])
+        ->count(),
+        'candidats' => Offre::all(),
+        ];
         
 
-        return view('offre.mesPropositions')->with('succes', 'Compte créé avec Succès');
+        return view('offre.mesPropositions')->with($data);
     }
 
     /**
@@ -101,7 +204,7 @@ class OffreController extends Controller
      */
     public function show(Offre $offre)
     {
-        return redirect('/offre'.'/'. $offre->id . '/edit');
+    
         
 
     }
@@ -177,6 +280,101 @@ class OffreController extends Controller
      */
     public function destroy($id)
     {
-        //
+        
     }
+    public function mesPropositions()
+    {
+        $user= Auth::user();
+        $data = [
+            'user' => $user,
+            'professionnels'=>Professionnel::all(),
+               'mesOffres'=>  Offre::select('*')
+        ->where([
+            ['vérification','acceptée'],
+            ['user_id',$user->id]
+               ])
+        ->get(),
+         'offreA'=> Offre::select('*')
+        ->where([
+            ['vérification','acceptée'],
+            ['user_id',$user->id]
+               ])
+        ->count(),
+         'mesOffresR'=>  Offre::select('*')
+        ->where([
+            ['vérification','refusée'],
+            ['user_id',$user->id]
+               ])
+        ->get(),
+         'offreR'=> Offre::select('*')
+        ->where([
+            ['vérification','refusée'],
+            ['user_id',$user->id]
+               ])
+        ->count(),
+        'candidats'=> Candidature::all(),
+        
+        ];
+         return view('offre.mesPropositions')->with($data);
+    }
+   
+     public function supprimerOffre($id)
+    { $user= Auth::user();
+        $data = [
+            'user' => $user,
+            'professionnels'=>Professionnel::all(),
+               'mesOffres'=>  Offre::select('*')
+        ->where([
+            ['vérification','acceptée'],
+            ['user_id',$user->id]
+               ])
+        ->get(),
+         'offreA'=> Offre::select('*')
+        ->where([
+            ['vérification','acceptée'],
+            ['user_id',$user->id]
+               ])
+        ->count(),
+         'mesOffresR'=>  Offre::select('*')
+        ->where([
+            ['vérification','refusée'],
+            ['user_id',$user->id]
+               ])
+        ->get(),
+         'offreR'=> Offre::select('*')
+        ->where([
+            ['vérification','refusée'],
+            ['user_id',$user->id]
+               ])
+        ->count(),
+        ];
+         $offre = Offre::where('id',$id)->first();
+         if ($offre != null) {
+        $offre->delete();
+       return view('offre.mesPropositions')->with($data);
+    }
+       
+         return view('offre.mesPropositions')->with($data);
+    }
+    public function categories()
+    {
+        $cats = Offre::select('*')
+        ->where([
+            ['vérification','acceptée'],
+            ['statut','ouverte']
+        ])->get();
+            //->groupBy('vat')
+            //->orderBy(\Offre::raw('count(cat)', 'DESC'))
+            //->take(3)
+            //->lists('cat');
+            return view('welcome',compact('cats'));
+    }
+    public function candidats($id)
+    {
+     $candidats= Candidature::select("*")
+     ->where('offre_id',$id)
+     ->get();
+     return view('myModal5',compact('candidats'));
+    }
+
 }

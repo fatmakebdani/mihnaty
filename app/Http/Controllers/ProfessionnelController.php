@@ -10,6 +10,10 @@ use App\PosteCourant;
 use App\Experience;
 use Auth;
 use App\User;
+use App\Candidature;
+use App\Jury;
+use App\Offre;
+use App\Fichee;
 use Illuminate\Support\Facades\Storage;
 
 class ProfessionnelController extends Controller
@@ -224,11 +228,14 @@ class ProfessionnelController extends Controller
         if(auth()->user()->id !== $professionnel->user_id){
             return redirect('/professionnel'.'/'. $professionnel->id . '/edit')->with('error', 'Unauthorized Page');
         }
+       
 
         $data = [
             'professionnel' => $professionnel,
-        ];
-        return view('professionnel.edit')->with('professionnel', $professionnel);
+            'experiences' => Experience::where('user_id', Auth::user()->id)->get(),
+            'fiche' =>Fichee::where('user_id', Auth::user()->id)->first(),
+               ];
+        return view('professionnel.edit')->with( $data);
     }
     /**
      * Update the specified resource in storage.
@@ -283,32 +290,7 @@ class ProfessionnelController extends Controller
 
         $user->save();
 
-        for ($i=1; $i <= $user->experiences->count() ; $i++) {
-            $experience = Experience::find(intval($request->input('experience_id_'.$i)));
-            $experience->entreprise = $request->input('nom_en_'.$i);
-            $experience->titre = $request->input('titre_en_'.$i);
-            $experience->debut = $request->input('date_debut_'.$i);
-            $experience->fin = $request->input('date_fin_'.$i);
-            //EXPERIENCE IMAGE
-            // make thumbnails
-
-            if($request->hasFile('contrat_file'.$i)){
-                // Get filename with the extension
-                $filenameWithExt = $request->file('contrat_file_'.$i)->getClientOriginalName();
-                // Get just filename
-                $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
-                // Get just ext
-                $extension = $request->file('contrat_file_'.$i)->getClientOriginalExtension();
-                // Filename to store
-                $fileNameToStore2= $filename.'_'.time().'.'.$extension;
-                // Upload Image
-                $path = $request->file('contrat_file_'.$i)->storeAs('public/experience', $fileNameToStore2);
-                Storage::delete('public/experience/'.$experience->file);
-                $experience->file = $fileNameToStore2;
-
-            }
-            $experience->save();
-        }
+    
 
         $poste = PosteCourant::find($user->poste_courant->id);
         $poste->entreprise = $request->input('nom_en_c');
@@ -335,39 +317,7 @@ class ProfessionnelController extends Controller
         $poste->save();
 
 
-        for ($i=1; $i <= $user->diplomes->count() ; $i++) {
-            //DIPLOME IMAGE
-            $diplome = Diplome::find(intval($request->input('diplome_id_'.$i)));
-            $diplome->titre = $request->input('diplome_'.$i);
-            $diplome->etablisement = $request->input('diplome_en_'.$i);
-            $diplome->debut = $request->input('date_debut_d_'.$i);
-            $diplome->fin = $request->input('date_fin_d_'.$i);
-
-            // Get filename with the extension
-            if($request->hasFile('diplome_file_'.$i)){
-                Storage::delete('public/diplome/'.$diplome->file);
-                // Get filename with the extension
-                $filenameWithExt = $request->file('diplome_file_'.$i)->getClientOriginalName();
-                // Get just filename
-                $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
-                // Get just ext
-                $extension = $request->file('diplome_file_'.$i)->getClientOriginalExtension();
-                // Filename to store
-                $fileNameToStore4= $filename.'_'.time().'.'.$extension;
-                // Upload Image
-                $path = $request->file('diplome_file_'.$i)->storeAs('public/diplome', $fileNameToStore4);
-                $diplome->file = $fileNameToStore4;
-
-            }
-
-            $diplome->save();
-        }
-
-        for ($i=1; $i <= $user->competences->count() ; $i++) {
-            $competence = Competence::find(intval($request->input('competence_id_'.$i)));
-            $competence->titre = $request->input('competence_'.$i);
-            $competence->save();
-        }
+       
 
 
 
@@ -384,5 +334,54 @@ class ProfessionnelController extends Controller
     {
         //
     }
+     public function afficherExaminations()
+    {
+        $auth = Auth::user();
+        $prof = Professionnel::where('user_id',$auth->id)->first();
+         $data = [
+        
+            'jurys'=>Jury::select('*')
+        ->where([
+            ['professionnel_id',$prof->id]
+               ])
+        ->get(),
+         'nbrE'=> Jury::select('*')
+        ->where([
+            ['professionnel_id',$prof->id]
+               ])
+        ->count(),
+        'candidats'=>Candidature::all(),
+    ];
+        ///$candidatures = Candidature::where('candidat_id',$auth->id)->get();
+       // $candidatures = Offre::where('id',$offres->offre_id)->get();
+       // $offres= Offre::all();
+        //$candidatures= $offres::where([
+            //['id_candidat',$auth->id],
+           // ['id_offre',$offres->id]
 
+       // ])->get();
+        
+        return view('MesExaminations')->with($data);
+        
+    }
+    public function changerStatut($id)
+    {
+       Offre::where('id',$id)->update(['statut'=>'cloturée']);
+        return redirect('mesPropositions');
+    }
+     public function passerExamination($id)
+    {
+       Offre::where('id',$id)->update(['statut'=>'en_cours_examination']);
+        return redirect('mesPropositions');
+    }
+    public function Evaluer($id)
+    {
+
+        $evaluation->jury_id = $id;
+        $evaluation->candidature_id = $request->input('candidature_id');
+        $evaluation->save();
+        return redirect('MesExaminations');
+
+    }
+   
 }

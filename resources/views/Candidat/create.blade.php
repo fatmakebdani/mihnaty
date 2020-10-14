@@ -173,25 +173,7 @@
                         </div>
 
                     </div>
-                    <div class="row justify-content-center">
-                        <div class="col-md-6">
-                            <h6 class="title-5 m-b-35">Réseaux sociaux</h6>
-                            <div class="statistic-chart-1"style="background-color:#A6A4BB;">
-                                <img src="assets/img/icon/instag.png"  />
-                                <label>Instagram</label>
-                                <input name="insta" type="url" class="form-control" id="id_link"><br>
-
-                                <img src="assets/img/icon/lin.png"  />
-                                <label>Linkedin</label>
-                                <input name="linkedin" type="url" class="form-control" id="id_insta"><br>
-
-                                <img src="assets/img/icon/por.png"  />
-                                <label>Portfolio</label>
-                                <input name="portfolio" type="url" class="form-control" id="id_port"><br>
-
-                            </div>
-                        </div>
-                    </div>
+                 
                     <div class="row justify-content-center">
                          {{Form::submit('Enregistrer', ['class'=>'genric-btn primary-border circle'])}}
                     </div>

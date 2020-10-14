@@ -15,11 +15,19 @@
                 <i class="zmdi zmdi-file-text"></i> Ma fiche professionnelle
                 </a>
             </li>
+            @if($fiche == null)
             <li>
                 <a href="{{ route('fichee.create')}}">
                 <i class="zmdi zmdi-card-travel"></i> Ma fiche d'entreprise
                 </a>
             </li>
+            @else
+            <li>
+                <a href="{{ route('fichee.edit',$fiche->id)}}">
+                <i class="zmdi zmdi-card-travel"></i> Ma fiche d'entreprise
+                </a>
+            </li>
+            @endif
             <li>
                 <a href="{{ route('offre.create')}}">
                 <i class="fas fa-lightbulb"></i> Mes propositions
@@ -30,11 +38,7 @@
                 <i class="zmdi zmdi-check-square"></i> Mes examinations
                 </a>
             </li>
-             <li>
-                <a href="#">
-                <i class="fas fa-user-plus"></i> Mes invitations
-                </a>
-            </li>
+           
 
             </ul>
         </div>
@@ -74,7 +78,8 @@
                             <!-- CHART-->
                             <div class="statistic-chart-1"style="background-color:#A6A4BB">
                                 <div class="row">
-                                        <img  style="width:100%" src="/storage/app/public/user_images/{{$professionnel->user->user_photo}}" alt="cover_img">
+                                        <img  style="width:25%;height: 25%" src="{{url('/storage/user_images/'.$professionnel->user->user_photo)}} ">
+
                                         <label>Changer de photo</label>
                                         <input name="image" type="file"id="idI" accept="image/png, image/jpeg">
                                     </div>
@@ -109,7 +114,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-6">
+                         <div class="col-md-6">
                             <h6 class="title-5 m-b-35"style="color: #242b5e;" {{$i = 0}}>Expériences</h6>
                             <!-- CHART-->
 
@@ -122,8 +127,6 @@
 
                                 <label>Titre</label>
                                 <input name="titre_en_{{$i}}" type="text" class="form-control" id="id_TitreE" value="{{$experience->titre}}" required>
-
-                                
 
                                 <label>Date de début</label>
                                 <input name="date_debut_{{$i}}" type="date" id="id_DateD" value="{{$experience->debut}}" required><br>
@@ -209,16 +212,14 @@
                     </div>
                     <div class="row justify-content-center">
                         <div class="col-md-6">
-                            <h6 class="title-5 m-b-35">Réseaux sociaux</h6>
+                            <h6 class="title-5 m-b-35">Partager sur réseaux sociaux</h6>
                             <div class="statistic-chart-1"style="background-color:#A6A4BB;">
-                               <button type="button" class="btn btn-ins"><i class="fab fa-instagram pr-1"></i> Instagram</button><br>
+                               <a type="button" class="btn btn-ins" href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram pr-1"></i> Instagram</a><br>
 
-                               <button type="button" class="btn btn-git"><i class="fab fa-github pr-1"></i> Github</button><br>
+                               <a type="button" class="btn btn-linkedin"  href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin pr-1"></i> Linkedin</a><br>
+                                <a type="button" class="btn btn-linkedin"  href="https://www.portfolio.com/" target="_blank"><i class="fas fa-briefcase pr-1"></i> Portfolio</a><br>
 
 
-                                <img src="assets/img/icon/por.png"  />
-                                <label>Portfolio</label>
-                                <input name="portfolio" type="url" class="form-control" id="id_port" value="{{$professionnel->user->portfolio}}"><br>
 
                             </div>
                         </div>

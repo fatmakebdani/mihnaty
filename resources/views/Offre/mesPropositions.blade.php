@@ -22,15 +22,11 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="/MesExaminations">
                 <i class="zmdi zmdi-check-square"></i> Mes examinations
                 </a>
             </li>
-             <li>
-         <a href="/professionnel/invitations">
-          <i class="fas fa-user-plus"></i> Mes invitations
-          </a>
-        </li>
+            
 
             </ul>
         </div>
@@ -40,16 +36,19 @@
             <!-- BREADCRUMB-->
         
             <section class="au-breadcrumb2">
-            <div class="container ">
-                      <h2 class="mb-30"style="color:#fb246a">Mes propositions</h2>
+            <div class="container" >
+              <div class="genric-btn primary-border circle">
+                                                     <a aria-hidden="true" data-toggle="modal" data-target="#myModal1"> Nouvelle offre</a>
+                                                   </div>
+                      <h2 class="mb-30"style="color:#fb246a">Mes offres acceptées</h2>
+
                       <hr class="line-seprate">
                        <div class="row">
                                     <div class="col-lg-12">
                                         <div class="count-job mb-35">
-                                            <span>6 offres proposées</span>
+                                            
                                             <!-- Select job items start -->
-                                                 <div class="items-link items-link2 f-right">
-                                                     <a aria-hidden="true" data-toggle="modal" data-target="#myModal1"> Nouvelle offre</a>
+                                                 
 <div id="myModal1" class="modal" tabindex="-1" role="dialog"  aria-labelledby="myModal1">
   <div class="modal-dialog modal-lg" role="document">
 
@@ -84,7 +83,7 @@
                 <label  for="Ville" style="color: #242b5e; font-weight: bolder;">Emplacement</label><br>
                 <div class="wrapper">
                <select name="ville" size="1" class="form-control" >wilaya
-                                      <option value="1">Adrar</option><option value="2">Chlef</option><option value="3">Laghouat</option><option value="4">Oum El-Bouaghi</option><option value="5">Batna</option><option value="6">Bejaia</option><option value="7">Biskra</option><option value="8">Bechar</option><option value="9">Blida</option><option value="10">Bouira</option><option value="11">Tamanrassat</option><option value="12">Tebessa</option><option value="13">Tlemcen</option><option value="14">Tiaret</option><option value="15">Tizi-Ouzou</option><option value="16">Alger</option><option value="17">Djelfa</option><option value="18">Jijel</option><option value="19">Setif</option><option value="20">Saida</option><option value="21">Skikda</option><option value="22">Sidi-Bel-Abbes</option><option value="23">Annaba</option><option value="24">Guelma</option><option value="25">Constantine</option><option value="26">Médea</option><option value="27">Mostaganem</option><option value="28">M'sila</option><option value="29">Mascara</option><option value="30">Ouargla</option><option value="31">Oran</option><option value="32">El-Bayadh</option><option value="33">Illizi</option><option value="34">Bordj Bou-Arreridj</option><option value="35">Boumerdes</option><option value="36">El-Taref</option><option value="37">Tindouf</option><option value="38">Tissimsilt</option><option value="39">El-Oued</option><option value="40">khenchela</option><option value="41">Souk Ahras</option><option value="42">Tipaza</option><option value="43">Mila</option><option value="44">Ain Defla</option><option value="45">Naama</option><option value="46">Ain Timouchent</option><option value="47">Ghardaia</option><option value="48">Relizane</option>
+                                      <option value="Adrar">Adrar</option><option value="Chlef">Chlef</option><option value="Laghouat">Laghouat</option><option value="Oum El-Bouaghi">Oum El-Bouaghi</option><option value="Batna">Batna</option><option value="Bejaia">Bejaia</option><option value="Biskra">Biskra</option><option value="Bechar">Bechar</option><option value="Blida">Blida</option><option value="Bouira">Bouira</option><option value="Tamanrassat">Tamanrassat</option><option value="Tebessa">Tebessa</option><option value="Tlemcen">Tlemcen</option><option value="Tiaret">Tiaret</option><option value="Tizi-Ouzou">Tizi-Ouzou</option><option value="Alger">Alger</option><option value="Djelfa">Djelfa</option><option value="Jijel">Jijel</option><option value="Setif">Setif</option><option value="Saida">Saida</option><option value="Skikda">Skikda</option><option value="Sidi-Bel-Abbes">Sidi-Bel-Abbes</option><option value="Annaba">Annaba</option><option value="Guelma">Guelma</option><option value="Constantine">Constantine</option><option value="Médea">Médea</option><option value="Mostaganem">Mostaganem</option><option value="Msila">M'sila</option><option value="Mascara">Mascara</option><option value="Ouargla">Ouargla</option><option value="Oran">Oran</option><option value="El-Bayadh">El-Bayadh</option><option value="Illizi">Illizi</option><option value="Bordj Bou-Arreridj">Bordj Bou-Arreridj</option><option value="Boumerdes">Boumerdes</option><option value="El-Taref">El-Taref</option><option value="Tindouf">Tindouf</option><option value="Tissimsilt">Tissimsilt</option><option value="El-Oued">El-Oued</option><option value="khenchela">khenchela</option><option value="Souk Ahras">Souk Ahras</option><option value="Tipaza">Tipaza</option><option value="Mila">Mila</option><option value="Ain Defla">Ain Defla</option><option value="Naama">Naama</option><option value="Ain Timouchent">Ain Timouchent</option><option value="Ghardaia">Ghardaia</option><option value="Relizane">Relizane</option>
                                     </select>
               </div>
           </div><br>
@@ -92,47 +91,47 @@
                 <label  for="cat" style="color: #242b5e; font-weight: bolder;">Catégorie</label><br>
                 <div class="wrapper">
                <select name="cat" size="1" class="form-control"  data-live-search="true">
-                                     <option value="1">Commercial et marketing</option>
-                                        <option value="2">Commerce et vente</option>
-                                        <option value="3">Industrie et production</option>
-                                        <option value="4">Education et formations</option>
-                                        <option value="5">Bureatique et secretariat</option>
-                                        <option value="6">Beauté et Esthétique</option>
-                                        <option value="7">Tourisme et Gastronomie</option>
-                                        <option value="8">Nettoyage et Hygiéne</option>
-                                        <option value="9">Génie logiciel</option>
-                                        <option value="10">développement web</option>
-                                        <option value="11">développement mobile</option>
-                                        <option value="12">Programmation</option>
-                                        <option value="13">Base de données</option>
-                                        <option value="14">Cryptographie</option>
-                                        <option value="15">Photographie</option>
-                                        <option value="16">Analyse des donnés</option>
-                                        <option value="17">Réseau</option>
-                                        <option value="18">Développement jeux vidéo</option>
-                                        <option value="19">Systeme d'informations</option>
-                                        <option value="20">Securité</option>
-                                        <option value="21">Comptabilité et Audit</option>
-                                        <option value="22">Couture et Confection</option>
-                                        <option value="23">Graphisme et Communication</option>
-                                        <option value="24">Administration et Management</option>
-                                        <option value="25">Mécanique Auto</option>
-                                        <option value="26">Transport et Chauffeurs</option>
-                                        <option value="27">Agents polyvalents</option>
-                                        <option value="28">Eléctronique et Téchnique</option>
-                                        <option value="29">Artisanat</option>
-                                        <option value="30">Immobilier</option>
-                                        <option value="31">Achat et Logistique</option>
-                                        <option value="32">Environnement</option>
-                                        <option value="33">Journalisme et Presse</option>
-                                        <option value="34">Recherche</option>
-                                        <option value="35">Juridique</option>
-                                        <option value="36">Carburants et Mines</option>
-                                        <option value="37">Construction et Travaux</option>
-                                        <option value="38">Medecine et Santé</option>
-                                        <option value="39">Télecom</option>
-                                        <option value="40">Banque,Assurances</option>
-                                        <option value="41">Autre</option>
+                                     <option value="Commercial et marketing">Commercial et marketing</option>
+                                        <option value="Commerce et vente">Commerce et vente</option>
+                                        <option value="Industrie et production">Industrie et production</option>
+                                        <option value="Education et formations">Education et formations</option>
+                                        <option value="Bureatique et secretariat">Bureatique et secretariat</option>
+                                        <option value="Beauté et Esthétique">Beauté et Esthétique</option>
+                                        <option value="Tourisme et Gastronomie">Tourisme et Gastronomie</option>
+                                        <option value="Nettoyage et Hygiéne">Nettoyage et Hygiéne</option>
+                                        <option value="Génie logiciel">Génie logiciel</option>
+                                        <option value="Développement web">Développement web</option>
+                                        <option value="Développement mobile">Développement mobile</option>
+                                        <option value="Programmation">Programmation</option>
+                                        <option value="Base de données">Base de données</option>
+                                        <option value="Cryptographie">Cryptographie</option>
+                                        <option value="Photographie">Photographie</option>
+                                        <option value="Analyse des données">Analyse des données</option>
+                                        <option value="Réseau">Réseau</option>
+                                        <option value="Développement jeux vidéo">Développement jeux vidéo</option>
+                                        <option value="Systeme d'informations">Systeme d'informations</option>
+                                        <option value="Securité">Securité</option>
+                                        <option value="Comptabilité et Audit">Comptabilité et Audit</option>
+                                        <option value="Couture et Confection">Couture et Confection</option>
+                                        <option value="Graphisme et Communication">Graphisme et Communication</option>
+                                        <option value="Administration et Management">Administration et Management</option>
+                                        <option value="Mécanique Auto">Mécanique Auto</option>
+                                        <option value="Transport et Chauffeurs">Transport et Chauffeurs</option>
+                                        <option value="Agents polyvalents">Agents polyvalents</option>
+                                        <option value="Eléctronique et Téchnique">Eléctronique et Téchnique</option>
+                                        <option value="Artisanat">Artisanat</option>
+                                        <option value="Immobilier">Immobilier</option>
+                                        <option value="Achat et Logistique">Achat et Logistique</option>
+                                        <option value="Environnement">Environnement</option>
+                                        <option value="Journalisme et Presse">Journalisme et Presse</option>
+                                        <option value="Recherche">Recherche</option>
+                                        <option value="Juridique">Juridique</option>
+                                        <option value="Carburants et Mines">Carburants et Mines</option>
+                                        <option value="Construction et Travaux">Construction et Travaux</option>
+                                        <option value="Medecine et Santé">Medecine et Santé</option>
+                                        <option value="Télecom">Télecom</option>
+                                        <option value="Banque,Assurances">Banque,Assurances</option>
+                                        <option value="Autre">Autre</option>
                                     </select>
               </div>
           </div><br>
@@ -144,12 +143,12 @@
               <div class="row justify-content-center">
                                 <label style="color: #242b5e; font-weight: bolder;">Sexe</label><br>
 
-                <input type="radio" name="sexe" id="id_sexe" value="H">
+                <input type="radio" name="sexe" id="id_sexe" value="Homme">
                                 <label>Homme</label>
 
-                                <input type="radio" name="sexe" id="id_sexe" value="F">
+                                <input type="radio" name="sexe" id="id_sexe" value="Femme">
                                 <label>Femme</label>
-                                <input type="radio" name="sexe" id='id_sexe' value="Q">
+                                <input type="radio" name="sexe" id='id_sexe' value="Quelconque">
                                 <label>Quelconque</label><br>
 
 
@@ -172,7 +171,7 @@
                 
               </div>
                <div class="row justify-content-center">
-                   <label style="color: #242b5e; font-weight: bolder;">Dernier délais</label>
+                   <label style="color: #242b5e; font-weight: bolder;">Dernier délais de candidature</label>
                                     <input name="dernier_delais" type="date" id="id_dernier_delais" ><br>
 
               </div>
@@ -186,9 +185,18 @@
                                     <input name="date_fonction" type="date" id="id_date_fonction" ><br>
 
               </div>
-
+              <div class="row justify-content-center">
+                <label style="color: #242b5e;font-weight: bolder;">Membre de jury</label>
+               <select class="form-control" multiple size="4" name="jurys[]" >
+                                        <option  disabled selected></option>
+                                        @foreach ($professionnels as $professionnel)
+                                        
+                                        <option value="{{$professionnel->id}}">{{$professionnel->nom}}</option>
+                                        @endforeach
+                                    </select>  
+                </div>
   
-
+               
          
         
     
@@ -216,67 +224,232 @@
                                 </div>
                             </div>
           
-         
+       
                         <div class="row justify-content-center">
                              <section class="featured-job-area">
-                            <div class="container">
+                            <div class="container" style="padding-bottom:20px; border-bottom: 1px solid #black;">
                                 <!-- Count of Job list Start -->
                                 
                                 <!-- Count of Job list End -->
                                 <!-- single-job-content -->
+                                @if ($offreA ?? ''>0)
+                                <span>{{$offreA ?? '' ?? ''}} offres acceptées</span>
+                                  @foreach($mesOffres ?? '' as $monOffre)
                                 <div class="single-job-items mb-30">
                                     <div class="job-items">
+                                       <div class="company-img">
+                                            <a><img width="85px;" height="85px;" src="{{url('/storage/entreprise_images/'.$monOffre->user->fichee->entreprise_photo)}}"></a>
+                                        </div>
         
                                         <div class="job-tittle job-tittle2">
                                             <a href="#">
-                                                <h4>Digital Marketer</h4>
+                                                <h4>{{$monOffre->titre}}</h4>
                                             </a>
                                             <ul>
-                                                <li>Creative Agency</li>
-                                                <li><i class="fas fa-map-marker-alt"></i>Athens, Greece</li>
-                                                <li>$3500 - $4000</li>
+                                                <li><i class="fas fa-map-marker-alt"></i>{{$monOffre->ville}}</li>
+                                                <li>{{$monOffre->salaire}}</li>
+                                                 <li style="background-color:#fb246a; color:  #242b5e;">{{$monOffre->statut}}</li>
                                             </ul>
                                         </div>
                                     </div>
-                                     <div class="items-link items-link2 f-right">
-                                                     <a aria-hidden="true" data-toggle="modal" data-target="#myModal3"> Voir détail</a>
-<div id="myModal3" class="modal" tabindex="-1" role="dialog"  aria-labelledby="myModal1">
+                                    <div class="nav-item dropdown">
+                                <a id="navbarDropdown" class="genric-btn primary-border circle"  data-toggle="dropdown">
+                                    options <span class="caret"></span>
+                                </a>
+                                    <div class="dropdown-menu dropdown-menu-left" aria-labelledby="navbarDropdown">
+                                 <a href="#" aria-hidden="true" data-toggle="modal" data-target="#myModal3{{$monOffre->id}}"style="font-size: 13px;color: black"> Voir détail</a><br>
+                                <a href="/supprimer-offre/{{$monOffre->id}}" style="font-size: 13px;color: black">
+                                        Modifier</a><br>
+                                          <a href="#" aria-hidden="true" data-toggle="modal" data-target="#myModal5{{$monOffre->id}}"style="font-size: 13px;color: black"> Voir les candidatures</a><br>
+                                        @if($monOffre->statut=='ouverte')
+                                         <a href="/changerStatut/{{$monOffre->id}}" style="font-size: 13px;color: black">
+                                        Fermer les candidatures</a>
+                                        @elseif($monOffre->statut=='cloturée')
+                                         <a href="/passerExamination/{{$monOffre->id}}" style="font-size: 13px;color: black">
+                                         Passer à l'examination </a>
+                                        @else
+                                         <a href="/supprimer-offre/{{$monOffre->id}}"style="font-size: 13px;color: black" >
+                                        Supprimer</a>
+                                        @endif
+                                  
+                              </div>
+                            </div>
+                                    
+<div id="myModal3{{$monOffre->id}}" class="modal" tabindex="-1" role="dialog"  aria-labelledby="myModal1">
   <div class="modal-dialog modal-lg" role="document">
 
     <!-- Modal content-->
     <div class="modal-content">
      
   <div class="modal-header">
-    <div class="modal-title" style="color:#fb246a; font-weight: bolder;">offre</div>
+    <div class="modal-title" style="color:#fb246a; font-weight: bolder;">{{$monOffre->titre}}</div>
       <button type="button" class="close" data-dismiss="modal">X</button>
     </div>
     <div class="modal-body">
-     <section class="site-section">
-      <div class="container">
-
-        <div class="row align-items-center mb-5">
-          <div class="col-lg-8 mb-4 mb-lg-0">
-            <div class="d-flex align-items-center">
-              <div>
-              
-              </div>
-            </div>
-          </div>
-        </div>
-        
-         
-        
-    
-      </div>
-    </section>
+    <ul class="list-unstyled pl-3 mb-0">
+              <li class="mb-2"><strong class="text-black">Titre:</strong>{{$monOffre->titre}}</li>
+              <li class="mb-2"><strong class="text-black">Entreprise:</strong>{{$monOffre->user->fichee->nom}}</li>
+              <li class="mb-2"><strong class="text-black">Emplacement:</strong> {{$monOffre->ville}}</li>
+              <li class="mb-2"><strong class="text-black">Catégorie:</strong>{{$monOffre->cat}}</li>
+              <li class="mb-2"><strong class="text-black">Description de l'offre:</strong>{{$monOffre->description}}</li>
+              <li class="mb-2"><strong class="text-black">Sexe:</strong>{{$monOffre->sexe}}</li>
+              <li class="mb-2"><strong class="text-black">Salaire:</strong>{{$monOffre->salaire}}<strong class="text-black">DA</strong></li>
+              <li class="mb-2"><strong class="text-black">dernier délais de candidature:</strong>{{$monOffre->dernier_delais}}</li>
+              <li class="mb-2"><strong class="text-black">date de notification:</strong>{{$monOffre->date_notif}}</li>
+              <li class="mb-2"><strong class="text-black">date prise en fonction:</strong>{{$monOffre->date_fonction}}</li> 
+          </ul>
 
 </div>
  <div class="modal-footer">
-      <div class="items-link items-link2 f-right">
-                                        <a href="#">Poster</a>
-                                    </div>
+      
+                              
                                       <div class="items-link items-link2 f-right" data-dismiss="modal">
-                                        <a href="#">Annuler</a>
+                                        <a href="#">Fermer</a>
+                                    </div>
+                                       
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div id="myModal5{{$monOffre->id}}" class="modal" tabindex="-1" role="dialog"  aria-labelledby="myModal1">
+  <div class="modal-dialog modal-lg" role="document">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+     
+  <div class="modal-header">
+    <div class="modal-title" style="color:#fb246a; font-weight: bolder;">{{$monOffre->titre}}</div>
+      <button type="button" class="close" data-dismiss="modal">X</button>
+    </div>
+    <div class="modal-body">
+    
+      @if($candidats==0)
+        <p>pas de candidatures</p>
+        @else
+     <table class="table">
+      <thead>
+        <tr>
+          <th style="color: #242b5e;">#</th><th style="color:#242b5e; ">Candidat</th>
+        </tr>
+      </thead>
+      <tbody>
+
+      @foreach($candidats as $key=>$candidat)
+      
+      <tr>
+        @if($candidat->offre_id == $monOffre->id)
+        
+                        <th>{{++$key}}</th><th>{{$candidat->user->nom}}&nbsp;{{$candidat->user->prenom}}</th>
+                        @endif
+                        </tr>
+                      
+                        @endforeach
+                        </tbody>
+
+          </table>
+@endif
+</div>
+   
+                                   <div class="modal-footer">
+      
+                              
+                                      <div class="items-link items-link2 f-right" data-dismiss="modal">
+                                        <a href="#">Fermer</a>
+                                    </div>
+                                       
+                                </div>
+
+      </div>
+                                        
+                                            <!--  Select job items End-->
+                                        </div>
+                                    </div>
+                                  </div>
+                                                                @endforeach
+                                @else 
+
+                                <p>Pas d'offre proposées</p>
+                              @endif 
+                                <!-- single-job-content -->
+                              
+                                <!-- single-job-content -->
+                                
+                                <!-- single-job-content -->
+                                
+                               
+                                <!-- single-job-content -->
+                               
+                            </div>
+                        </section>
+                                    
+                                </div>
+                                <hr class="line-seprate">
+                                 <h2 class="mb-30"style="color:#fb246a">Mes offres refusées</h2>
+                                 <div class="row justify-content-center">
+                             <section class="featured-job-area">
+                            <div class="container">
+                                <!-- Count of Job list Start -->
+                                
+                                <!-- Count of Job list End -->
+                                <!-- single-job-content -->
+                                 @if ($offreR ?? ''>0)
+                                  <span>{{$offreR ?? ''}} offres refusées</span>
+                                  @foreach($mesOffresR ?? '' as $monOffre)
+                               <div class="single-job-items mb-30">
+                                    <div class="job-items">
+                                       <div class="company-img">
+                                            <a><img width="85px;" height="85px;" src="{{url('/storage/entreprise_images/'.$monOffre->user->fichee->entreprise_photo)}}"></a>
+                                        </div>
+        
+                                        <div class="job-tittle job-tittle2">
+                                            <a href="#">
+                                                <h4>{{$monOffre->titre}}</h4>
+                                            </a>
+                                            <ul>
+                                                <li>{{$monOffre->user->fichee->nom}}
+                                                <li><i class="fas fa-map-marker-alt"></i>{{$monOffre->ville}}</li>
+                                                <li>{{$monOffre->salaire}}</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                     <div class="items-link items-link2 f-right">
+                                                     <a aria-hidden="true" data-toggle="modal" data-target="#myModal3{{$monOffre->id}}"> Voir détail</a>
+                                                   </div>
+<div id="myModal3{{$monOffre->id}}" class="modal" tabindex="-1" role="dialog"  aria-labelledby="myModal1">
+  <div class="modal-dialog modal-lg" role="document">
+
+    <!-- Modal content-->
+   <div class="modal-content">
+     
+  <div class="modal-header">
+    <div class="modal-title" style="color:#fb246a; font-weight: bolder;">{{$monOffre->titre}}</div>
+      <button type="button" class="close" data-dismiss="modal">X</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-body">
+    <ul class="list-unstyled pl-3 mb-0">
+              <li class="mb-2"><strong class="text-black">Titre:</strong>{{$monOffre->titre}}</li>
+              <li class="mb-2"><strong class="text-black">Entreprise:</strong>{{$monOffre->user->fichee->nom}}</li>
+              <li class="mb-2"><strong class="text-black">Emplacement:</strong> {{$monOffre->ville}}</li>
+              <li class="mb-2"><strong class="text-black">Catégorie:</strong>{{$monOffre->cat}}</li>
+              <li class="mb-2"><strong class="text-black">Description de l'offre:</strong>{{$monOffre->description}}</li>
+              <li class="mb-2"><strong class="text-black">Sexe:</strong>{{$monOffre->sexe}}</li>
+              <li class="mb-2"><strong class="text-black">Salaire:</strong>{{$monOffre->salaire}}<strong class="text-black">DA</strong></li>
+              <li class="mb-2"><strong class="text-black">dernier délais de candidature:</strong>{{$monOffre->dernier_delais}}</li>
+              <li class="mb-2"><strong class="text-black">date de notification:</strong>{{$monOffre->date_notif}}</li>
+              <li class="mb-2"><strong class="text-black">date prise en fonction:</strong>{{$monOffre->date_fonction}}</li> 
+          </ul>
+
+</div>
+ <div class="modal-footer">
+       <div class="items-link items-link2 f-right">
+          <a href="/supprimer-offre/{{$monOffre->id}}" >
+                                        Supprimer
+    </div>
+   
+                                      </a>
+                                      <div class="items-link items-link2 f-right" data-dismiss="modal">
+                                        <a href="#">Fermer</a>
                                     </div>
       </div>
                                         
@@ -285,125 +458,128 @@
                                     </div>
                                 </div>
                             </div>
-                                </div>
+                                @endforeach
+                                @else
+                                <p>Pas d'offres refusées</p>
+                                @endif
+                               
                                 <!-- single-job-content -->
-                                <div class="single-job-items mb-30">
+                              
+                                <!-- single-job-content -->
+                                
+                                <!-- single-job-content -->
+                                
+                               
+                                <!-- single-job-content -->
+                               
+                            </div>
+                        </section>
+                                    
+                                </div>
+                                  <hr class="line-seprate">
+                                 <h2 class="mb-30"style="color:#fb246a">Mes offres en attente</h2>
+                                 <div class="row justify-content-center">
+                             <section class="featured-job-area">
+                            <div class="container">
+                                <!-- Count of Job list Start -->
+                                
+                                <!-- Count of Job list End -->
+                                <!-- single-job-content -->
+                                 @if ($offreS ?? ''>0)
+                                  <span>{{$offreS ?? ''}} offres en attente</span>
+                                  @foreach($mesOffresS ?? '' as $monOffre)
+                               <div class="single-job-items mb-30">
                                     <div class="job-items">
+                                       <div class="company-img">
+                                            <a><img width="85px;" height="85px;" src="{{url('/storage/entreprise_images/'.$monOffre->user->fichee->entreprise_photo)}}"></a>
+                                        </div>
+        
+                                        <div class="job-tittle job-tittle2">
+                                            <a href="#">
+                                                <h4>{{$monOffre->titre}}</h4>
+                                            </a>
+                                            <ul>
+                                                <li>{{$monOffre->user->fichee->nom}}
+                                                <li><i class="fas fa-map-marker-alt"></i>{{$monOffre->ville}}</li>
+                                                <li>{{$monOffre->salaire}}</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                     <div class="items-link items-link2 f-right">
+                                                     <a aria-hidden="true" data-toggle="modal" data-target="#myModal3{{$monOffre->id}}"> Voir détail</a>
+                                                   </div>
+<div id="myModal3{{$monOffre->id}}" class="modal" tabindex="-1" role="dialog"  aria-labelledby="myModal1">
+  <div class="modal-dialog modal-lg" role="document">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+     
+  <div class="modal-header">
+    <div class="modal-title" style="color:#fb246a; font-weight: bolder;">{{$monOffre->titre}}</div>
+      <button type="button" class="close" data-dismiss="modal">X</button>
+    </div>
+    <div class="modal-body">
+     <div class="modal-body">
+    <ul class="list-unstyled pl-3 mb-0">
+              <li class="mb-2"><strong class="text-black">Titre:</strong>{{$monOffre->titre}}</li>
+              <li class="mb-2"><strong class="text-black">Entreprise:</strong>{{$monOffre->user->fichee->nom}}</li>
+              <li class="mb-2"><strong class="text-black">Emplacement:</strong> {{$monOffre->ville}}</li>
+              <li class="mb-2"><strong class="text-black">Catégorie:</strong>{{$monOffre->cat}}</li>
+              <li class="mb-2"><strong class="text-black">Description de l'offre:</strong>{{$monOffre->description}}</li>
+              <li class="mb-2"><strong class="text-black">Sexe:</strong>{{$monOffre->sexe}}</li>
+              <li class="mb-2"><strong class="text-black">Salaire:</strong>{{$monOffre->salaire}}<strong class="text-black">DA</strong></li>
+              <li class="mb-2"><strong class="text-black">dernier délais de candidature:</strong>{{$monOffre->dernier_delais}}</li>
+              <li class="mb-2"><strong class="text-black">date de notification:</strong>{{$monOffre->date_notif}}</li>
+              <li class="mb-2"><strong class="text-black">date prise en fonction:</strong>{{$MonOffre->date_fonction}}</li> 
+          </ul>
+
+</div>
+ <div class="modal-footer">
+   <div class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    options <span class="caret"></span>
+                                </a>
+                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                
+                                <a href="/supprimer-offre/{{$monOffre->id}}" >
+                                        Modifier</a>
+                                        @if($monOffre->statut=='cloturée')
+                                         <a href="/supprimer-offre/{{$monOffre->id}}" >
+                                        Fermer les candidatures</a>
+                                        @else
+                                         <a href="/supprimer-offre/{{$monOffre->id}}" >
+                                        Supprimer</a>
+                                        @endif
+                                  
+                              </div>
+                                  
+                              </div>
+      
+   
+                                    
+                                    
+      </div>
                                         
-                                        <div class="job-tittle job-tittle2">
-                                            <a href="#">
-                                                <h4>Digital Marketer</h4>
-                                            </a>
-                                            <ul>
-                                                <li>Creative Agency</li>
-                                                <li><i class="fas fa-map-marker-alt"></i>Athens, Greece</li>
-                                                <li>$3500 - $4000</li>
-                                            </ul>
+                                            <!--  Select job items End-->
                                         </div>
                                     </div>
-                                    <div class="items-link items-link2 f-right">
-                                        <a href="job_details.html">Full Time</a>
-                                        <span>7 hours ago</span>
-                                    </div>
                                 </div>
+                            </div>
+                          </div>
+                                @endforeach
+                                @else
+                                <p>Pas d'offres en attente</p>
+                                @endif
+                               
                                 <!-- single-job-content -->
-                                <div class="single-job-items mb-30">
-                                    <div class="job-items">
-                                      
-                                        <div class="job-tittle job-tittle2">
-                                            <a href="#">
-                                                <h4>Digital Marketer</h4>
-                                            </a>
-                                            <ul>
-                                                <li>Creative Agency</li>
-                                                <li><i class="fas fa-map-marker-alt"></i>Athens, Greece</li>
-                                                <li>$3500 - $4000</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="items-link items-link2 f-right">
-                                        <a href="job_details.html">Full Time</a>
-                                        <span>7 hours ago</span>
-                                    </div>
-                                </div>
+                              
                                 <!-- single-job-content -->
-                                <div class="single-job-items mb-30">
-                                    <div class="job-items">
-                                        <div class="job-tittle job-tittle2">
-                                            <a href="#">
-                                                <h4>Digital Marketer</h4>
-                                            </a>
-                                            <ul>
-                                                <li>Creative Agency</li>
-                                                <li><i class="fas fa-map-marker-alt"></i>Athens, Greece</li>
-                                                <li>$3500 - $4000</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="items-link items-link2 f-right">
-                                        <a href="job_details.html">Full Time</a>
-                                        <span>7 hours ago</span>
-                                    </div>
-                                </div>
+                                
                                 <!-- single-job-content -->
-                                <div class="single-job-items mb-30">
-                                    <div class="job-items">
-                                        <div class="job-tittle job-tittle2">
-                                            <a href="#">
-                                                <h4>Digital Marketer</h4>
-                                            </a>
-                                            <ul>
-                                                <li>Creative Agency</li>
-                                                <li><i class="fas fa-map-marker-alt"></i>Athens, Greece</li>
-                                                <li>$3500 - $4000</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="items-link items-link2 f-right">
-                                        <a href="job_details.html">Full Time</a>
-                                        <span>7 hours ago</span>
-                                    </div>
-                                </div>
+                                
+                               
                                 <!-- single-job-content -->
-                                <div class="single-job-items mb-30">
-                                    <div class="job-items">
-                                        
-                                        <div class="job-tittle job-tittle2">
-                                            <a href="#">
-                                                <h4>Digital Marketer</h4>
-                                            </a>
-                                            <ul>
-                                                <li>Creative Agency</li>
-                                                <li><i class="fas fa-map-marker-alt"></i>Athens, Greece</li>
-                                                <li>$3500 - $4000</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="items-link items-link2 f-right">
-                                        <a href="job_details.html">Full Time</a>
-                                        <span>7 hours ago</span>
-                                    </div>
-                                </div>
-                                <!-- single-job-content -->
-                                <div class="single-job-items mb-30">
-                                    <div class="job-items">
-                                     
-                                        <div class="job-tittle job-tittle2">
-                                            <a href="#">
-                                                <h4>Digital Marketer</h4>
-                                            </a>
-                                            <ul>
-                                                <li>Creative Agency</li>
-                                                <li><i class="fas fa-map-marker-alt"></i>Athens, Greece</li>
-                                                <li>$3500 - $4000</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="items-link items-link2 f-right">
-                                        <a href="job_details.html">Full Time</a>
-                                        <span>7 hours ago</span>
-                                    </div>
-                                </div>
+                               
                             </div>
                         </section>
                                     

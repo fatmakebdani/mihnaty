@@ -15,13 +15,9 @@
                 <i class="zmdi zmdi-file-text"></i> Ma fiche professionnelle
                 </a>
             </li>
+         
             <li>
-                <a href="/MaFicheE">
-                <i class="zmdi zmdi-card-travel"></i> Ma fiche d'entreprise
-                </a>
-            </li>
-            <li>
-                <a href="/MesPropositions">
+                <a href="/mes_candidatures">
                 <i class="fas fa-lightbulb"></i> Mes candidatures
                 </a>
             </li>
@@ -64,7 +60,7 @@
                             <!-- CHART-->
                             <div class="statistic-chart-1"style="background-color:#A6A4BB">
                                 <div class="row">
-                                        <img src="/storage/user_images/{{$candidat->user->user_photo}}" alt="cover_img">
+                                           <img  style="width:25%;height: 25%" src="{{url('/storage/user_images/'.$candidat->user->user_photo)}} ">
                                         <label>Changer de photo</label>
                                         <input name="image" type="file"id="idI" accept="image/png, image/jpeg">
                                 </div>
@@ -195,21 +191,17 @@
                         </div>
 
                     </div>
-                    <div class="row justify-content-center">
+                   
+                        <div class="row justify-content-center">
                         <div class="col-md-6">
-                            <h6 class="title-5 m-b-35">Réseaux sociaux</h6>
+                            <h6 class="title-5 m-b-35">Partager sur réseaux sociaux</h6>
                             <div class="statistic-chart-1"style="background-color:#A6A4BB;">
-                                <img src="assets/img/icon/instag.png"  />
-                                <label>Instagram</label>
-                                <input name="insta" type="url" class="form-control" id="id_link" value="{{$candidat->user->insta}}"><br>
+                               <a type="button" class="btn btn-ins" href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram pr-1"></i> Instagram</a><br>
 
-                                <img src="assets/img/icon/lin.png"  />
-                                <label>Linkedin</label>
-                                <input name="linkedin" type="url" class="form-control" id="id_insta" value="{{$candidat->user->linkedin}}"><br>
+                               <a type="button" class="btn btn-linkedin"  href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin pr-1"></i> Linkedin</a><br>
+                                <a type="button" class="btn btn-linkedin"  href="https://www.portfolio.com/" target="_blank"><i class="fas fa-briefcase pr-1"></i> Portfolio</a><br>
 
-                                <img src="assets/img/icon/por.png"  />
-                                <label>Portfolio</label>
-                                <input name="portfolio" type="url" class="form-control" id="id_port" value="{{$candidat->user->portfolio}}"><br>
+
 
                             </div>
                         </div>

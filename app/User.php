@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-
+use Auth;
 class User extends Authenticatable
 {
     use Notifiable;
@@ -37,7 +37,10 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-
+    public function hasRole($role)
+    {  
+      return $this->role == $role;
+    }
     public function experiences()
     {
         return $this->hasMany('App\Experience');
@@ -65,5 +68,21 @@ class User extends Authenticatable
     {
         return $this->hasOne('App\Candidat');
     }
+    public function offres()
+    {
+        return $this->hasMany('App\Offre');
+    }
+    public function fichee()
+    {
+        return $this->hasOne('App\Fichee');
+    }
+    public function candidatures()
+    {
+        return $this->hasMany('App\Candidature');
+    }
+    public function employe()
+     {
+      return $this->hasOne('App\Employe');
+     }
 
 }

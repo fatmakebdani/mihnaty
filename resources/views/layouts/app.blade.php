@@ -90,7 +90,7 @@
                                         <ul id="navigation">
                                             <li><a href="/">Accueil</a></li>
                                             <li><a href="/lesOffres">Offres d'emploi</a></li>
-                                            <li><a href="/fiches entreprises">Fiches d'entreprise</a></li>
+                                            <li><a href="/entreprises">Fiches d'entreprise</a></li>
                                             <li><a href="/apropos">A propos</a></li>
                                             <li><a href="/contact">Contact</a></li>
                                         </ul>
@@ -100,12 +100,12 @@
                                 <div class="header-btn d-none f-right d-lg-block">
                                    @guest
                                     <a class="btn head-btn2" data-toggle="modal" data-target="#myModal">
-    {{ __('Connection') }}</a>
+    {{ __('Connexion') }}</a>
 <div class="modal custom-modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
     aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
-            <div class="modal-header">{{ __('Connection') }}
+            <div class="modal-header">{{ __('Connexion') }}
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
                     ×</button>
                 </div>
@@ -259,9 +259,22 @@
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->nom }}  {{ Auth::user()->prenom }} <span class="caret"></span>
                                 </a>
+                            
 
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href=""> Profile</a>
+                                      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                          @if(Auth::user()->hasRole(1))
+                                <a class="dropdown-item" href="/admin"> Profile</a>
+                                        @elseif (Auth::user()->hasRole('2'))
+            
+                                <a class="dropdown-item" href="/mes_candidatures"> Profile</a>
+                        
+
+                                      @else
+                    
+                                <a class="dropdown-item" href="/mesPropositions"> Profile</a>
+              @endif 
+
+                              
 
                                      <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();

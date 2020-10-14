@@ -18,7 +18,7 @@
         </a>
       </li>
       <li>
-        <a href="{{ route('offre.create')}}">
+        <a href="/offre/create">
           <i class="fas fa-lightbulb"></i> Mes propositions
         </a>
       </li>
@@ -27,11 +27,7 @@
           <i class="zmdi zmdi-check-square"></i> Mes examinations
         </a>
       </li>
-       <li>
-         <a href="/professionnel/invitations">
-          <i class="fas fa-user-plus"></i> Mes invitations
-          </a>
-        </li>
+    
     
     </ul>
   </div>
@@ -67,7 +63,7 @@
                             <div class="statistic-chart-1"style="background-color:#A6A4BB ">
                                 <div class="row">
                                     
-                                  <img src="/storage/user_images/{{$fichee->photo}}" alt="cover_img">
+                                  <img  style="width:25%;height: 25%" src="{{url('/storage/entreprise_images/'.$fichee->entreprise_photo)}} ">
                                         
                                     <label>Changer de photo</label>
                                     <input name="photo" type="file"id="idI" accept="image/png, image/jpeg">
@@ -122,8 +118,8 @@
                             <div class="statistic-chart-1"style="background-color:#A6A4BB ">
                     
                                     
-                                  
-                                
+                                 <h3> {{$gerant->nom}} {{$gerant->prenom}} </h3>
+                          
                                     
 
  
@@ -148,7 +144,9 @@
                             <h6 class="title-5 m-b-35"style="color: #242b5e;">Membres de l'entreprise</h6>
                             <!-- CHART-->
                             <div class="statistic-chart-1"style="background-color:#A6A4BB ">
-                                
+                                @foreach($employes as $employe)
+                                {{$employe->professionnel->nom}}
+                                @endforeach
                                         
                                
                     
