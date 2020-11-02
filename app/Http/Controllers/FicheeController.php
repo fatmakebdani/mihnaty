@@ -50,7 +50,7 @@ class FicheeController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'photo' => 'image|nullable|max:1999',
+            'entreprise_photo' => 'image|nullable|max:1999',
             'nom' => 'required',
             'adresse' => 'required',
             'code_postal' => 'required',
@@ -68,17 +68,17 @@ class FicheeController extends Controller
 
         // User image
         
-                if($request->hasFile('image')){
+                if($request->hasFile('entreprise_photo')){
             // Get filename with the extension
-            $filenameWithExt = $request->file('image')->getClientOriginalName();
+            $filenameWithExt = $request->file('entreprise_photo')->getClientOriginalName();
             // Get just filename
             $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
             // Get just ext
-            $extension = $request->file('image')->getClientOriginalExtension();
+            $extension = $request->file('entreprise_photo')->getClientOriginalExtension();
             // Filename to store
             $fileNameToStore1= $filename.'_'.time().'.'.$extension;
             // Upload Image
-            $path = $request->file('image')->storeAs('public/entreprise_images', $fileNameToStore1);
+            $path = $request->file('entreprise_photo')->storeAs('public/entreprise_images', $fileNameToStore1);
 
         }
         else {
@@ -95,7 +95,7 @@ class FicheeController extends Controller
         $fichee = new Fichee;
         $fichee->user_id = $auth->id;
         $fichee->nom = $request->input('nom');
-         $offre->vérification = ('suspendu');
+        $fichee->vérification = ('suspendu');
         $fichee->adresse = $request->input('adresse');
         $fichee->site = $request->input('site');
         $fichee->code_postal = $request->input('code_postal');

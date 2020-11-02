@@ -61,9 +61,10 @@
                         <div class="col-md-10">
                             <!-- CHART-->
                             <div class="statistic-chart-1"style="background-color:#A6A4BB ">
-                                <div class="row">
+                                <div class="col-md-12">
+                                  <div style="background-color:#fb246a; ">{{$fichee->vérification}}</div>
                                     
-                                  <img  style="width:25%;height: 25%" src="{{url('/storage/entreprise_images/'.$fichee->entreprise_photo)}} ">
+                                  <img style="width:25%;height: 25%" src="{{url('/storage/entreprise_images/'.$fichee->entreprise_photo)}} ">
                                         
                                     <label>Changer de photo</label>
                                     <input name="photo" type="file"id="idI" accept="image/png, image/jpeg">

@@ -38,13 +38,13 @@
             <div class="single-job-items ">
                                     <div class="job-items">
                                         <div class="company-img">
-                                             <a><img width="85px;" height="85px;"  src="{{url('/storage/entreprise_images/'.$offre->user->fichee->entreprise_photo)}}">
+                                             <a> <img style="width:85px;height:85px;" src="{{url('/storage/entreprise_images/'.$offre->user->fichee->entreprise_photo)}} ">
                                            </a>
                                         </div>
                                         <div class="job-tittle job-tittle2">
-                                            
+                                            <a href="#">
                                                 <h4>{{$offre->titre}}</h4>
-                                          
+                                           </a>
                                             <ul>
                                                 <li>{{$offre->user->fichee->nom}}</li>
                                                 <li><i class="fas fa-map-marker-alt"></i>{{$offre->ville}}</li>
@@ -111,7 +111,7 @@
             <div class="single-job-items ">
                                     <div class="job-items">
                                         <div class="company-img">
-                                            <a><img width="85px;" height="85px;"  src="{{url('/storage/entreprise_images/'.$offre->user->fichee->entreprise_photo)}}">
+                                            <a><img width="85px;" height="85px;"  src="{{url('/storage/entreprise_images/'.$entreprise->entreprise_photo)}}">
                                            </a>
                                         </div>
                                         <div class="job-tittle job-tittle2">

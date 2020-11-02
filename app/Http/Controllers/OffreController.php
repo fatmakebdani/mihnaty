@@ -15,6 +15,7 @@ use App\Fichee;
 use App\Employe;
 use App\Jury;
 use App\Candidature;
+use App\Evaluation;
 use Illuminate\Support\Facades\Storage;
 use Spatie\Searchable\Search;
 
@@ -121,6 +122,7 @@ class OffreController extends Controller
             'sexe' => 'required',
             'contrat' => 'required',
             'dernier_delais' => 'required',
+            'date_examination' => 'required',
             'date_notif' => 'required',
             'date_fonction' => 'required',
 
@@ -131,7 +133,6 @@ class OffreController extends Controller
         $offre = new Offre;
         $offre->statut = ('ouverte');
         $offre->vérification = ('suspendue');
-        $offre->motif = ('');
         $offre->titre = $request->input('titre');
         $offre->ville = $request->input('ville');
         $offre->cat = $request->input('cat');
@@ -140,6 +141,7 @@ class OffreController extends Controller
         $offre->salaire=$request->input('salaire');
         $offre->contrat = $request->input('contrat');
         $offre->dernier_delais = $request->input('dernier_delais');
+        $offre->date_examination = $request->input('date_examination');
         $offre->date_notif = $request->input('date_notif');
         $offre->date_fonction = $request->input('date_fonction');
         $offre->user_id = $auth->id;
@@ -313,6 +315,7 @@ class OffreController extends Controller
                ])
         ->count(),
         'candidats'=> Candidature::all(),
+        'evaluations'=>Evaluation::all(),
         
         ];
          return view('offre.mesPropositions')->with($data);

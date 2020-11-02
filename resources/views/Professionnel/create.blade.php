@@ -30,11 +30,7 @@
                 <i class="zmdi zmdi-check-square"></i> Mes examinations
                 </a>
             </li>
-            <li>
-                <a href="#">
-                <i class="fas fa-user-plus"></i> Mes invitations
-                </a>
-            </li>
+           
 
             </ul>
         </div>

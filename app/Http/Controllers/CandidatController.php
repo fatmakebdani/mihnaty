@@ -12,6 +12,7 @@ use App\Offre;
 use Auth;
 use App\User;
 use App\Candidature;
+use App\Attribution;
 use Illuminate\Support\Facades\Storage;
 
 class CandidatController extends Controller
@@ -423,6 +424,17 @@ class CandidatController extends Controller
             ['candidat_id',$auth->id]
                ])
         ->count(),
+        'attributions' =>Attribution::select('*')
+        ->where([
+            ['candidat_id',$auth->id]
+        ])
+        ->get(),
+        'nbrA' =>Attribution::select('*')
+        ->where([
+            ['candidat_id',$auth->id]
+        ])
+        ->count(),
+
     ];
         ///$candidatures = Candidature::where('candidat_id',$auth->id)->get();
        // $candidatures = Offre::where('id',$offres->offre_id)->get();

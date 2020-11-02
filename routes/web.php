@@ -67,10 +67,11 @@ Route::get('/refuser-offre/{id}','AdminController@refuserOffre')->name('refuser-
 
 Route::get('/changerStatut/{id}','ProfessionnelController@changerStatut')->name('changerStatut');
 Route::get('/passerExamination/{id}','ProfessionnelController@passerExamination')->name('passerExamination');
+Route::get('/fermerExamination/{id}','ProfessionnelController@fermerExamination')->name('fermerExamination');
 
 Route::get('/Evaluer/{id}','ProfessionnelController@Evaluer')->name('Evaluer');
-
-
+Route::get('/Changer/{id}','ProfessionnelController@Changer')->name('Changer');
+Route::get('/Attribuer/{id}','ProfessionnelController@Attribuer')->name('Attribuer');
 
 Route::get('/refus-offre/{id}','AdminController@refus')->name('refuser-motif');
 Route::post('/refus-offre/{id}','AdminController@refus')->name('refuser-motif');

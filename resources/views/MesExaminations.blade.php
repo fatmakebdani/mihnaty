@@ -60,6 +60,7 @@
                                                 <li>{{$jury->offre->user->fichee->nom}}
                                                 <li><i class="fas fa-map-marker-alt"></i>{{$jury->offre->ville}}</li>
                                                 <li style="background-color:#fb246a; color:  #242b5e;">{{$jury->offre->statut}}</li>
+
                                             </ul>
                                         </div>
                                     </div>
@@ -128,23 +129,27 @@
        
       @if($candidats==0)
         <p>pas de candidatures</p>
-        @else
+        @endif
       
+  
+  @if($examination==0)
+   <p>Prière d'envoyer les éxaminations avant:<b>{{$jury->offre->date_examination}}</b></p>
     <table class="table">
-      <thead>
+     <thead>
         <tr>
-          <th style="color: #242b5e;">#</th><th style="color:#242b5e; ">Candidat</th><th></th>
+          <th style="color:#242b5e; ">Candidat</th><th></th>
         </tr>
       </thead>
       <tbody>
-
       @foreach($candidats as $key=>$candidat)
-      
+     
       <tr>
         @if($candidat->offre_id == $jury->offre_id)
+       
         <form action="/Evaluer/{{$candidat->id}}">
+          @csrf
           @method('POST')
-                        <th>{{++$key}}</th><th>{{$candidat->user->nom}}&nbsp;{{$candidat->user->prenom}}</th><th> <input type="radio" name="candidature_id" id="id_sexe" value="{{$candidat->id}}"></th>
+                        <th>{{$candidat->user->nom}}&nbsp;{{$candidat->user->prenom}}</th><th> <input type="radio" name="candidature_id" id="id_sexe" value="{{$candidat->id}}"></th>
                          
                         @endif
                         </tr>
@@ -154,28 +159,77 @@
                         </tbody>
 
           </table>
+       
+          @else
+          Vous avez choisi {{$examination->candidature->user->nom}} {{$examination->candidature->user->prenom}}
+
+             <p>Prière d'envoyer  les changements avant:<b>{{$jury->offre->date_examination}}</b></p>
+          <table class="table">
+     <thead>
+        <tr>
+          <th style="color:#242b5e; ">Candidat</th><th></th>
+        </tr>
+      </thead>
+      <tbody>
+      @foreach($candidats as $key=>$candidat)
+     
+      <tr>
+        @if($candidat->offre_id == $jury->offre_id)
+       
+        <form action="/Changer/{{$candidat->id}}">
+          @csrf
+          @method('POST')
+                        <th>{{$candidat->user->nom}}&nbsp;{{$candidat->user->prenom}}</th><th> <input type="radio" name="candidature_id" id="id_sexe" value="{{$candidat->id}}"></th>
+                         
+                        @endif
+                        </tr>
+                      
+                        @endforeach
+                         
+                        </tbody>
+
+          </table>
+          @endif
+
 @endif
-</div>
+
    
-                                   <div class="modal-footer">
-                                        
-                           <button class="btn btn-primary">Save</button>
-                        
+                                
+
+      </div>
+        @if($examination==0)
+       <div class="modal-footer">
+                                       
+                          <button style="background: transparent;color: black;"> <div type="button" class="items-link items-link2 f-right"><a style="color: #9999ff;" >Envoyer</a></div></button>
+
+                     
    
-  </div>
+  
 </form>
                                       <div class="items-link items-link2 f-right" data-dismiss="modal">
                                         <a href="#">Fermer</a>
                                     </div>
                                        
                                 </div>
+                                @else
+         <div class="modal-footer">
+                                       
+                          <button style="background: transparent;color: black;"> <div type="button" class="items-link items-link2 f-right"><a style="color: #9999ff;" >Changer</a></div></button>
 
-      </div>
-                                        
+                     
+   
+  
+</form>
+                                      <div class="items-link items-link2 f-right" data-dismiss="modal">
+                                        <a href="#">Fermer</a>
+                                    </div>
+                                       
+                                </div>
+                                     @endif   
                                             <!--  Select job items End-->
                                         </div>
-                                    </div>
-                            @endif
+                                    
+                          
                                                                 @endforeach
                                 @else 
 

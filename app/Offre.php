@@ -15,7 +15,7 @@ class Offre extends Authenticatable
         protected $primaryKey = 'id';
 
         protected $fillable = [
-            'titre','ville','cat','contrat','salaire', 'sexe','dernier_delais','date_notif','date_fonction',
+            'titre','ville','cat','contrat','salaire', 'sexe','dernier_delais','date_examination','date_notif','date_fonction',
         ];
 
         protected $hidden = [
@@ -46,5 +46,9 @@ class Offre extends Authenticatable
      public function jurys()
     {
         return $this->hasMany('App\Jury');
+    }
+      public function attribution()
+    {
+        return $this->hasOne('App\Attribution');
     }
 } 

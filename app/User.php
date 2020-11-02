@@ -84,5 +84,9 @@ class User extends Authenticatable
      {
       return $this->hasOne('App\Employe');
      }
+       public function attributions()
+    {
+        return $this->hasMany('App\Attribution');
+    }
 
 }

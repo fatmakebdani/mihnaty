@@ -62,7 +62,7 @@
                                 <div class="row">   
                                  
                                     <label>Ajouter une logo:</label>
-                                    <input name="photo" type="file"id="idI" accept="image/png, image/jpeg">
+                                    <input name="entreprise_photo" type="file"id="idI" accept="image/png, image/jpeg">
                                     
                                 
                                 
@@ -114,7 +114,7 @@
                                         <option  disabled selected></option>
                                         @foreach ($professionnels as $professionnel)
                                         
-                                        <option value="{{$professionnel->id}}">{{$professionnel->nom}}{{$professionnel->prenom}}</option>
+                                        <option value="{{$professionnel->id}}">{{$professionnel->nom}}&nbsp;{{$professionnel->prenom}}</option>
                                         @endforeach
                                     </select>
                                         

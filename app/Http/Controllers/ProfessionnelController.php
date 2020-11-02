@@ -14,6 +14,8 @@ use App\Candidature;
 use App\Jury;
 use App\Offre;
 use App\Fichee;
+use App\Evaluation;
+use App\Attribution;
 use Illuminate\Support\Facades\Storage;
 
 class ProfessionnelController extends Controller
@@ -351,6 +353,7 @@ class ProfessionnelController extends Controller
                ])
         ->count(),
         'candidats'=>Candidature::all(),
+        'examination'=> Evaluation::where('jury_id',$prof->id)->first(),
     ];
         ///$candidatures = Candidature::where('candidat_id',$auth->id)->get();
        // $candidatures = Offre::where('id',$offres->offre_id)->get();
@@ -374,13 +377,44 @@ class ProfessionnelController extends Controller
        Offre::where('id',$id)->update(['statut'=>'en_cours_examination']);
         return redirect('mesPropositions');
     }
-    public function Evaluer($id)
+      public function fermerExamination($id)
     {
-
-        $evaluation->jury_id = $id;
+       Offre::where('id',$id)->update(['statut'=>'examination_finalisée']);
+        return redirect('mesPropositions');
+    }
+    public function Evaluer(Request $request,$id)
+    {   $jury = Jury::where('id',$id)->first();
+        $auth = Auth::user();
+        $prof = Professionnel::where('user_id',$auth->id)->first();
+        $evaluation= new Evaluation;
+        
+        $evaluation->jury_id = $prof->id;
         $evaluation->candidature_id = $request->input('candidature_id');
         $evaluation->save();
         return redirect('MesExaminations');
+
+    }
+     public function Changer(Request $request,$id)
+    {   $evaluation = Evaluation::where('jury_id',$id)->first();
+        $auth = Auth::user();
+        $prof = Professionnel::where('user_id',$auth->id)->first();
+        $evaluation->candidature_id = $request->input('candidature_id');
+        $evaluation->update();
+        return redirect('MesExaminations');
+
+    }
+      public function Attribuer(Request $request,$id)
+    {   Offre::where('id',$id)->update(['statut'=>'attribuée']);
+
+        $candidatureE = $request->input('candidature_id');
+        $candidat=Candidature::where('id',$candidatureE)->first();
+         $attribution= new Attribution;
+        
+        $attribution->offre_id = $id;
+        $attribution->candidat_id=$candidat->candidat_id;
+        $attribution->save();
+    
+        return redirect('mesPropositions');
 
     }
    

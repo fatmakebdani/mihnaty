@@ -60,12 +60,12 @@
                     <div class="col-lg-12">
                         
                         <div class="section-tittle text-center">
-                            <h2> Top Categories </h2>
+                            <h2> Quelques categories </h2>
                         </div>
                     </div>
                 </div>
                 <div class="row d-flex justify-contnet-center">
-                  @foreach ($offres as $offre)
+                
                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
                         <div class="single-services text-center mb-30">
                             <div class="services-ion">
@@ -73,12 +73,98 @@
                             </div>
                           
                             <div class="services-cap">
-                               <h5><a href="job_listing.html">{{$offre->cat}}</a></h5>
+                               <h5><a href="#">Commercial et marketing</a></h5>
                                 <span></span>
                             </div>
                         </div>
                     </div>
-                    @endforeach
+                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
+                        <div class="single-services text-center mb-30">
+                            <div class="services-ion">
+                             
+                            </div>
+                          
+                            <div class="services-cap">
+                               <h5><a href="#">Développement mobile</a></h5>
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
+                        <div class="single-services text-center mb-30">
+                            <div class="services-ion">
+                             
+                            </div>
+                          
+                            <div class="services-cap">
+                               <h5><a href="#">Transport et Chauffeurs</a></h5>
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
+                        <div class="single-services text-center mb-30">
+                            <div class="services-ion">
+                             
+                            </div>
+                          
+                            <div class="services-cap">
+                               <h5><a href="#">Artisanat</a></h5>
+                                <span></span>
+                            </div>
+                        </div>
+                    </div> <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
+                        <div class="single-services text-center mb-30">
+                            <div class="services-ion">
+                             
+                            </div>
+                          
+                            <div class="services-cap">
+                               <h5><a href="#">Juridique</a></h5>
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
+                        <div class="single-services text-center mb-30">
+                            <div class="services-ion">
+                             
+                            </div>
+                          
+                            <div class="services-cap">
+                               <h5><a href="#">Tourisme et Gastronomie</a></h5>
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
+                        <div class="single-services text-center mb-30">
+                            <div class="services-ion">
+                             
+                            </div>
+                          
+                            <div class="services-cap">
+                               <h5><a href="#">Banque,Assurances</a></h5>
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
+                        <div class="single-services text-center mb-30">
+                            <div class="services-ion">
+                             
+                            </div>
+                          
+                            <div class="services-cap">
+                               <h5><a href="#">Medecine et Santé</a></h5>
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+
+                        
+                    </div>
+                 
                    
                   
                   

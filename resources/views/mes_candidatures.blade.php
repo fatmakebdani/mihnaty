@@ -15,11 +15,7 @@
                 <i class="zmdi zmdi-file-text"></i> Ma fiche professionnelle
                 </a>
             </li>
-            <li>
-                <a href="/MaFicheE">
-                <i class="zmdi zmdi-card-travel"></i> Ma fiche d'entreprise
-                </a>
-            </li>
+           
             <li>
                 <a href="/MesPropositions">
                 <i class="fas fa-lightbulb"></i> Mes candidatures
@@ -140,9 +136,35 @@
                                 <!-- single-job-content -->
                                
                             </div>
+                             <hr class="line-seprate">
+                                 <h2 class="mb-30"style="color:#fb246a">Mes Attributions</h2>
+                                    @if ($nbrA ?? ''>0)
+                                <span>{{$nbrA ?? '' ?? ''}} attribution(s)</span>
+                                  <hr class="line-seprate">
+                                  @foreach($attributions ?? '' as $attribution)
+                              <div class="row">
+                    <div class="col-md-3">
+                                       
+                                            <img width="85px;" height="85px;" src="{{url('/storage/entreprise_images/'.$attribution->offre->user->fichee->entreprise_photo)}}">
+                                        </div>
+                                        <div class="col-md-9 mt-sm-20">
+                        <p><b>{{$attribution->offre->user->fichee->nom}}</b> a le plaisir de vous annoncer que vous etes choisi pour le poste <b>{{$attribution->offre->titre}}</b>.Veuillez nous contacter le plus vite possible sur <b>0 {{$attribution->offre->user->fichee->num}}</b><br>
+                            Merci </p>
+                    </div>
+                </div>
+        
+                                       
+                                   
+                        
+                                                                @endforeach
+                                @else 
+
+                                <p>Pas de candidature</p>
+                              @endif
                         </section>
                                     
                                 </div>
+
                         </section>
                                     
                                 </div>
@@ -150,7 +172,7 @@
 </main>
             <!-- END STATISTIC CHART-->
 
-            <!-- DATA TABLE-->
+            <!-- DATA TABLE-->h
 
             <!-- END DATA TABLE-->
 

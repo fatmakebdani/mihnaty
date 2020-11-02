@@ -175,6 +175,11 @@
                                     <input name="dernier_delais" type="date" id="id_dernier_delais" ><br>
 
               </div>
+               <div class="row justify-content-center">
+                   <label style="color: #242b5e; font-weight: bolder;">Dernier délais de soumission des évaluations</label>
+                                    <input name="date_examination" type="date" id="id_date_examination" ><br>
+
+              </div>
                 <div class="row justify-content-center">
                    <label style="color: #242b5e; font-weight: bolder;">Date de notification</label>
                                     <input name="date_notif" type="date" id="id_date_notif" ><br>
@@ -191,7 +196,7 @@
                                         <option  disabled selected></option>
                                         @foreach ($professionnels as $professionnel)
                                         
-                                        <option value="{{$professionnel->id}}">{{$professionnel->nom}}</option>
+                                        <option value="{{$professionnel->id}}">{{$professionnel->nom}}&nbsp;{{$professionnel->prenom}}</option>
                                         @endforeach
                                     </select>  
                 </div>
@@ -233,7 +238,7 @@
                                 <!-- Count of Job list End -->
                                 <!-- single-job-content -->
                                 @if ($offreA ?? ''>0)
-                                <span>{{$offreA ?? '' ?? ''}} offres acceptées</span>
+                                <span>{{$offreA ?? '' ?? ''}} offre(s) acceptée(s)</span>
                                   @foreach($mesOffres ?? '' as $monOffre)
                                 <div class="single-job-items mb-30">
                                     <div class="job-items">
@@ -260,18 +265,26 @@
                                  <a href="#" aria-hidden="true" data-toggle="modal" data-target="#myModal3{{$monOffre->id}}"style="font-size: 13px;color: black"> Voir détail</a><br>
                                 <a href="/supprimer-offre/{{$monOffre->id}}" style="font-size: 13px;color: black">
                                         Modifier</a><br>
-                                          <a href="#" aria-hidden="true" data-toggle="modal" data-target="#myModal5{{$monOffre->id}}"style="font-size: 13px;color: black"> Voir les candidatures</a><br>
+                                         
                                         @if($monOffre->statut=='ouverte')
                                          <a href="/changerStatut/{{$monOffre->id}}" style="font-size: 13px;color: black">
                                         Fermer les candidatures</a>
+                                         <a href="#" aria-hidden="true" data-toggle="modal" data-target="#myModal5{{$monOffre->id}}"style="font-size: 13px;color: black"> Voir les candidatures</a><br>
                                         @elseif($monOffre->statut=='cloturée')
                                          <a href="/passerExamination/{{$monOffre->id}}" style="font-size: 13px;color: black">
                                          Passer à l'examination </a>
-                                        @else
-                                         <a href="/supprimer-offre/{{$monOffre->id}}"style="font-size: 13px;color: black" >
-                                        Supprimer</a>
+                                          <a href="#" aria-hidden="true" data-toggle="modal" data-target="#myModal5{{$monOffre->id}}"style="font-size: 13px;color: black"> Voir les candidatures</a><br>
+                                         @elseif($monOffre->statut=='en_cours_examination')
+                                         <a href="/fermerExamination/{{$monOffre->id}}" style="font-size: 13px;color: black">
+                                         Cloturer l'examination </a>
+                                          <a href="#" aria-hidden="true" data-toggle="modal" data-target="#myModal5{{$monOffre->id}}"style="font-size: 13px;color: black"> Voir les candidatures</a><br>
+                                          @elseif($monOffre->statut=='examination_finalisée')
+                                          <a href="#" aria-hidden="true" data-toggle="modal" data-target="#myModal6{{$monOffre->id}}"style="font-size: 13px;color: black"> Voir les examinations</a><br>
+                                        @elseif($monOffre->statut=='attribuée')
+                                        {{$monOffre->titre}}<br>
                                         @endif
-                                  
+                                   <a href="/supprimer-offre/{{$monOffre->id}}"style="font-size: 13px;color: black" >
+                                        Supprimer</a>
                               </div>
                             </div>
                                     
@@ -323,13 +336,65 @@
     </div>
     <div class="modal-body">
     
+     
+     <table class="table">
+      <thead>
+        <tr>
+          <th style="color:#242b5e; ">Candidat</th>
+        </tr>
+      </thead>
+      <tbody>
+
+      @foreach($examinationq as $key=>$candidat)
+      
+      <tr>
+        @if($candidat->offre_id == $monOffre->id)
+        
+                    <th>{{$candidat->user->nom}}&nbsp;{{$candidat->user->prenom}}</th>
+                        @endif
+                        </tr>
+                      
+                        @endforeach
+                        </tbody>
+
+          </table>
+
+</div>
+   
+                                   <div class="modal-footer">
+      
+                              
+                                      <div class="items-link items-link2 f-right" data-dismiss="modal">
+                                        <a href="#">Fermer</a>
+                                    </div>
+                                       
+                                </div>
+
+      </div>
+                                        
+                                            <!--  Select job items End-->
+                                        </div>
+                                    </div>
+
+                                    <div id="myModal6{{$monOffre->id}}" class="modal" tabindex="-1" role="dialog"  aria-labelledby="myModal1">
+  <div class="modal-dialog modal-lg" role="document">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+     
+  <div class="modal-header">
+    <div class="modal-title" style="color:#fb246a; font-weight: bolder;">{{$monOffre->titre}}</div>
+      <button type="button" class="close" data-dismiss="modal">X</button>
+    </div>
+    <div class="modal-body">
+    
       @if($candidats==0)
         <p>pas de candidatures</p>
         @else
      <table class="table">
       <thead>
         <tr>
-          <th style="color: #242b5e;">#</th><th style="color:#242b5e; ">Candidat</th>
+         <th style="color:#242b5e; ">Candidat</th><th>Score</th>
         </tr>
       </thead>
       <tbody>
@@ -338,8 +403,16 @@
       
       <tr>
         @if($candidat->offre_id == $monOffre->id)
-        
-                        <th>{{++$key}}</th><th>{{$candidat->user->nom}}&nbsp;{{$candidat->user->prenom}}</th>
+            <form action="/Attribuer/{{$candidat->id}}">
+          @csrf
+          @method('POST')
+                        <th>{{$candidat->user->nom}}&nbsp;{{$candidat->user->prenom}}</th>
+                        
+
+                         <th>{{$candidat->evaluations->count()}}</th>
+                         <th> <input type="radio" name="candidature_id" id="id_sexe" value="{{$candidat->id}}"></th>
+                     
+
                         @endif
                         </tr>
                       
@@ -347,12 +420,15 @@
                         </tbody>
 
           </table>
-@endif
+          @endif
+
 </div>
    
                                    <div class="modal-footer">
       
-                              
+                                                        <button style="background: transparent;color: black;"> <div type="button" class="items-link items-link2 f-right"><a style="color: #9999ff;" >Attribuer</a></div></button>
+                                                      </form>
+
                                       <div class="items-link items-link2 f-right" data-dismiss="modal">
                                         <a href="#">Fermer</a>
                                     </div>
