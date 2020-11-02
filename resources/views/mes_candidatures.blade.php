@@ -29,10 +29,9 @@
         <!-- WELCOME-->
         <section class="au-breadcrumb2">
             <div class="container">
-                    <div class="row justify-content-left">
+                    <div class="row justify-content-center">
                         <div class=" col-lg-9">
-                            <h3 class="mb-30"style="color:#fb246a">Mes candidatures</h3>
-
+                            <h2 class="mb-30"style="color:#fb246a">Mes candidatures</h2>
                         <hr class="line-seprate">
                     </div>
 

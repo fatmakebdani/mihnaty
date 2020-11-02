@@ -17,7 +17,7 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="/mesPropositions">
                 <i class="fas fa-lightbulb"></i> Mes propositions
                 </a>
             </li>
