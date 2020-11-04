@@ -340,6 +340,7 @@ class ProfessionnelController extends Controller
     {
         $auth = Auth::user();
         $prof = Professionnel::where('user_id',$auth->id)->first();
+        $jury= Jury::where('professionnel_id',$prof->id)->get();
          $data = [
         
             'jurys'=>Jury::select('*')
@@ -395,7 +396,10 @@ class ProfessionnelController extends Controller
 
     }
      public function Changer(Request $request,$id)
-    {   $evaluation = Evaluation::where('jury_id',$id)->first();
+    {  $auth = Auth::user();
+        $prof = Professionnel::where('user_id',$auth->id)->first();
+        $jury = Jury::where('professionnel_id',$prof->id)->first();
+      $evaluation = Evaluation::where([['jury_id',$jury->id],['candidature_id',$id]])->first();
         $auth = Auth::user();
         $prof = Professionnel::where('user_id',$auth->id)->first();
         $evaluation->candidature_id = $request->input('candidature_id');

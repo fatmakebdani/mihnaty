@@ -345,7 +345,7 @@
       </thead>
       <tbody>
 
-      @foreach($examinationq as $key=>$candidat)
+      @foreach($candidats as $key=>$candidat)
       
       <tr>
         @if($candidat->offre_id == $monOffre->id)
@@ -406,7 +406,58 @@
             <form action="/Attribuer/{{$candidat->id}}">
           @csrf
           @method('POST')
-                        <th>{{$candidat->user->nom}}&nbsp;{{$candidat->user->prenom}}</th>
+                        <th> <a href="#" aria-hidden="true" data-toggle="modal" data-target="#myModal2{{$candidat->id}}">{{$candidat->user->nom}}&nbsp;{{$candidat->user->prenom}}</a></th>
+                          <div id="myModal2{{$candidat->id}}" class="modal" tabindex="-1" role="dialog"  aria-labelledby="myModal1">
+  <div class="modal-dialog modal-lg" role="document">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+     
+  <div class="modal-header">
+    <div class="modal-title" style="color:#fb246a; font-weight: bolder;">{{$candidat->user->candidat->nom}}&nbsp;{{$candidat->user->candidat->prenom}}</div>
+      <button type="button" class="close" data-dismiss="modal">X</button>
+    </div>
+    <div class="modal-body">
+        <img  style="width:10%;height: 10%" src="{{url('/storage/user_images/'.$candidat->user->user_photo)}} ">
+    <ul class="list-unstyled pl-3 mb-0">
+              <li class="mb-2"><strong class="text-black" style="color:#fb246a;">Nom:</strong>{{$candidat->user->candidat->nom}}</li>
+              <li class="mb-2"><strong class="text-black"style="color:#fb246a;">Prenom:</strong>{{$candidat->user->candidat->prenom}}</li>
+              <li class="mb-2"><strong class="text-black"style="color:#fb246a;">Date de naissance:</strong> {{$candidat->user->candidat->dateN}}</li>
+              <li class="mb-2"><strong class="text-black"style="color:#fb246a;">Sexe:</strong>{{$candidat->user->candidat->sexe}}</li>
+              <li class="mb-2"><strong class="text-black"style="color:#fb246a;">Email:</strong>{{$candidat->user->candidat->email}}</li>
+              <li class="mb-2"><strong class="text-black"style="color:#fb246a;">telephone:</strong> {{$candidat->user->candidat->tel}}</li>
+              <li class="mb-2"><strong class="text-black"style="color:#fb246a;">Experience:</strong>
+                @foreach($candidat->user->experiences as $exp)
+                <b>{{$exp->titre}}</b>&nbsp;à&nbsp;<b>{{$exp->entreprise}}</b>&nbsp;du&nbsp;{{$exp->debut}}&nbsp;au&nbsp;{{$exp->fin}} 
+              @endforeach</li>
+               <li class="mb-2"><strong class="text-black"style="color:#fb246a;">Diplome:</strong>
+                @foreach($candidat->user->diplomes as $dip)
+                <b>{{$dip->titre}}</b>&nbsp;à&nbsp;<b>{{$dip->etablisement}}</b>&nbsp;du&nbsp;{{$dip->debut}}&nbsp;au&nbsp;{{$dip->fin}} 
+              @endforeach</li>
+               <li class="mb-2"><strong class="text-black"style="color:#fb246a;">Compétences:</strong>
+                @foreach($candidat->user->competences as $comp)
+                {{$comp->titre}}
+              @endforeach</li>
+               <li class="mb-2"><strong class="text-black"style="color:#fb246a;">Poste courant:</strong> <b>{{$candidat->user->poste_courant->titre}}</b>&nbsp;à&nbsp;<b>{{$candidat->user->poste_courant->entreprise}}</b>&nbsp;du&nbsp;{{$candidat->user->poste_courant->debut}}&nbsp;au&nbsp;{{$candidat->user->poste_courant->fin}} </li>
+
+              
+          </ul>
+
+
+</div>
+ <div class="modal-footer">
+  
+   
+                                      </a>
+                                      <div class="items-link items-link2 f-right" data-dismiss="modal">
+                                        <a href="#">Fermer</a>
+                                    </div>
+      </div>
+                                        
+                                            <!--  Select job items End-->
+                                        </div>
+                                    </div>
+                                </div>
                         
 
                          <th>{{$candidat->evaluations->count()}}</th>

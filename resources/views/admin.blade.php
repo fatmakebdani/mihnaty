@@ -125,13 +125,13 @@
                                             </ul>
                                         </div>
                                     </div>
-                                     <div class="items-link items-link2 f-right"  aria-hidden="true" data-toggle="modal" data-target="#myModal-{{ $entreprise->id }}">
+                                     <div class="items-link items-link2 f-right"  aria-hidden="true" data-toggle="modal" data-target="#myModalE-{{ $entreprise->id }}">
                                        
                                         <a>Voir détails</a>
                                        
                                       
                                     </div>
-                                    <div id="myModal-{{ $entreprise->id }}" class="modal" tabindex="-1" role="dialog"  aria-labelledby="myModal">
+                                    <div id="myModalE-{{ $entreprise->id }}" class="modal" tabindex="-1" role="dialog"  aria-labelledby="myModal">
   <div class="modal-dialog modal-lg" role="document">
 
     <!-- Modal content-->

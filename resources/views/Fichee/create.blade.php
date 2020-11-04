@@ -150,7 +150,7 @@
                                         <option  disabled selected>Membre</option>
                                         @foreach ($professionnels as $professionnel)
                                         
-                                        <option value="{{$professionnel->id}}">{{$professionnel->nom}}{{$professionnel->prenom}}</option>
+                                        <option value="{{$professionnel->id}}">{{$professionnel->nom}}&nbsp;{{$professionnel->prenom}}</option>
                                         @endforeach
                                     </select>  
                              

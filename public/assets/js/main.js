@@ -262,6 +262,7 @@ $('#myModal5').click(function () {
 $('#myModal7').click(function () {
   $("#myModal7").modal("show");
 });
+
 $('#AjoutE').click(function () {
   $("#AjoutE").modal("show");
 });
